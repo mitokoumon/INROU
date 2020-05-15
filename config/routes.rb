@@ -10,7 +10,8 @@ Rails.application.routes.draw do
     get '/orders/thanks' => 'orders#thanks'
     get '/orders/check' => 'orders#check'
     delete '/carts' => 'carts#destroy_all'
-    get '/orders/check' => 'orders#check'
+    get '/user_flag' => 'users#user_flag'
+    patch '/user_flag' => 'users#update'
   end
     root 'tops#top'
 

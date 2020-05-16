@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     patch '/user_flag' => 'users#update'
   end
   get 'user/info/edit' =>'users#edit'
-    root 'tops#top'
+    root 'tops#top'#test
 
 
     # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

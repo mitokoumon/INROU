@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
 
-  devise_for :admins, skip: [:registrations]
-=======
-  devise_for :admins
->>>>>>> origin/master
+
+  devise_for :admins, skip: [:registrations], controllers: {
+  sessions:      'admins/sessions',
+  passwords:     'admins/passwords',
+}
   devise_for :users
+
+  resource :admins do
+    get '/top' => 'admins/tops#top'
+  end
 
   resource :users,only:[:show, :update] do
     resources :receivers,only:[:index, :show, :create, :destroy, :edit]

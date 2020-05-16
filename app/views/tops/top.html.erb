@@ -67,7 +67,7 @@
       <h3>オススメ商品</h3>
       <#% @products.each do |product| %>
         <div>
-          <div><#%= attachment_image_tag product %></div>
+          <div><#%= attachment_image_tag product.image %></div>
           <div><#%= product.name %></div>
           <div><#%= product.now_price %></div>
         </div>

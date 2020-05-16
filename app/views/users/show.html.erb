@@ -1,0 +1,8 @@
+<h1>マイページ</h1>
+<%= link_to "編集する",user_info_edit_path %>
+<%= link_to "パスワードを変更する",edit_user_password_path %>
+
+<%= current_user.family_name %>
+<%= current_user.last_name %><br>
+<%= current_user.family_name_kana %>
+<%= current_user.last_name_kana %><!-- tesut -->

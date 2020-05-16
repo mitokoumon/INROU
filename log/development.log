@@ -1046,6 +1046,7 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 538ms (Views: 533.3ms | ActiveRecord: 0.5ms)
 
 
+<<<<<<< HEAD
 actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
 web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
@@ -2014,5 +2015,61 @@ Processing by Admins::TopsController#top as HTML
   Rendering admins/tops/top.html.erb within layouts/application
   Rendered admins/tops/top.html.erb within layouts/application (1.0ms)
 Completed 200 OK in 905ms (Views: 897.9ms | ActiveRecord: 0.7ms)
+=======
+Started GET "/" for 10.0.2.2 at 2020-05-16 06:10:09 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by TopsController#top as HTML
+  Rendering tops/top.html.erb within layouts/application
+  Rendered tops/top.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 16128ms (Views: 15943.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 10.0.2.2 at 2020-05-16 06:12:38 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/devise-4.7.1/app/views/devise/shared/_error_messages.html.erb (1.6ms)
+  Rendered users/shared/_links.html.erb (2.6ms)
+  Rendered users/registrations/new.html.erb within layouts/application (600.5ms)
+Completed 200 OK in 1791ms (Views: 1648.5ms | ActiveRecord: 45.7ms)
+
+
+Started POST "/users" for 10.0.2.2 at 2020-05-16 06:15:34 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1wW6HxxIIyAhZJI27Bsauws1x98pB834nwX2bvTBVy+oGn3n7+WAJtR32J9dXSpBydV3pjIJDMLQ2oNJVL7nBA==", "user"=>{"family_name"=>"aaaaaaa", "last_name"=>"aaaaaa", "family_name_kana"=>"aaaaaa", "last_name_kana"=>"aaaaaa", "post_code"=>"aaaaaa", "address"=>"aaaaaa", "telephone_number"=>"aaaaaa", "email"=>"aaaaaa@aaaaaa", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (7.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "aaaaaa@aaaaaa"], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (24.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "family_name", "last_name", "family_name_kana", "last_name_kana", "post_code", "address", "telephone_number", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "aaaaaa@aaaaaa"], ["encrypted_password", "$2a$11$r7hV8aJz1ZvP/AJ1hI9ijeVHiNwx6dAt4jwOpl.DHBSihwDODAW/S"], ["family_name", "aaaaaaa"], ["last_name", "aaaaaa"], ["family_name_kana", "aaaaaa"], ["last_name_kana", "aaaaaa"], ["post_code", "aaaaaa"], ["address", "aaaaaa"], ["telephone_number", "aaaaaa"], ["created_at", "2020-05-16 06:15:35.166082"], ["updated_at", "2020-05-16 06:15:35.166082"]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (55.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/users
+Completed 302 Found in 810ms (ActiveRecord: 87.7ms)
+
+
+Started GET "/users" for 10.0.2.2 at 2020-05-16 06:15:35 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:5
+  Rendered users/show.html.erb within layouts/application (30.4ms)
+Completed 200 OK in 1225ms (Views: 1162.1ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/" for 10.0.2.2 at 2020-05-16 09:02:23 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (3.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by TopsController#top as HTML
+  Rendering tops/top.html.erb within layouts/application
+  Rendered tops/top.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 8592ms (Views: 8509.5ms | ActiveRecord: 0.0ms)
+>>>>>>> 778e491cfa9c975fa3f3939c8d506616bbba2498
 
 

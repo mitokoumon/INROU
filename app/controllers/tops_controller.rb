@@ -3,4 +3,6 @@ class TopsController < ApplicationController
     @categories =Category.all
     @products =Product.all
   end
+  def about
+  end
 end

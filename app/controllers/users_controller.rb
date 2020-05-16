@@ -26,7 +26,7 @@ class UsersController < ApplicationController
 	def taikai
 		@user = current_user
 		if @user.flag == 2 then
-			redirect_to destroy_user_session_path
+			redirect_to root_path
 		end
 	end
 

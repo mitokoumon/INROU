@@ -28,6 +28,7 @@ class Users::SessionsController < Devise::SessionsController
   def reject_user
     @user = current_user
     if @user.flag == 2
+      reset_session
       redirect_to root_path
     end
   end

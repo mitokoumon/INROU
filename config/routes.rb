@@ -32,8 +32,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   namespace :admins do
-    resources :user
-    resources :categories
+    resources :users
   end
 
 

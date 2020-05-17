@@ -54,7 +54,9 @@
   <div class="field">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div><!-- test -->
+  </div>
+
+  <%= f.hidden_field :flag, :value => 1 %>
 
   <div class="actions">
     <%= f.submit "Sign up" %>

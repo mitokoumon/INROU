@@ -1,0 +1,8 @@
+<% if receiver.errors.any? %>
+  <h4><%= receiver.errors.count %> errors prevented obj from being saved:</h4>
+  <ul>
+    <%= receiver.errors.full_messages.each do |message| %>
+      <li><%= message%></li>
+    <% end %>
+  </ul>
+<% end %>

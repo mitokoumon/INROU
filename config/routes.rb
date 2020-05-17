@@ -1,3 +1,4 @@
+
 Rails.application.routes.draw do
 
 
@@ -6,12 +7,14 @@ Rails.application.routes.draw do
   passwords:     'admins/passwords',
 }
 
+
   resource :admins do
     get '/top' => 'admins/tops#top'
+    resources :categories,only:[:index, :edit, :create, :update]
   end
 
   resource :users,only:[:show, :update, :edit] do
-    resources :receivers,only:[:index, :show, :create, :destroy, :edit]
+    resources :receivers,only:[:index, :show, :create, :destroy, :edit, :update]
     resources :carts,only:[:index, :create, :destroy]
     resources :orders,only:[:index, :show, :new, :create]
 
@@ -21,11 +24,17 @@ Rails.application.routes.draw do
     get '/flag' => 'users#flag'
     patch '/flag' => 'users#update'
   end
+  resources :products
   get 'user/info/edit' =>'users#edit'
     root 'tops#top'#test
     get '/about' => 'tops#about'
 
   devise_for :users
+
+  namespace :admins do
+    resources :user
+    resources :categories
+  end
 
 
 

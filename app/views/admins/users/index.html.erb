@@ -1,0 +1,31 @@
+<h2>会員一覧</h2>
+
+<table class="table table-bordered">
+  <thead>
+    <tr class="active">
+      <th>会員ID</th>
+      <th>氏名</th>
+      <th>メールアドレス</th>
+      <th>ステータス</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+    <tr>
+      <td><%= user.id %></td>
+      <td><%= link_to "#{user.family_name}+#{user.last_name}", admins_user(user) %></td>
+    <!-- 二つのカラムの値を合わせて表示させたい -->
+      <td><%= user.email %></td>
+      <td>
+        <% if user.flag == "1" %>
+          <p>有効</p>
+        <% elsif user.flag == "2" %>
+          <p>退会済み</p>
+        <% end %>
+      </td>
+    </tr>
+    <% end %>
+    <!-- kaminariページャ 10件ずつ表示 -->
+    <%= paginate @users %>
+  </tbody>
+</table>

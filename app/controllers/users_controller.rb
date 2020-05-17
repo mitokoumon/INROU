@@ -28,4 +28,5 @@ class UsersController < ApplicationController
 		params.require(:user).permit(:family_name, :last_name, :family_name_kana, :last_name_kana, :post_code, :address, :telephone_number, :email, :flag)
 	end
 
+
 end

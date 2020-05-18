@@ -1,2 +1,45 @@
-<h1>Receivers#index</h1>
-<p>Find me in app/views/receivers/index.html.erb</p>
+<div class="container">
+  <div class="col-xs-9">
+    <h3>配送先登録/一覧</h3>
+    <!-- エラーメッセージ -->
+    <%= render 'error', receiver: @receiver %>
+
+    <!-- 配送先登録フォーム -->
+    <%= form_with(url: users_receivers_path, model:@receiver, local: true) do |f| %>
+      <%= f.label :post_code, "郵便番号(ハイフンなし)" %>
+      <%= f.text_field :post_code %>
+      <%= f.label :address, "住所"%>
+      <%= f.text_field :address %>
+      <%= f.label :name, "宛名"%>
+      <%= f.text_field :name %>
+      <%= f.submit "登録する", class: "btn btn-success" %>
+    <% end %>
+  </div>
+<!-- 配送先一覧表 -->
+  <div class="col-xs-9">
+    <table class="table table-bordered">
+      <thead>
+        <tr class="active">
+          <th>郵便番号</th>
+          <th>住所</th>
+          <th>宛名</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @receivers.each do |receiver| %>
+          <tr>
+            <th><%= receiver.post_code %></th>
+            <th><%= receiver.address %></th>
+            <th><%= receiver.name %></th>
+            <th>
+              <%= link_to "編集する", edit_users_receiver_path(id: receiver.id), method: :get, class: "btn btn-primary" %>
+              <%= link_to "削除する", users_receiver_path(id: receiver.id), method: :delete, data: {confirm:"本当に削除してもよろしいですか？"}, class: "btn btn-danger" %>
+            </th>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+

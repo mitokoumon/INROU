@@ -1,7 +1,6 @@
 
 Rails.application.routes.draw do
-
-
+  
   devise_for :admins, skip: [:registrations], controllers: {
   sessions:      'admins/sessions',
   passwords:     'admins/passwords',
@@ -32,7 +31,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   namespace :admins do
-    resources :user
+    resources :users
     resources :categories
   end
 

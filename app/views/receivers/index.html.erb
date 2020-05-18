@@ -5,7 +5,7 @@
     <%= render 'error', receiver: @receiver %>
 
     <!-- 配送先登録フォーム -->
-    <%= form_with(url: users_receivers_path, model:[@user, @receiver], local: true) do |f| %>
+    <%= form_with(url: users_receivers_path, model:@receiver, local: true) do |f| %>
       <%= f.label :post_code, "郵便番号(ハイフンなし)" %>
       <%= f.text_field :post_code %>
       <%= f.label :address, "住所"%>
@@ -33,8 +33,8 @@
             <th><%= receiver.address %></th>
             <th><%= receiver.name %></th>
             <th>
-              <%= link_to "編集する", edit_users_receiver_path(receiver), class: "btn btn-primary" %>
-              <%= link_to "削除する", users_receiver_path(receiver), method: :delete, data: {confirm:"本当に削除してもよろしいですか？"}, class: "btn btn-danger" %>
+              <%= link_to "編集する", edit_users_receiver_path(id: receiver.id), method: :get, class: "btn btn-primary" %>
+              <%= link_to "削除する", users_receiver_path(id: receiver.id), method: :delete, data: {confirm:"本当に削除してもよろしいですか？"}, class: "btn btn-danger" %>
             </th>
           </tr>
         <% end %>

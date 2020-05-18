@@ -1,7 +1,6 @@
 
 Rails.application.routes.draw do
-
-
+  
   devise_for :admins, skip: [:registrations], controllers: {
   sessions:      'admins/sessions',
   passwords:     'admins/passwords',
@@ -13,7 +12,7 @@ Rails.application.routes.draw do
   end
 
   resource :users,only:[:show, :update, :edit] do
-    resources :receivers,only:[:index, :show, :create, :destroy, :edit, :update]
+    resources :receivers,only:[:index, :create, :destroy, :edit, :update]
     resources :carts,only:[:index, :create, :destroy]
     resources :orders,only:[:index, :show, :new, :create]
 

@@ -1,0 +1,59 @@
+<%= @user.family_name %>
+<%= @user.last_name %>さんの会員情報編集
+<br>
+
+会員ID  :  <%= @user.id %>
+
+<%= form_for(@user,url: admins_user_path,method: :patch) do |f| %>
+
+	<div class="field">
+		<%= f.label :family_name %>
+		<%= f.text_field :family_name, class: "name" %>
+	</div>
+
+	<div class="field">
+		<%= f.label :last_name %>
+		<%= f.text_field :last_name, class: "name" %>
+	</div>
+
+	<div class="field">
+		<%= f.label :family_name_kana %>
+		<%= f.text_field :family_name_kana, class: "name" %>
+	</div>
+
+	<div class="field">
+		<%= f.label :last_name_kana %>
+		<%= f.text_field :last_name_kana, class: "name" %>
+	</div>
+
+	<div class="field">
+		<%= f.label :post_code %>
+		<%= f.text_field :post_code, class: "name" %>
+	</div>
+
+	<div class="field">
+		<%= f.label :address %>
+		<%= f.text_field :address, class: "name" %>
+	</div>
+
+	<div class="field">
+    <%= f.label :telephone_number %><br />
+    <%= f.text_field :telephone_number, autocomplete: "telephone_number" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autocomplete: "email" %>
+  </div>
+
+	<div class="field">
+    <%= f.label :flag, "会員ステータス" %><br />
+		<label><%=f.radio_button :flag, 1 %>有効</label>
+		<label><%=f.radio_button :flag, 2 %>退会済み</label>
+  </div>
+
+	<div class="actions">
+		<%= f.submit %>
+	</div>
+
+<% end %>

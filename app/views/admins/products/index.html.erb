@@ -15,25 +15,29 @@
 			</thead>
 			<tbody>
 				<% @product.each do |product| %>
-				<tr>
-				<td>
-					<%=  product.id  %>
-				</td>
-				<td>
-					<%= link_to admins_product_path(product.id) do %>
-						<%= product.name %>
-					<% end %>
-				</td>
-				<td>
-					<%= product.now_price %>
-				</td>
-				<td>
-					<%= product.category.name %>
-				</td>
-				<!-- <td>
-					<= product.flag >
-				</td> -->
-				</tr>
+					<tr>
+					<td>
+						<%=  product.id  %>
+					</td>
+					<td>
+						<%= link_to admins_product_path(product.id) do %>
+							<%= product.name %>
+						<% end %>
+					</td>
+					<td>
+						<%= product.now_price %>
+					</td>
+					<td>
+						<%= product.category.name %>
+					</td>
+					<td>
+						<% if product.flag == 1 %>
+							<span>販売中</span>
+						<% else %>
+							<span>売り切れ</span>
+						<% end %>
+					</td>
+					</tr>
 				<% end %>
 			</tbody>
 		</table>

@@ -18,6 +18,10 @@ class Admins::CategoriesController < ApplicationController
 	def update
 		category = Category.find(params[:id])
 		category.update(category_params)
+		products = category.products
+		if category.flag == 2
+			products.update(flag: 2)
+		end
 		redirect_to admins_categories_path
 	end
 

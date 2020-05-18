@@ -5,7 +5,7 @@
     <%= render 'error', receiver: @receiver %>
 
     <!-- 配送先登録フォーム -->
-    <%= form_with(url: users_receivers_path, model:  @receiver, local: true) do |f| %>
+    <%= form_with(url: users_receivers_path, model:[@user, @receiver], local: true) do |f| %>
       <%= f.label :post_code, "郵便番号(ハイフンなし)" %>
       <%= f.text_field :post_code %>
       <%= f.label :address, "住所"%>

@@ -14,7 +14,7 @@ class ReceiversController < ApplicationController
 
   def index
     @receiver = Receiver.new
-    @receivers = Receiver.all
+    @receivers = current_user.receivers
   end
 
   def edit

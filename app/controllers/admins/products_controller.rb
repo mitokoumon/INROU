@@ -9,12 +9,12 @@ class Admins::ProductsController < ApplicationController
 
   def new
   	@product = Product.new
-  	@categories = Category.all
+  	@categories = Category.where(flag: 1)
   end
 
   def edit
   	@product = Product.find(params[:id])
-  	@categories = Category.all
+  	@categories = Category.where(flag: 1)
   end
 
   def create
@@ -31,6 +31,6 @@ class Admins::ProductsController < ApplicationController
 
   private
   def product_params
-  	params.require(:product).permit(:category_id, :name, :text, :image, :now_price)
+  	params.require(:product).permit(:category_id, :name, :text, :image, :now_price, :flag)
   end
 end

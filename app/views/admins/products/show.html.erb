@@ -32,15 +32,15 @@
 						(<%= @product.now_price %>)円
 					</td>
 				</tr>
-				<!-- <tr>
-					<td>販売ステータス</td>
+				<tr>
 					<td>
-						<= product.category.name >
+						<% if @product.flag == 1 %>
+							<span>販売中</span>
+						<% else %>
+							<span>売り切れ</span>
+						<% end %>
 					</td>
-				</tr> -->
-				<!-- <td>
-					<= product.flag >
-				</td> -->
+				</tr>
 			</tbody>
 		</table>
 	</div>

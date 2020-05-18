@@ -21,7 +21,7 @@
 	</div>
 
 	<div class="field">
-		<%= f.label :noe_price %>
+		<%= f.label :now_price %>
 		<%= f.text_field :now_price, class: "image" %>円
 	</div>
 
@@ -29,6 +29,12 @@
 		<%= f.label :image %>
 		<%= f.attachment_field :image, class: "image" %>
 	</div> -->
+
+	<div class="field">
+		<%= f.label :category %>
+		<%= f.select :flag, {"販売中":1, "売り切れ":2} %>
+	</div>
+	
 	<div class="action">
  		<%= f.submit %>
 	</div>

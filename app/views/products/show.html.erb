@@ -1,50 +1,55 @@
-<h1>商品詳細</h1>
 <div class = "container">
 	<div class = "row">
-		<table class ="table">
-			<tbody>
-				<td>
-					<%=  attachment_image_tag(@product, :image)  %>
-				</td>
-				<td>
-					<%=  @product.id  %>
-				</td>
-				<tr>
-					<td>商品名</td>
-					<td>
-							<%= @product.name %>
-					</td>
-				</tr>
-				<tr>
-					<td>商品説明</td>
-					<td>
-							<%= @product.text %>
-					</td>
-				</tr>
-				<tr>
-					<td>ジャンル</td>
-					<td>
-							<%= @product.category.name %>
-					</td>
-				</tr>
-				<tr>
-					<td>税込価格（税抜価格）</td>
-					<td>
-						<%= number_to_currency(@product.now_price*1.1) %>
-						(<%= @product.now_price %>)円
-					</td>
-				</tr>
-				<!-- <tr>
-					<td>販売ステータス</td>
-					<td>
-						<= product.category.name >
-					</td>
-				</tr> -->
-				<!-- <td>
-					<= product.flag >
-				</td> -->
-			</tbody>
-		</table>
+		<div class="col-xs-3">
+			<%= render "sidecategory",categories:@categories%>
+		</div>
+		<div class="col-xs-4">
+			<%=  attachment_image_tag(@product, :image)  %>
+		</div>
+		<div class="col-xs-5">
+			<table class ="table">
+				<tbody>
+					<tr>
+						<td>商品名</td>
+						<td>
+								<%= @product.name %>
+						</td>
+					</tr>
+					<tr>
+						<td>商品説明</td>
+						<td>
+								<%= @product.text %>
+						</td>
+					</tr>
+					<tr>
+						<td>ジャンル</td>
+						<td>
+								<%= @product.category.name %>
+						</td>
+					</tr>
+					<tr>
+						<td>税込価格（税抜価格）</td>
+						<td>
+							<%= number_to_currency(@product.now_price*1.1) %>
+							(<%= @product.now_price %>)円
+						</td>
+					</tr>
+					<!-- <tr>
+						<td>販売ステータス</td>
+						<td>
+							<= product.category.name >
+						</td>
+					</tr> -->
+					<!-- <td>
+						<= product.flag >
+					</td> -->
+				</tbody>
+			</table>
+		</div>
 	</div>
 </div>
-<%= link_to "編集する",edit_product_path(@product) %>
+<%= form_for(@cart,url:users_carts_path,method: :post) do |f| %>
+<%= f.select :number, [1,2,3]%>
+
+<%=f.submit %>
+<% end %>

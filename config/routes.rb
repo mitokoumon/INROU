@@ -10,7 +10,6 @@ Rails.application.routes.draw do
 
   resource :admins do
     get '/top' => 'admins/tops#top'
-    resources :categories,only:[:index, :edit, :create, :update]
   end
 
   resource :users,only:[:show, :update, :edit] do
@@ -24,7 +23,8 @@ Rails.application.routes.draw do
     get '/flag' => 'users#flag'
     patch '/flag' => 'users#update'
   end
-  resources :products
+  resources :products,only:[:index, :show]
+  get '/product/judge' =>'products#judge'
   get 'user/info/edit' =>'users#edit'
     root 'tops#top'#test
     get '/about' => 'tops#about'
@@ -33,6 +33,8 @@ Rails.application.routes.draw do
 
   namespace :admins do
     resources :users
+    resources :categories,only:[:index, :edit, :create, :update]
+    resources :products,except:[:destroy]
   end
 
 

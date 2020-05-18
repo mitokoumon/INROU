@@ -1,0 +1,31 @@
+<%= @user.family_name %>
+<%= @user.last_name %>さんの会員詳細
+
+<br>
+顧客ID  :  <%= @user.id %> 
+<% if @user.flag == 1 %>
+<p>有効会員</p>
+<% else %>
+<p>退会済み</p>
+<% end %>
+
+<br>
+<h3>氏名</h3>
+<%= @user.family_name %>
+<%= @user.last_name %><br>
+<%= @user.last_name %><br>
+<h3>カナ</h3>
+<%= @user.family_name_kana %>
+<%= @user.last_name_kana %><!-- tesut --> 
+<%= @user.last_name_kana %>
+<h3>郵便番号</h3>
+<%= @user.post_code %><br>
+<h3>住所</h3>
+<%= @user.address %><br>
+<h3>電話番号</h3>
+<%= @user.telephone_number %><br>
+<h3>メールアドレス</h3>
+<%= @user.email %><br>
+<%= link_to "編集する",edit_admins_user_path %>
+<%= link_to "一覧を見る",admins_users_path %><br>
+<!-- admin_orders_path -->

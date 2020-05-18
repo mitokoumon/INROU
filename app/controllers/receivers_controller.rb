@@ -1,23 +1,23 @@
 class ReceiversController < ApplicationController
+  before_action :authenticate_user!
+
   def create
-    receiver = Receiver.new(receiver_params)
-    receiver.user_id = current_user.id
+    receiver = current_user.receivers.new(receiver_params)
     if receiver.save
       redirect_to users_receivers_path
     else
-      receivers = current_user.receivers
+      @receiver = Receiver.new
+      @receivers = current_user.receivers
       render 'index'
     end
   end
 
   def index
-    @user = current_user
     @receiver = Receiver.new
-    @receivers = Receiver.all
+    @receivers = current_user.receivers
   end
 
   def edit
-    @user = current_user
     @receiver = Receiver.find(params[:id])
   end
 
@@ -26,15 +26,17 @@ class ReceiversController < ApplicationController
     if @receiver.update(receiver_params)
       redirect_to users_receivers_path
     else
-      render 'edit'
+      redirect_to edit_users_receiver_path, flash: { error: @receiver.errors.full_messages }
     end
   end
 
   def destroy
-    @receiver = Receiver.find(params[:id])
-    if @receiver.destroy
+    registrated_receiver = Receiver.find(params[:id])
+    if registrated_receiver.destroy
       redirect_to users_receivers_path
     else
+      @receiver = Receiver.new
+      @receivers = current_user.receivers
       render 'index'
     end
   end

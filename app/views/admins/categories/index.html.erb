@@ -26,6 +26,7 @@
 			</thead>
 			<tbody>
 				<% @categories.each do |category| %>
+				<tr>
 				<td>
 					<%= category.name %>
 				</td>
@@ -37,6 +38,7 @@
 				<td>
 					<%= link_to "編集する",edit_admins_category_path(category.id) %>
 				</td>
+				</tr>
 				<% end %>
 			</tbody>
 		</table>

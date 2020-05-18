@@ -20,13 +20,13 @@ class Admins::ProductsController < ApplicationController
   def create
   	@product = Product.new(product_params)
   	@product.save
-  	redirect_to product_path(@product)
+  	redirect_to admins_product_path(@product)
   end
 
   def update
   	@product = Product.find(params[:id])
   	@product.update(product_params)
-  	redirect_to product_path(@product)
+  	redirect_to admins_product_path(@product)
   end
 
   private

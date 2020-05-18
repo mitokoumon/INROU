@@ -1,0 +1,35 @@
+<h1>商品新規登録</h1>
+<%= form_for(@product,url: products_path,method: :post) do |f| %>
+	<div class="field">
+		<%= f.label :image %>
+		<%= f.attachment_field :image, class: "image" %>
+	</div>
+
+	<div class="field">
+		<%= f.label :name %>
+		<%= f.text_field :name, class: "image" %>
+	</div>
+
+	<div class="field">
+		<%= f.label :text %>
+		<%= f.text_area :text, class: "image" %>
+	</div>
+
+	<div class="field">
+		<%= f.label :category %>
+		<%= f.collection_select :category_id, @categories, :id, :name %>
+	</div>
+
+	<div class="field">
+		<%= f.label :noe_price %>
+		<%= f.text_field :now_price, class: "image" %>円
+	</div>
+
+	<!-- <div class="field">
+		<%= f.label :image %>
+		<%= f.attachment_field :image, class: "image" %>
+	</div> -->
+	<div class="action">
+ 		<%= f.submit %>
+	</div>
+<% end %>

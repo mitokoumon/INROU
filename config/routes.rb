@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   resource :users,only:[:show, :update, :edit] do
     resources :receivers,only:[:index, :create, :destroy, :edit, :update]
-    resources :carts,only:[:index, :create, :destroy]
+    resources :carts,only:[:index, :update, :create, :destroy]
     resources :orders,only:[:index, :show, :new, :create]
 
     get '/orders/thanks' => 'orders#thanks'

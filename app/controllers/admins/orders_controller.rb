@@ -9,7 +9,7 @@ class Admins::TopsController < ApplicationController
 		@odered_products = @order.products
 	end
 
-	def flag_update
+	def update
 		@order = Order.find(params[:id])
 		@order.update(orders_params)
 	end

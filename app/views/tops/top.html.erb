@@ -14,8 +14,8 @@
         <button type="button" class="btn btn-default navbar-btn"><%= link_to "商品一覧", products_path  %>
           <!-- products_path -->
         </button>
-        <button type="button" class="btn btn-default navbar-btn"><%= link_to "カート", "#"  %>
-          <!-- carts_path -->
+        <button type="button" class="btn btn-default navbar-btn"><%= link_to "カート", users_carts_path  %>
+          <!-- users_carts_path -->
         </button>
         <button type="button" class="btn btn-default navbar-btn"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
           <!-- destroy_user_session_path -->

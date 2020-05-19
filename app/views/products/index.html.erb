@@ -11,15 +11,14 @@
 			<% end %>
 			全<%= @products.count %>件
 			<% @products.each do |product| %>
-			<%= link_to product_path(product.id) do %>
-				<%=  attachment_image_tag(product,:image)  %><br>
-				<%= product.name %><br>
-			<% end %>
-			<%= number_to_currency(product.now_price) %><br>
-			<%= product.category.name %>
-		<!-- <td>
-			<= product.flag >
-		</td> -->
+				<% if product.category.flag == 1 %>
+					<%= link_to product_path(product.id) do %>
+						<%=  attachment_image_tag(product,:image)  %><br>
+						<%= product.name %><br>
+					<% end %>
+					<%= number_to_currency(product.now_price) %><br>
+					<%= product.category.name %>
+				<% end %>
 			<% end %>
 		</div>
 	</div>

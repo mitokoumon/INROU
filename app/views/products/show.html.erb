@@ -39,7 +39,7 @@
 		</div>
 	</div>
 </div>
-<%= form_for(@cart,url:users_carts_path,method: :post) do |f| %>
+<%= form_for([@product,@cart],url:users_carts_path(id: @product.id),method: :post) do |f| %>
 <%= f.select :number, [1,2,3]%>
 
 <%=f.submit %>

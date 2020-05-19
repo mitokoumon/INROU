@@ -1,4 +1,4 @@
-<h3 class="">注文履歴一覧</h3>
+<h3 class="bg-light">注文履歴一覧</h3>
 
 <table class="table table-bordered">
   <thead>
@@ -13,23 +13,25 @@
     <% @orders.each do |order| %>
       <tr>
         <th>
-          <% link_to 
-            <%= order.created_at %>
-            
-        </th>
+          <%= link_to admins_order_path(order) do %>
+            <%= order.created_at.strftime("%Y-%m-%d %H:%M:%S") %> 
+          <% end %>
+        </th>  
         <th><%= order.name %></th>
-        <th><%= order.ordered_products.number %></th>
+        <th><#%= order.ordered_products.number %></th>
         <th>
           <% if order.flag == 1 %>
-            <p>着手不可</p>
+            <p>入金待ち</p>
           <% elsif order.flag == 2 %>
-            <p>制作待ち</p>
+            <p>入金確認</p>
           <% elsif order.flag == 3 %>
             <p>製作中</p>
-          <% else %>
-            <p>制作完了</p>
-          <% end %>            
-          </th>
+          <% elsif order.flag == 4 %>
+            <p>発送準備中</p>
+          <% elsif order.flag == 5%>
+            <p>発送済み</p>
+          <% end %>
+        </th>
       </tr>
     <% end %>
   </tbody>

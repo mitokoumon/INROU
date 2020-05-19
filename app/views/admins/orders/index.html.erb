@@ -1,0 +1,36 @@
+<h3 class="">注文履歴一覧</h3>
+
+<table class="table table-bordered">
+  <thead>
+    <tr class="active">
+      <th>購入日時</th>
+      <th>購入者</th>
+      <th>購入個数</th>
+      <th>注文ステータス</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @orders.each do |order| %>
+      <tr>
+        <th>
+          <% link_to 
+            <%= order.created_at %>
+            
+        </th>
+        <th><%= order.name %></th>
+        <th><%= order.ordered_products.number %></th>
+        <th>
+          <% if order.flag == 1 %>
+            <p>着手不可</p>
+          <% elsif order.flag == 2 %>
+            <p>制作待ち</p>
+          <% elsif order.flag == 3 %>
+            <p>製作中</p>
+          <% else %>
+            <p>制作完了</p>
+          <% end %>            
+          </th>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

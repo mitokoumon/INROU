@@ -3999,3 +3999,1098 @@ Processing by Admins::OrdersController#show as HTML
 Completed 200 OK in 3619ms (Views: 3163.1ms | ActiveRecord: 55.7ms)
 
 
+Started GET "/admins/products/4" for 10.0.2.2 at 2020-05-20 12:13:43 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (3.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/admins/products_controller.rb:7
+  Rendering admins/products/show.html.erb within layouts/application
+  [1m[36mCategory Load (2.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/admins/products/show.html.erb:25
+  Rendered admins/products/show.html.erb within layouts/application (116.2ms)
+Completed 200 OK in 1016ms (Views: 914.0ms | ActiveRecord: 24.7ms)
+
+
+Started GET "/admins/products/4/edit" for 10.0.2.2 at 2020-05-20 12:14:00 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::ProductsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (2.8ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/admins/products_controller.rb:16
+  Rendering admins/products/edit.html.erb within layouts/application
+  [1m[36mCategory Load (1.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."flag" = ?[0m  [["flag", 1]]
+  ↳ app/views/admins/products/edit.html.erb:20
+  Rendered admins/products/edit.html.erb within layouts/application (40.1ms)
+Completed 200 OK in 870ms (Views: 759.5ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/admins/products/3" for 10.0.2.2 at 2020-05-20 12:14:08 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::ProductsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProduct Load (4.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/admins/products_controller.rb:7
+  Rendering admins/products/show.html.erb within layouts/application
+  [1m[36mCategory Load (2.5ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/admins/products/show.html.erb:25
+  Rendered admins/products/show.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 771ms (Views: 707.7ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/admins/products/2" for 10.0.2.2 at 2020-05-20 12:14:13 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (7.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/admins/products_controller.rb:7
+  Rendering admins/products/show.html.erb within layouts/application
+  [1m[36mCategory Load (2.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/products/show.html.erb:25
+  Rendered admins/products/show.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 801ms (Views: 734.9ms | ActiveRecord: 9.3ms)
+
+
+Started GET "/admins/products/1" for 10.0.2.2 at 2020-05-20 12:14:17 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (2.8ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/products_controller.rb:7
+  Rendering admins/products/show.html.erb within layouts/application
+  [1m[36mCategory Load (4.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/products/show.html.erb:25
+  Rendered admins/products/show.html.erb within layouts/application (15.3ms)
+Completed 200 OK in 780ms (Views: 720.2ms | ActiveRecord: 7.2ms)
+
+
+Started GET "/admins/orders" for 10.0.2.2 at 2020-05-20 12:14:30 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::OrdersController#index as HTML
+  [1m[36mAdmin Load (2.4ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  Rendering admins/orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (2.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  ↳ app/views/admins/orders/index.html.erb:13
+  Rendered admins/orders/index.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 868ms (Views: 775.0ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/admins/orders/1" for 10.0.2.2 at 2020-05-20 12:14:35 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::OrdersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdmin Load (2.8ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrder Load (3.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/orders_controller.rb:8
+  Rendering admins/orders/show.html.erb within layouts/application
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/orders/show.html.erb:8
+  [1m[36mOrderedProduct Load (2.6ms)[0m  [1m[34mSELECT "ordered_products".* FROM "ordered_products" WHERE "ordered_products"."order_id" = ?[0m  [["order_id", 1]]
+  ↳ app/views/admins/orders/show.html.erb:49
+  [1m[36mProduct Load (4.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/orders/show.html.erb:51
+  Rendered admins/orders/show.html.erb within layouts/application (24.8ms)
+Completed 200 OK in 782ms (Views: 706.0ms | ActiveRecord: 15.2ms)
+
+
+Started PATCH "/admins/ordered_products/1" for 10.0.2.2 at 2020-05-20 12:14:43 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::OrderedProductsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MVWkvcqdDFlNnBvYjFzM2zVJXkokuEp8Y73d/k5HUiwv/oOqmV8HhUbUx5I2JMAa6M3do3cYsKhbDtU+zjPJLw==", "ordered_product"=>{"flag"=>"3"}, "commit"=>"更新", "id"=>"1"}
+  [1m[36mAdmin Load (3.0ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrderedProduct Load (8.6ms)[0m  [1m[34mSELECT  "ordered_products".* FROM "ordered_products" WHERE "ordered_products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/ordered_products_controller.rb:9
+  [1m[35m (1.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admins/ordered_products_controller.rb:10
+  [1m[36mProduct Load (2.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/ordered_products_controller.rb:10
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/ordered_products_controller.rb:10
+  [1m[36mOrderedProduct Update (16.2ms)[0m  [1m[33mUPDATE "ordered_products" SET "flag" = ?, "updated_at" = ? WHERE "ordered_products"."id" = ?[0m  [["flag", 3], ["updated_at", "2020-05-20 12:14:43.654520"], ["id", 1]]
+  ↳ app/controllers/admins/ordered_products_controller.rb:10
+  [1m[35m (9.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admins/ordered_products_controller.rb:10
+No template found for Admins::OrderedProductsController#update, rendering head :no_content
+Completed 204 No Content in 2203ms (ActiveRecord: 40.7ms)
+
+
+Started GET "/admins/orders/1" for 10.0.2.2 at 2020-05-20 12:15:50 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (5.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by Admins::OrdersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdmin Load (2.8ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrder Load (2.5ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/orders_controller.rb:8
+  Rendering admins/orders/show.html.erb within layouts/application
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/orders/show.html.erb:8
+  [1m[36mOrderedProduct Load (4.7ms)[0m  [1m[34mSELECT "ordered_products".* FROM "ordered_products" WHERE "ordered_products"."order_id" = ?[0m  [["order_id", 1]]
+  ↳ app/views/admins/orders/show.html.erb:49
+  [1m[36mProduct Load (2.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/orders/show.html.erb:51
+  Rendered admins/orders/show.html.erb within layouts/application (214.3ms)
+Completed 200 OK in 4391ms (Views: 4116.4ms | ActiveRecord: 67.0ms)
+
+
+Started PATCH "/admins/ordered_products/1" for 10.0.2.2 at 2020-05-20 12:15:57 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::OrderedProductsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tP7Y1EryBXkh7pkbzmFbBPN7X27XHfIC4L49hK9boJArEcBIAPjRFKVG/VdmsgPbzCqwDVXq7o4DZ/nntHFr7A==", "ordered_product"=>{"flag"=>"3"}, "commit"=>"更新", "id"=>"1"}
+  [1m[36mAdmin Load (3.1ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrderedProduct Load (5.8ms)[0m  [1m[34mSELECT  "ordered_products".* FROM "ordered_products" WHERE "ordered_products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/ordered_products_controller.rb:10
+  [1m[35m (0.8ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admins/ordered_products_controller.rb:11
+  [1m[36mProduct Load (3.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/ordered_products_controller.rb:11
+  [1m[36mOrder Load (0.6ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/ordered_products_controller.rb:11
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admins/ordered_products_controller.rb:11
+Redirected to http://localhost:3000/admins/orders/1
+Completed 302 Found in 71ms (ActiveRecord: 14.6ms)
+
+
+Started GET "/admins/orders/1" for 10.0.2.2 at 2020-05-20 12:15:57 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::OrdersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdmin Load (7.4ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrder Load (8.6ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/orders_controller.rb:8
+  Rendering admins/orders/show.html.erb within layouts/application
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/orders/show.html.erb:8
+  [1m[36mOrderedProduct Load (9.1ms)[0m  [1m[34mSELECT "ordered_products".* FROM "ordered_products" WHERE "ordered_products"."order_id" = ?[0m  [["order_id", 1]]
+  ↳ app/views/admins/orders/show.html.erb:49
+  [1m[36mProduct Load (2.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/orders/show.html.erb:51
+  Rendered admins/orders/show.html.erb within layouts/application (42.5ms)
+Completed 200 OK in 920ms (Views: 809.5ms | ActiveRecord: 30.1ms)
+
+
+Started PATCH "/admins/ordered_products/1" for 10.0.2.2 at 2020-05-20 12:16:01 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::OrderedProductsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2syHOF0tzpGgwccG1ZuS9+X9ol54A+pPiH4FKPi2JFVFI5+kFyca/CRpo0p9SMoo2qxNPfr09sNrp8FL45zvKQ==", "ordered_product"=>{"flag"=>"2"}, "commit"=>"更新", "id"=>"1"}
+  [1m[36mAdmin Load (4.6ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrderedProduct Load (8.9ms)[0m  [1m[34mSELECT  "ordered_products".* FROM "ordered_products" WHERE "ordered_products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/ordered_products_controller.rb:10
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admins/ordered_products_controller.rb:11
+  [1m[36mProduct Load (12.9ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/ordered_products_controller.rb:11
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/ordered_products_controller.rb:11
+  [1m[36mOrderedProduct Update (15.4ms)[0m  [1m[33mUPDATE "ordered_products" SET "flag" = ?, "updated_at" = ? WHERE "ordered_products"."id" = ?[0m  [["flag", 2], ["updated_at", "2020-05-20 12:16:01.966427"], ["id", 1]]
+  ↳ app/controllers/admins/ordered_products_controller.rb:11
+  [1m[35m (11.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admins/ordered_products_controller.rb:11
+Redirected to http://localhost:3000/admins/orders/1
+Completed 302 Found in 129ms (ActiveRecord: 53.1ms)
+
+
+Started GET "/admins/orders/1" for 10.0.2.2 at 2020-05-20 12:16:02 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::OrdersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdmin Load (4.7ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrder Load (7.6ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/orders_controller.rb:8
+  Rendering admins/orders/show.html.erb within layouts/application
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/orders/show.html.erb:8
+  [1m[36mOrderedProduct Load (3.3ms)[0m  [1m[34mSELECT "ordered_products".* FROM "ordered_products" WHERE "ordered_products"."order_id" = ?[0m  [["order_id", 1]]
+  ↳ app/views/admins/orders/show.html.erb:49
+  [1m[36mProduct Load (5.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/orders/show.html.erb:51
+  Rendered admins/orders/show.html.erb within layouts/application (38.4ms)
+Completed 200 OK in 982ms (Views: 871.2ms | ActiveRecord: 25.0ms)
+
+
+Started PATCH "/admins/orders/1" for 10.0.2.2 at 2020-05-20 12:16:07 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::OrdersController#update as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mE+QeHDlhSsXqIbpc8LwgmTdx86efFR3A3Bf0Cs7+PUHoIjkOu9RRpMA4qXbEahdW4worRyLSPvgqZuzMBEziQ==", "order"=>{"flag"=>"3"}, "commit"=>"更新", "id"=>"1"}
+  [1m[36mAdmin Load (9.8ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrder Load (4.5ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/orders_controller.rb:13
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admins/orders_controller.rb:14
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/orders_controller.rb:14
+  [1m[36mOrder Update (11.5ms)[0m  [1m[33mUPDATE "orders" SET "flag" = ?, "updated_at" = ? WHERE "orders"."id" = ?[0m  [["flag", 3], ["updated_at", "2020-05-20 12:16:08.004523"], ["id", 1]]
+  ↳ app/controllers/admins/orders_controller.rb:14
+  [1m[35m (4.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admins/orders_controller.rb:14
+No template found for Admins::OrdersController#update, rendering head :no_content
+Completed 204 No Content in 3589ms (ActiveRecord: 33.1ms)
+
+
+Started GET "/admins/orders/1" for 10.0.2.2 at 2020-05-20 12:18:57 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::OrdersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdmin Load (3.0ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrder Load (2.6ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/orders_controller.rb:8
+  Rendering admins/orders/show.html.erb within layouts/application
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/orders/show.html.erb:8
+  [1m[36mOrderedProduct Load (2.1ms)[0m  [1m[34mSELECT "ordered_products".* FROM "ordered_products" WHERE "ordered_products"."order_id" = ?[0m  [["order_id", 1]]
+  ↳ app/views/admins/orders/show.html.erb:49
+  [1m[36mProduct Load (2.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/orders/show.html.erb:51
+  Rendered admins/orders/show.html.erb within layouts/application (21.8ms)
+Completed 200 OK in 972ms (Views: 900.7ms | ActiveRecord: 13.2ms)
+
+
+Started PATCH "/admins/orders/1" for 10.0.2.2 at 2020-05-20 12:40:55 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by Admins::OrdersController#update as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mHa0ZqY7TD14RFyw8JreiKMgMhfhKC5qCYdF8pk9ohEHmaz67DGYUPzsOPxYSYZXnHHddGPfMubqXoGRghdpbQ==", "order"=>{"flag"=>"2"}, "commit"=>"更新", "id"=>"1"}
+  [1m[36mAdmin Load (3.8ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrder Load (3.3ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/orders_controller.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admins/orders_controller.rb:14
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/orders_controller.rb:14
+  [1m[36mOrder Update (6.4ms)[0m  [1m[33mUPDATE "orders" SET "flag" = ?, "updated_at" = ? WHERE "orders"."id" = ?[0m  [["flag", 2], ["updated_at", "2020-05-20 12:40:55.661234"], ["id", 1]]
+  ↳ app/controllers/admins/orders_controller.rb:14
+  [1m[35m (5.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admins/orders_controller.rb:14
+Completed 500 Internal Server Error in 785ms (ActiveRecord: 43.1ms)
+
+
+  
+NameError (undefined local variable or method `order' for #<Admins::OrdersController:0x0000000007392a90>
+Did you mean?  @order):
+  
+app/controllers/admins/orders_controller.rb:15:in `update'
+Started PATCH "/admins/orders/1" for 10.0.2.2 at 2020-05-20 12:41:08 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::OrdersController#update as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mHa0ZqY7TD14RFyw8JreiKMgMhfhKC5qCYdF8pk9ohEHmaz67DGYUPzsOPxYSYZXnHHddGPfMubqXoGRghdpbQ==", "order"=>{"flag"=>"1"}, "commit"=>"更新", "id"=>"1"}
+  [1m[36mAdmin Load (4.7ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrder Load (3.6ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/orders_controller.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admins/orders_controller.rb:14
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/orders_controller.rb:14
+  [1m[36mOrder Update (6.8ms)[0m  [1m[33mUPDATE "orders" SET "flag" = ?, "updated_at" = ? WHERE "orders"."id" = ?[0m  [["flag", 1], ["updated_at", "2020-05-20 12:41:08.459486"], ["id", 1]]
+  ↳ app/controllers/admins/orders_controller.rb:14
+  [1m[35m (5.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admins/orders_controller.rb:14
+Completed 500 Internal Server Error in 627ms (ActiveRecord: 23.2ms)
+
+
+  
+NameError (undefined local variable or method `order' for #<Admins::OrdersController:0x00000000073ff1b8>
+Did you mean?  @order):
+  
+app/controllers/admins/orders_controller.rb:15:in `update'
+Started PATCH "/admins/ordered_products/1" for 10.0.2.2 at 2020-05-20 12:41:12 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::OrderedProductsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mHa0ZqY7TD14RFyw8JreiKMgMhfhKC5qCYdF8pk9ohEHmaz67DGYUPzsOPxYSYZXnHHddGPfMubqXoGRghdpbQ==", "ordered_product"=>{"flag"=>"1"}, "commit"=>"更新", "id"=>"1"}
+  [1m[36mAdmin Load (3.3ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrderedProduct Load (3.5ms)[0m  [1m[34mSELECT  "ordered_products".* FROM "ordered_products" WHERE "ordered_products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/ordered_products_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admins/ordered_products_controller.rb:11
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/ordered_products_controller.rb:11
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/ordered_products_controller.rb:11
+  [1m[36mOrderedProduct Update (8.5ms)[0m  [1m[33mUPDATE "ordered_products" SET "flag" = ?, "updated_at" = ? WHERE "ordered_products"."id" = ?[0m  [["flag", 1], ["updated_at", "2020-05-20 12:41:12.313024"], ["id", 1]]
+  ↳ app/controllers/admins/ordered_products_controller.rb:11
+  [1m[35m (22.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admins/ordered_products_controller.rb:11
+Redirected to http://localhost:3000/admins/orders/1
+Completed 302 Found in 172ms (ActiveRecord: 54.5ms)
+
+
+Started GET "/admins/orders/1" for 10.0.2.2 at 2020-05-20 12:41:12 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::OrdersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdmin Load (6.4ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrder Load (2.5ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/orders_controller.rb:8
+  Rendering admins/orders/show.html.erb within layouts/application
+  [1m[36mUser Load (4.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/orders/show.html.erb:8
+  [1m[36mOrderedProduct Load (2.3ms)[0m  [1m[34mSELECT "ordered_products".* FROM "ordered_products" WHERE "ordered_products"."order_id" = ?[0m  [["order_id", 1]]
+  ↳ app/views/admins/orders/show.html.erb:49
+  [1m[36mProduct Load (3.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/orders/show.html.erb:51
+  Rendered admins/orders/show.html.erb within layouts/application (43.3ms)
+Completed 200 OK in 4028ms (Views: 3944.9ms | ActiveRecord: 18.4ms)
+
+
+Started PATCH "/admins/orders/1" for 10.0.2.2 at 2020-05-20 12:41:45 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::OrdersController#update as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"G+6WesDsc49mbuldziQdsQCZ3WSlT/NFVp7L6OVfBteEAY7miuan4uLGjRFm90VuP8gyBye478m1Rw+L/nXNqw==", "order"=>{"flag"=>"2"}, "commit"=>"更新", "id"=>"1"}
+  [1m[36mAdmin Load (2.4ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrder Load (3.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/orders_controller.rb:13
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admins/orders_controller.rb:14
+  [1m[36mUser Load (4.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/orders_controller.rb:14
+  [1m[36mOrder Update (8.1ms)[0m  [1m[33mUPDATE "orders" SET "flag" = ?, "updated_at" = ? WHERE "orders"."id" = ?[0m  [["flag", 2], ["updated_at", "2020-05-20 12:41:45.629357"], ["id", 1]]
+  ↳ app/controllers/admins/orders_controller.rb:14
+  [1m[35m (6.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admins/orders_controller.rb:14
+Completed 500 Internal Server Error in 684ms (ActiveRecord: 24.1ms)
+
+
+  
+NameError (undefined local variable or method `order' for #<Admins::OrdersController:0x0000000005cc31e8>
+Did you mean?  @order):
+  
+app/controllers/admins/orders_controller.rb:15:in `update'
+Started GET "/admins/orders/1" for 10.0.2.2 at 2020-05-20 12:44:03 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (3.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by Admins::OrdersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdmin Load (2.7ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrder Load (2.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/orders_controller.rb:8
+  Rendering admins/orders/show.html.erb within layouts/application
+  [1m[36mUser Load (4.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/orders/show.html.erb:8
+  [1m[36mOrderedProduct Load (2.5ms)[0m  [1m[34mSELECT "ordered_products".* FROM "ordered_products" WHERE "ordered_products"."order_id" = ?[0m  [["order_id", 1]]
+  ↳ app/views/admins/orders/show.html.erb:49
+  [1m[36mProduct Load (3.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/orders/show.html.erb:51
+  Rendered admins/orders/show.html.erb within layouts/application (299.9ms)
+Completed 200 OK in 4114ms (Views: 3796.4ms | ActiveRecord: 83.9ms)
+
+
+Started PATCH "/admins/orders/1" for 10.0.2.2 at 2020-05-20 12:44:12 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::OrdersController#update as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WlQNfH2LlQtK2ID9dPgiZwaZl9+C578GhHynHr1YwLLFuxXgN4FBZs5w5LHcK3q4Och4vAAQo4pnpWN9pnILzg==", "order"=>{"flag"=>"2"}, "commit"=>"更新", "id"=>"1"}
+  [1m[36mAdmin Load (20.0ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrder Load (3.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/orders_controller.rb:13
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admins/orders_controller.rb:14
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/orders_controller.rb:14
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admins/orders_controller.rb:14
+  [1m[36mOrderedProduct Load (4.2ms)[0m  [1m[34mSELECT "ordered_products".* FROM "ordered_products" WHERE "ordered_products"."order_id" = ?[0m  [["order_id", 1]]
+  ↳ app/controllers/admins/orders_controller.rb:17
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admins/orders_controller.rb:17
+  [1m[36mProduct Load (2.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/orders_controller.rb:17
+  [1m[36mOrderedProduct Update (15.5ms)[0m  [1m[33mUPDATE "ordered_products" SET "flag" = ?, "updated_at" = ? WHERE "ordered_products"."id" = ?[0m  [["flag", 2], ["updated_at", "2020-05-20 12:44:12.872073"], ["id", 1]]
+  ↳ app/controllers/admins/orders_controller.rb:17
+  [1m[35m (7.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admins/orders_controller.rb:17
+Redirected to http://localhost:3000/admins/orders/1
+Completed 200 OK in 140ms (ActiveRecord: 57.9ms)
+
+
+Started GET "/admins/orders/1" for 10.0.2.2 at 2020-05-20 12:44:12 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::OrdersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdmin Load (8.8ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrder Load (6.0ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/orders_controller.rb:8
+  Rendering admins/orders/show.html.erb within layouts/application
+  [1m[36mUser Load (5.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/orders/show.html.erb:8
+  [1m[36mOrderedProduct Load (9.2ms)[0m  [1m[34mSELECT "ordered_products".* FROM "ordered_products" WHERE "ordered_products"."order_id" = ?[0m  [["order_id", 1]]
+  ↳ app/views/admins/orders/show.html.erb:49
+  [1m[36mProduct Load (2.8ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/orders/show.html.erb:51
+  Rendered admins/orders/show.html.erb within layouts/application (52.9ms)
+Completed 200 OK in 943ms (Views: 830.3ms | ActiveRecord: 31.9ms)
+
+
+Started PATCH "/admins/orders/1" for 10.0.2.2 at 2020-05-20 12:56:04 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (3.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by Admins::OrdersController#update as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cx5gtoFPoTlvVmJ9QfFZjDIyxd/ddPeIuDjQOytWDqWqA0aXwZmh0XkE1w3Rt5mOIu71X2DawpDT5zcXWuXk7g==", "order"=>{"flag"=>"3"}, "commit"=>"更新", "id"=>"1"}
+  [1m[36mAdmin Load (3.2ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrder Load (3.7ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/orders_controller.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admins/orders_controller.rb:14
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/orders_controller.rb:14
+  [1m[36mOrder Update (9.4ms)[0m  [1m[33mUPDATE "orders" SET "flag" = ?, "updated_at" = ? WHERE "orders"."id" = ?[0m  [["flag", 3], ["updated_at", "2020-05-20 12:56:05.435380"], ["id", 1]]
+  ↳ app/controllers/admins/orders_controller.rb:14
+  [1m[35m (34.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admins/orders_controller.rb:14
+Redirected to http://localhost:3000/admins/orders/1
+Completed 200 OK in 589ms (ActiveRecord: 96.4ms)
+
+
+Started GET "/admins/orders/1" for 10.0.2.2 at 2020-05-20 12:56:05 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::OrdersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdmin Load (3.1ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrder Load (13.7ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/orders_controller.rb:8
+  Rendering admins/orders/show.html.erb within layouts/application
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/orders/show.html.erb:8
+  [1m[36mOrderedProduct Load (2.7ms)[0m  [1m[34mSELECT "ordered_products".* FROM "ordered_products" WHERE "ordered_products"."order_id" = ?[0m  [["order_id", 1]]
+  ↳ app/views/admins/orders/show.html.erb:49
+  [1m[36mProduct Load (4.8ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/orders/show.html.erb:51
+  Rendered admins/orders/show.html.erb within layouts/application (389.8ms)
+Completed 200 OK in 5959ms (Views: 5753.1ms | ActiveRecord: 64.7ms)
+
+
+Started PATCH "/admins/ordered_products/1" for 10.0.2.2 at 2020-05-20 12:56:17 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::OrderedProductsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YEH5WNDOFeQOz92d7lbVZLMJOl2nMfyz1rv+eiSwHyR+6t5PgwweOAWHAddULtmlbo25tPSRBmfuCPa6pMSEJw==", "ordered_product"=>{"flag"=>"1"}, "commit"=>"更新", "id"=>"1"}
+  [1m[36mAdmin Load (3.9ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrderedProduct Load (69.0ms)[0m  [1m[34mSELECT  "ordered_products".* FROM "ordered_products" WHERE "ordered_products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/ordered_products_controller.rb:10
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admins/ordered_products_controller.rb:11
+  [1m[36mProduct Load (12.9ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/ordered_products_controller.rb:11
+  [1m[36mOrder Load (1.0ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/ordered_products_controller.rb:11
+  [1m[36mOrderedProduct Update (8.5ms)[0m  [1m[33mUPDATE "ordered_products" SET "flag" = ?, "updated_at" = ? WHERE "ordered_products"."id" = ?[0m  [["flag", 1], ["updated_at", "2020-05-20 12:56:18.260063"], ["id", 1]]
+  ↳ app/controllers/admins/ordered_products_controller.rb:11
+  [1m[35m (25.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admins/ordered_products_controller.rb:11
+Redirected to http://localhost:3000/admins/orders/1
+Completed 302 Found in 343ms (ActiveRecord: 120.8ms)
+
+
+Started GET "/admins/orders/1" for 10.0.2.2 at 2020-05-20 12:56:18 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::OrdersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdmin Load (3.1ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrder Load (12.6ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/orders_controller.rb:8
+  Rendering admins/orders/show.html.erb within layouts/application
+  [1m[36mUser Load (4.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/orders/show.html.erb:8
+  [1m[36mOrderedProduct Load (48.4ms)[0m  [1m[34mSELECT "ordered_products".* FROM "ordered_products" WHERE "ordered_products"."order_id" = ?[0m  [["order_id", 1]]
+  ↳ app/views/admins/orders/show.html.erb:49
+  [1m[36mProduct Load (18.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/orders/show.html.erb:51
+  Rendered admins/orders/show.html.erb within layouts/application (252.5ms)
+Completed 200 OK in 1706ms (Views: 1423.7ms | ActiveRecord: 86.7ms)
+
+
+Started PATCH "/admins/orders/1" for 10.0.2.2 at 2020-05-20 12:56:37 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::OrdersController#update as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fX2IhrL/6Ux/Ns3wLALTPu9tHMt9Rn9JmcGvFTqgAK7ikpAa+PU9IfueqbyE0Yvh0DzzqP+xY8V6GGt2IYrL0g==", "order"=>{"flag"=>"2"}, "commit"=>"更新", "id"=>"1"}
+  [1m[36mAdmin Load (20.9ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrder Load (12.4ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/orders_controller.rb:13
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admins/orders_controller.rb:14
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/orders_controller.rb:14
+  [1m[36mOrder Update (48.6ms)[0m  [1m[33mUPDATE "orders" SET "flag" = ?, "updated_at" = ? WHERE "orders"."id" = ?[0m  [["flag", 2], ["updated_at", "2020-05-20 12:56:37.476827"], ["id", 1]]
+  ↳ app/controllers/admins/orders_controller.rb:14
+  [1m[35m (5.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admins/orders_controller.rb:14
+  [1m[36mOrderedProduct Load (6.0ms)[0m  [1m[34mSELECT "ordered_products".* FROM "ordered_products" WHERE "ordered_products"."order_id" = ?[0m  [["order_id", 1]]
+  ↳ app/controllers/admins/orders_controller.rb:17
+  [1m[35m (0.7ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admins/orders_controller.rb:17
+  [1m[36mProduct Load (2.8ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/orders_controller.rb:17
+  [1m[36mOrderedProduct Update (33.4ms)[0m  [1m[33mUPDATE "ordered_products" SET "flag" = ?, "updated_at" = ? WHERE "ordered_products"."id" = ?[0m  [["flag", 2], ["updated_at", "2020-05-20 12:56:37.682225"], ["id", 1]]
+  ↳ app/controllers/admins/orders_controller.rb:17
+  [1m[35m (6.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admins/orders_controller.rb:17
+Redirected to http://localhost:3000/admins/orders/1
+Completed 200 OK in 346ms (ActiveRecord: 140.0ms)
+
+
+Started GET "/admins/orders/1" for 10.0.2.2 at 2020-05-20 12:56:37 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::OrdersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdmin Load (6.8ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrder Load (2.9ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/orders_controller.rb:8
+  Rendering admins/orders/show.html.erb within layouts/application
+  [1m[36mUser Load (7.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/orders/show.html.erb:8
+  [1m[36mOrderedProduct Load (4.6ms)[0m  [1m[34mSELECT "ordered_products".* FROM "ordered_products" WHERE "ordered_products"."order_id" = ?[0m  [["order_id", 1]]
+  ↳ app/views/admins/orders/show.html.erb:49
+  [1m[36mProduct Load (2.8ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/orders/show.html.erb:51
+  Rendered admins/orders/show.html.erb within layouts/application (84.9ms)
+Completed 200 OK in 2043ms (Views: 1887.8ms | ActiveRecord: 24.9ms)
+
+
+Started PATCH "/admins/ordered_products/1" for 10.0.2.2 at 2020-05-20 13:06:11 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (3.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  
+SyntaxError (/vagrant/INROU/app/controllers/admins/ordered_products_controller.rb:24: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/admins/ordered_products_controller.rb:24: syntax error, unexpected end-of-input, expecting keyword_end
+Started PATCH "/admins/ordered_products/1" for 10.0.2.2 at 2020-05-20 13:06:57 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by Admins::OrderedProductsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vMmFo1TAllFwcy8cKGsWlthcobfRIgVO2JA0FwD8fg+iYqK0BwKdjXs781aSExpXBdgiXoKC/5rgIzzXgIjlDA==", "ordered_product"=>{"flag"=>"1"}, "commit"=>"更新", "id"=>"1"}
+  [1m[36mAdmin Load (3.2ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrderedProduct Load (4.1ms)[0m  [1m[34mSELECT  "ordered_products".* FROM "ordered_products" WHERE "ordered_products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/ordered_products_controller.rb:10
+Completed 500 Internal Server Error in 1791ms (ActiveRecord: 55.6ms)
+
+
+  
+NameError (undefined local variable or method `order' for #<Admins::OrderedProductsController:0x00007fefbc5842c0>):
+  
+app/controllers/admins/ordered_products_controller.rb:11:in `update'
+Started PATCH "/admins/ordered_products/1" for 10.0.2.2 at 2020-05-20 13:07:35 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::OrderedProductsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WHYCWrcLaJt4OuVg7PquNrSw7eivS3cZTkbC/k+k003HmRrG/QG89vySgSxEKfbpi+ECiy28a5WtnwadVI4YMQ==", "ordered_product"=>{"flag"=>"1"}, "commit"=>"更新", "id"=>"1"}
+  [1m[36mAdmin Load (14.1ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrderedProduct Load (5.8ms)[0m  [1m[34mSELECT  "ordered_products".* FROM "ordered_products" WHERE "ordered_products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/ordered_products_controller.rb:10
+Completed 500 Internal Server Error in 1231ms (ActiveRecord: 19.8ms)
+
+
+  
+NameError (undefined local variable or method `order' for #<Admins::OrderedProductsController:0x0000000006a36ac8>):
+  
+app/controllers/admins/ordered_products_controller.rb:11:in `update'
+Started GET "/admins/orders/1" for 10.0.2.2 at 2020-05-20 13:07:39 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::OrdersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdmin Load (3.5ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrder Load (10.0ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/orders_controller.rb:8
+  Rendering admins/orders/show.html.erb within layouts/application
+  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/orders/show.html.erb:8
+  [1m[36mOrderedProduct Load (4.3ms)[0m  [1m[34mSELECT "ordered_products".* FROM "ordered_products" WHERE "ordered_products"."order_id" = ?[0m  [["order_id", 1]]
+  ↳ app/views/admins/orders/show.html.erb:49
+  [1m[36mProduct Load (4.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/orders/show.html.erb:51
+  Rendered admins/orders/show.html.erb within layouts/application (393.0ms)
+Completed 200 OK in 6356ms (Views: 5909.6ms | ActiveRecord: 75.8ms)
+
+
+Started PATCH "/admins/ordered_products/1" for 10.0.2.2 at 2020-05-20 13:07:52 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::OrderedProductsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rnXSen90YvD9PPn5wpj3cZenPMbAu9Zb9mcS3BXGN9QxmsrmNX62nXmUnbVqS6+uqPbTpUJMytcVvta/Duz8qA==", "ordered_product"=>{"flag"=>"1"}, "commit"=>"更新", "id"=>"1"}
+  [1m[36mAdmin Load (42.4ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrderedProduct Load (19.8ms)[0m  [1m[34mSELECT  "ordered_products".* FROM "ordered_products" WHERE "ordered_products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/ordered_products_controller.rb:10
+Completed 500 Internal Server Error in 1910ms (ActiveRecord: 62.2ms)
+
+
+  
+NameError (undefined local variable or method `order' for #<Admins::OrderedProductsController:0x00007fefb8026278>):
+  
+app/controllers/admins/ordered_products_controller.rb:11:in `update'
+Started GET "/admins/orders/1" for 10.0.2.2 at 2020-05-20 13:09:56 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::OrdersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdmin Load (7.1ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrder Load (3.4ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/orders_controller.rb:8
+  Rendering admins/orders/show.html.erb within layouts/application
+  [1m[36mUser Load (10.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/orders/show.html.erb:8
+  [1m[36mOrderedProduct Load (10.1ms)[0m  [1m[34mSELECT "ordered_products".* FROM "ordered_products" WHERE "ordered_products"."order_id" = ?[0m  [["order_id", 1]]
+  ↳ app/views/admins/orders/show.html.erb:49
+  [1m[36mProduct Load (22.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/orders/show.html.erb:51
+  Rendered admins/orders/show.html.erb within layouts/application (101.5ms)
+Completed 200 OK in 1728ms (Views: 1376.6ms | ActiveRecord: 53.5ms)
+
+
+Started PATCH "/admins/ordered_products/1" for 10.0.2.2 at 2020-05-20 13:10:17 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by Admins::OrderedProductsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"M+kQJcdXuLCE9k5tjJPkfhjt+4XxMbRICCrWxSD+TUSsBgi5jV1s3QBeKiEkQLyhJ7wU5nPGqMTr8xKmO9SGOA==", "ordered_product"=>{"flag"=>"1"}, "commit"=>"更新", "id"=>"1"}
+  [1m[36mAdmin Load (3.2ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrderedProduct Load (4.8ms)[0m  [1m[34mSELECT  "ordered_products".* FROM "ordered_products" WHERE "ordered_products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/ordered_products_controller.rb:10
+  [1m[36mOrder Load (3.5ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/ordered_products_controller.rb:11
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admins/ordered_products_controller.rb:16
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/ordered_products_controller.rb:16
+  [1m[36mOrderedProduct Update (5.7ms)[0m  [1m[33mUPDATE "ordered_products" SET "flag" = ?, "updated_at" = ? WHERE "ordered_products"."id" = ?[0m  [["flag", 1], ["updated_at", "2020-05-20 13:10:18.831680"], ["id", 1]]
+  ↳ app/controllers/admins/ordered_products_controller.rb:16
+  [1m[35m (18.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admins/ordered_products_controller.rb:16
+Redirected to http://localhost:3000/admins/orders/1
+Completed 302 Found in 793ms (ActiveRecord: 94.5ms)
+
+
+Started GET "/admins/orders/1" for 10.0.2.2 at 2020-05-20 13:10:19 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::OrdersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdmin Load (21.5ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrder Load (10.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/orders_controller.rb:8
+  Rendering admins/orders/show.html.erb within layouts/application
+  [1m[36mUser Load (8.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/orders/show.html.erb:8
+  [1m[36mOrderedProduct Load (3.1ms)[0m  [1m[34mSELECT "ordered_products".* FROM "ordered_products" WHERE "ordered_products"."order_id" = ?[0m  [["order_id", 1]]
+  ↳ app/views/admins/orders/show.html.erb:49
+  [1m[36mProduct Load (7.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/orders/show.html.erb:51
+  Rendered admins/orders/show.html.erb within layouts/application (331.2ms)
+Completed 200 OK in 6699ms (Views: 6408.0ms | ActiveRecord: 68.2ms)
+
+
+Started PATCH "/admins/orders/1" for 10.0.2.2 at 2020-05-20 13:10:30 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::OrdersController#update as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iNW1nlaSCzZBtPuDQVelg02+6/7VlU9zjqmrQYt50BgXOq0CHJjfW8Ucn8/phP1ccu8EnVdiU/9tcG8ikFMbZA==", "order"=>{"flag"=>"2"}, "commit"=>"更新", "id"=>"1"}
+  [1m[36mAdmin Load (85.4ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrder Load (3.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/orders_controller.rb:13
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admins/orders_controller.rb:14
+  [1m[36mUser Load (60.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/orders_controller.rb:14
+  [1m[35m (0.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admins/orders_controller.rb:14
+Redirected to http://localhost:3000/admins/ordered_products/order.ordered_products.id?flag=2
+Completed 200 OK in 390ms (ActiveRecord: 149.9ms)
+
+
+Started GET "/admins/ordered_products/order.ordered_products.id?flag=2" for 10.0.2.2 at 2020-05-20 13:10:31 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [GET] "/admins/ordered_products/order.ordered_products.id"):
+  
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/admins/orders/1" for 10.0.2.2 at 2020-05-20 13:14:44 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (22.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by Admins::OrdersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdmin Load (3.6ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrder Load (8.3ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/orders_controller.rb:8
+  Rendering admins/orders/show.html.erb within layouts/application
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/orders/show.html.erb:8
+  [1m[36mOrderedProduct Load (4.5ms)[0m  [1m[34mSELECT "ordered_products".* FROM "ordered_products" WHERE "ordered_products"."order_id" = ?[0m  [["order_id", 1]]
+  ↳ app/views/admins/orders/show.html.erb:49
+  [1m[36mProduct Load (4.8ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/orders/show.html.erb:51
+  Rendered admins/orders/show.html.erb within layouts/application (543.4ms)
+Completed 200 OK in 7562ms (Views: 6975.2ms | ActiveRecord: 123.6ms)
+
+
+Started PATCH "/admins/orders/1" for 10.0.2.2 at 2020-05-20 13:15:02 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::OrdersController#update as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"M4FWm4nkSzS7wUNVOB5C0mrJOpJVm3/MGJjrVPjESl+sbk4Hw+6fWT9pJxmQzRoNVZjV8ddsY0D7QS834+6BIw==", "order"=>{"flag"=>"2"}, "commit"=>"更新", "id"=>"1"}
+  [1m[36mAdmin Load (5.9ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrder Load (6.0ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/orders_controller.rb:13
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admins/orders_controller.rb:14
+  [1m[36mUser Load (16.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/orders_controller.rb:14
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admins/orders_controller.rb:14
+Redirected to http://localhost:3000/admins/ordered_products/order.ordered_products.id?flag=2&method=patch
+Completed 200 OK in 186ms (ActiveRecord: 29.6ms)
+
+
+Started GET "/admins/ordered_products/order.ordered_products.id?flag=2&method=patch" for 10.0.2.2 at 2020-05-20 13:15:02 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [GET] "/admins/ordered_products/order.ordered_products.id"):
+  
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/admins/orders/1" for 10.0.2.2 at 2020-05-20 13:22:40 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::OrdersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdmin Load (50.4ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrder Load (9.8ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/orders_controller.rb:8
+  Rendering admins/orders/show.html.erb within layouts/application
+  [1m[36mUser Load (5.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/orders/show.html.erb:8
+  [1m[36mOrderedProduct Load (39.0ms)[0m  [1m[34mSELECT "ordered_products".* FROM "ordered_products" WHERE "ordered_products"."order_id" = ?[0m  [["order_id", 1]]
+  ↳ app/views/admins/orders/show.html.erb:49
+  [1m[36mProduct Load (9.7ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/orders/show.html.erb:51
+  Rendered admins/orders/show.html.erb within layouts/application (242.4ms)
+Completed 200 OK in 1919ms (Views: 1557.8ms | ActiveRecord: 114.2ms)
+
+
+Started PATCH "/admins/orders/1" for 10.0.2.2 at 2020-05-20 13:48:41 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by Admins::OrdersController#update as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"blxV8203YCbk8dNUrysyUTfRdVZuETt+bEe8S5TOmErxs01vJz20S2BZtxgH+GqOCICaNezmJ/KPnngoj+RTNg==", "order"=>{"flag"=>"3"}, "commit"=>"更新", "id"=>"1"}
+  [1m[36mAdmin Load (2.6ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrder Load (3.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/orders_controller.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admins/orders_controller.rb:14
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/orders_controller.rb:14
+  [1m[36mOrder Update (5.9ms)[0m  [1m[33mUPDATE "orders" SET "flag" = ?, "updated_at" = ? WHERE "orders"."id" = ?[0m  [["flag", 3], ["updated_at", "2020-05-20 13:48:41.996555"], ["id", 1]]
+  ↳ app/controllers/admins/orders_controller.rb:14
+  [1m[35m (33.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admins/orders_controller.rb:14
+Redirected to http://localhost:3000/admins/orders/1
+Completed 200 OK in 522ms (ActiveRecord: 95.7ms)
+
+
+Started GET "/admins/orders/1" for 10.0.2.2 at 2020-05-20 13:48:42 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::OrdersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdmin Load (7.0ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrder Load (33.7ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/orders_controller.rb:8
+  Rendering admins/orders/show.html.erb within layouts/application
+  [1m[36mUser Load (5.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/orders/show.html.erb:8
+  [1m[36mOrderedProduct Load (3.9ms)[0m  [1m[34mSELECT "ordered_products".* FROM "ordered_products" WHERE "ordered_products"."order_id" = ?[0m  [["order_id", 1]]
+  ↳ app/views/admins/orders/show.html.erb:49
+  [1m[36mProduct Load (5.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/orders/show.html.erb:51
+  Rendered admins/orders/show.html.erb within layouts/application (304.3ms)
+Completed 200 OK in 5906ms (Views: 5695.7ms | ActiveRecord: 85.4ms)
+
+
+Started PATCH "/admins/ordered_products/1" for 10.0.2.2 at 2020-05-20 13:48:59 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::OrderedProductsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mH7Bmfm9O2sbuSLN/mvevk330bls/dxoGSsKiOq7EkuG1eaOqn8wtxDx/odEE9J/kHNSUD9dJrwhmAJIas+JSA==", "ordered_product"=>{"flag"=>"3"}, "commit"=>"更新", "id"=>"1"}
+  [1m[36mAdmin Load (11.0ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrderedProduct Load (7.9ms)[0m  [1m[34mSELECT  "ordered_products".* FROM "ordered_products" WHERE "ordered_products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/ordered_products_controller.rb:10
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admins/ordered_products_controller.rb:11
+  [1m[36mProduct Load (47.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/ordered_products_controller.rb:11
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/ordered_products_controller.rb:11
+  [1m[36mOrderedProduct Update (45.8ms)[0m  [1m[33mUPDATE "ordered_products" SET "flag" = ?, "updated_at" = ? WHERE "ordered_products"."id" = ?[0m  [["flag", 3], ["updated_at", "2020-05-20 13:49:00.160885"], ["id", 1]]
+  ↳ app/controllers/admins/ordered_products_controller.rb:11
+  [1m[35m (85.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admins/ordered_products_controller.rb:11
+Completed 500 Internal Server Error in 392ms (ActiveRecord: 198.4ms)
+
+
+  
+ArgumentError (Unsupported argument type: #<Order:0x00007f043c0c6a38> (Order)):
+  
+app/controllers/admins/ordered_products_controller.rb:13:in `update'
+Started PATCH "/admins/ordered_products/1" for 10.0.2.2 at 2020-05-20 13:51:08 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (3.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by Admins::OrderedProductsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ajdSRmd3lbC08O05KKNzv/34YwzUjUwoHdFN92Srt3D12EraLX1B3TBYiXWAcCtgwqmMb1Z6UKT+CImUf4F8DA==", "ordered_product"=>{"flag"=>"3"}, "commit"=>"更新", "id"=>"1"}
+  [1m[36mAdmin Load (2.7ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrderedProduct Load (4.1ms)[0m  [1m[34mSELECT  "ordered_products".* FROM "ordered_products" WHERE "ordered_products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/ordered_products_controller.rb:10
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admins/ordered_products_controller.rb:11
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/ordered_products_controller.rb:11
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/ordered_products_controller.rb:11
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admins/ordered_products_controller.rb:11
+Completed 500 Internal Server Error in 613ms (ActiveRecord: 65.4ms)
+
+
+  
+NoMethodError (undefined method `update' for 3:Integer):
+  
+app/controllers/admins/ordered_products_controller.rb:15:in `update'
+Started PATCH "/admins/ordered_products/1" for 10.0.2.2 at 2020-05-20 13:54:05 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (9.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by Admins::OrderedProductsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ajdSRmd3lbC08O05KKNzv/34YwzUjUwoHdFN92Srt3D12EraLX1B3TBYiXWAcCtgwqmMb1Z6UKT+CImUf4F8DA==", "ordered_product"=>{"flag"=>"3"}, "commit"=>"更新", "id"=>"1"}
+  [1m[36mAdmin Load (3.3ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrderedProduct Load (3.2ms)[0m  [1m[34mSELECT  "ordered_products".* FROM "ordered_products" WHERE "ordered_products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/ordered_products_controller.rb:10
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admins/ordered_products_controller.rb:11
+  [1m[36mProduct Load (2.9ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/ordered_products_controller.rb:11
+  [1m[36mOrder Load (0.8ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/ordered_products_controller.rb:11
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admins/ordered_products_controller.rb:11
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admins/ordered_products_controller.rb:15
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/ordered_products_controller.rb:15
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admins/ordered_products_controller.rb:15
+Redirected to http://localhost:3000/admins/orders/1
+Completed 302 Found in 1849ms (ActiveRecord: 132.1ms)
+
+
+Started GET "/admins/orders/1" for 10.0.2.2 at 2020-05-20 13:54:08 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::OrdersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdmin Load (6.0ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrder Load (61.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/orders_controller.rb:8
+  Rendering admins/orders/show.html.erb within layouts/application
+  [1m[36mUser Load (5.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/orders/show.html.erb:8
+  [1m[36mOrderedProduct Load (3.0ms)[0m  [1m[34mSELECT "ordered_products".* FROM "ordered_products" WHERE "ordered_products"."order_id" = ?[0m  [["order_id", 1]]
+  ↳ app/views/admins/orders/show.html.erb:49
+  [1m[36mProduct Load (51.8ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/orders/show.html.erb:51
+  Rendered admins/orders/show.html.erb within layouts/application (229.6ms)
+Completed 200 OK in 8509ms (Views: 8141.6ms | ActiveRecord: 127.0ms)
+
+
+Started PATCH "/admins/ordered_products/1" for 10.0.2.2 at 2020-05-20 13:59:46 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by Admins::OrderedProductsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JSo9QW2y8eolxQ9+3ivsm/i+tLvUAH8a7Qz6xZoWlSO6xSXdJ7glh6FtazJ2+LREx+9b2Fb3Y5YO1T6mgTxeXw==", "ordered_product"=>{"flag"=>"3"}, "commit"=>"更新", "id"=>"1"}
+  [1m[36mAdmin Load (6.9ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrderedProduct Load (2.8ms)[0m  [1m[34mSELECT  "ordered_products".* FROM "ordered_products" WHERE "ordered_products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/ordered_products_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admins/ordered_products_controller.rb:11
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/ordered_products_controller.rb:11
+  [1m[36mOrder Load (1.0ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/ordered_products_controller.rb:11
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admins/ordered_products_controller.rb:11
+  [1m[36mOrderedProduct Load (3.5ms)[0m  [1m[34mSELECT "ordered_products".* FROM "ordered_products" WHERE "ordered_products"."order_id" = ?[0m  [["order_id", 1]]
+  ↳ app/controllers/admins/ordered_products_controller.rb:14
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admins/ordered_products_controller.rb:16
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/ordered_products_controller.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admins/ordered_products_controller.rb:16
+Redirected to http://localhost:3000/admins/orders/1
+Completed 302 Found in 155560ms (ActiveRecord: 72.6ms)
+
+
+Started GET "/admins/orders/1" for 10.0.2.2 at 2020-05-20 14:02:23 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admins::OrdersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdmin Load (3.0ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrder Load (11.3ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/orders_controller.rb:8
+  Rendering admins/orders/show.html.erb within layouts/application
+  [1m[36mUser Load (9.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/orders/show.html.erb:8
+  [1m[36mOrderedProduct Load (2.6ms)[0m  [1m[34mSELECT "ordered_products".* FROM "ordered_products" WHERE "ordered_products"."order_id" = ?[0m  [["order_id", 1]]
+  ↳ app/views/admins/orders/show.html.erb:49
+  [1m[36mProduct Load (8.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/admins/orders/show.html.erb:51
+  Rendered admins/orders/show.html.erb within layouts/application (128.7ms)
+Completed 200 OK in 6977ms (Views: 6738.7ms | ActiveRecord: 34.5ms)
+
+
+Started PATCH "/admins/ordered_products/1" for 10.0.2.2 at 2020-05-20 14:02:50 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (15.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by Admins::OrderedProductsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tY/Bn6bc9ep5xY479l+jqWAsHiG8huR+L9P3HRc87KEqYNkD7NYhh/1t6ndejPt2X33xQj5x+PLMCjN+DBYn3Q==", "ordered_product"=>{"flag"=>"1"}, "commit"=>"更新", "id"=>"1"}
+  [1m[36mAdmin Load (2.8ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrderedProduct Load (6.9ms)[0m  [1m[34mSELECT  "ordered_products".* FROM "ordered_products" WHERE "ordered_products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/ordered_products_controller.rb:10
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admins/ordered_products_controller.rb:11
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/ordered_products_controller.rb:11
+  [1m[36mOrder Load (0.9ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/ordered_products_controller.rb:11
+  [1m[36mOrderedProduct Update (8.7ms)[0m  [1m[33mUPDATE "ordered_products" SET "flag" = ?, "updated_at" = ? WHERE "ordered_products"."id" = ?[0m  [["flag", 1], ["updated_at", "2020-05-20 14:02:51.393868"], ["id", 1]]
+  ↳ app/controllers/admins/ordered_products_controller.rb:11
+  [1m[35m (5.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admins/ordered_products_controller.rb:11
+  [1m[36mOrderedProduct Load (2.0ms)[0m  [1m[34mSELECT  "ordered_products".* FROM "ordered_products" WHERE "ordered_products"."order_id" = ? LIMIT ?[0m  [["order_id", 1], ["LIMIT", 11]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 29213ms (ActiveRecord: 77.9ms)
+
+
+  
+  [1m[36mCACHE OrderedProduct Load (0.1ms)[0m  [1m[34mSELECT  "ordered_products".* FROM "ordered_products" WHERE "ordered_products"."order_id" = ? LIMIT ?[0m  [["order_id", 1], ["LIMIT", 11]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+NoMethodError (undefined method `flag' for #<OrderedProduct::ActiveRecord_Relation:0x0000000005f519c8>):
+  
+app/controllers/admins/ordered_products_controller.rb:18:in `update'
+Started PATCH "/admins/ordered_products/1" for 10.0.2.2 at 2020-05-20 14:05:54 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (4.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by Admins::OrderedProductsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tY/Bn6bc9ep5xY479l+jqWAsHiG8huR+L9P3HRc87KEqYNkD7NYhh/1t6ndejPt2X33xQj5x+PLMCjN+DBYn3Q==", "ordered_product"=>{"flag"=>"1"}, "commit"=>"更新", "id"=>"1"}
+  [1m[36mAdmin Load (2.6ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mOrderedProduct Load (2.5ms)[0m  [1m[34mSELECT  "ordered_products".* FROM "ordered_products" WHERE "ordered_products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/ordered_products_controller.rb:10
+  [1m[35m (1.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admins/ordered_products_controller.rb:11
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/ordered_products_controller.rb:11
+  [1m[36mOrder Load (1.1ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/admins/ordered_products_controller.rb:11
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admins/ordered_products_controller.rb:11
+  [1m[36mOrderedProduct Load (28.4ms)[0m  [1m[34mSELECT  "ordered_products".* FROM "ordered_products" WHERE "ordered_products"."order_id" = ? LIMIT ?[0m  [["order_id", 1], ["LIMIT", 11]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 787ms (ActiveRecord: 56.4ms)
+
+
+  
+  [1m[36mCACHE OrderedProduct Load (0.1ms)[0m  [1m[34mSELECT  "ordered_products".* FROM "ordered_products" WHERE "ordered_products"."order_id" = ? LIMIT ?[0m  [["order_id", 1], ["LIMIT", 11]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+NoMethodError (undefined method `flag' for #<OrderedProduct::ActiveRecord_Relation:0x0000000005d92d80>):
+  
+app/controllers/admins/ordered_products_controller.rb:17:in `update'

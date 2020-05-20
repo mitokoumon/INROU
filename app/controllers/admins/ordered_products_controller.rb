@@ -6,7 +6,7 @@ class Admins::OrderedProductsController < ApplicationController
 	end
 
 	def update
-		ordered_product = OrderedProduct.find_by(order_id: order.id)
+		ordered_product = OrderedProduct.find(params[:order_id])
 		ordered_product.update
 	end
 

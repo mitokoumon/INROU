@@ -55,7 +55,7 @@
             <%= (product.price * product.number).round %>
           </td>
           <td>
-            <%= form_with model: product, url: admins_ordered_product_path(product.id),method: :patch do |f| %>
+            <%= form_with model: product, url: admins_ordered_product_path(product.id),method: :patch,order_id:"product.order_id" do |f| %>
               <%= f.select :flag, [['着手不可', 1], ['製作待ち', 2], ['製作中', 3], ['製作完了', 4]], { selected: 1 }, { class: "form-control" } %>
               <%= f.submit "更新", class: "btn btn-success" %>
             <% end %>

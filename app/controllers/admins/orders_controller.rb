@@ -6,7 +6,7 @@ class Admins::OrdersController < ApplicationController
 
 	def show
 		@order = Order.find(params[:id])
-		#@ordered_products = @order.products
+		@ordered_products = @order.ordered_products
 	end
 
 	def update
@@ -16,7 +16,7 @@ class Admins::OrdersController < ApplicationController
 
 	private
 	def orders_params
-		params.require(:orders).permit(:flag)
+		params.require(:order).permit(:flag)
 	end
 
 end

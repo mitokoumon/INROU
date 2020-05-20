@@ -35,6 +35,7 @@ Rails.application.routes.draw do
     resources :categories,only:[:index, :edit, :create, :update]
     resources :products,except:[:destroy]
     resources :orders,only:[:index, :show, :update]
+    resources :ordered_products,only:[:update, :create]
   end
 
 

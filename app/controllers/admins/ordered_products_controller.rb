@@ -7,9 +7,21 @@ class Admins::OrderedProductsController < ApplicationController
 	end
 
 	def update
-		ordered_products = OrderedProduct.find(params[:id])
-		ordered_products.update(ordered_products_params)
-		redirect_to request.referer
+		ordered_product = OrderedProduct.find(params[:id])
+		ordered_product.update(ordered_products_params)
+		order = ordered_product.order
+		ordered_products_flag = OrderedProduct.where(order_id: order.id,flag: 4)
+		ordered_products = OrderedProduct.where(order_id: order.id)
+
+		if ordered_product.flag == 3
+			order.update(flag: 3)
+  			redirect_to request.referer
+		elsif ordered_products_flag.count == ordered_products.count
+			order.update(flag: 4)
+			redirect_to request.referer
+		else
+	  		redirect_to request.referer
+	  end
 		# 前のページに遷移
 	end
 

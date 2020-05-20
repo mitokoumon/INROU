@@ -3,11 +3,14 @@ class Admins::OrderedProductsController < ApplicationController
 	def create
 		@ordered_product = OrderedProduct.new(ordered_products_params)
 		@ordered_product.save
+		redirect_to request.referer
 	end
 
 	def update
-		ordered_product = OrderedProduct.find(params[:order_id])
-		ordered_product.update
+		ordered_products = OrderedProduct.find(params[:id])
+		ordered_products.update(ordered_products_params)
+		redirect_to request.referer
+		# 前のページに遷移
 	end
 
 	private

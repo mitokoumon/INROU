@@ -1,4 +1,4 @@
-class Admins::TopsController < ApplicationController
+class Admins::OrdersController < ApplicationController
 	before_action :authenticate_admin!
 	def index
 		@orders = Order.all
@@ -6,10 +6,10 @@ class Admins::TopsController < ApplicationController
 
 	def show
 		@order = Order.find(params[:id])
-		@odered_products = @order.products
+		#@ordered_products = @order.products
 	end
 
-	def flag_update
+	def update
 		@order = Order.find(params[:id])
 		@order.update(orders_params)
 	end

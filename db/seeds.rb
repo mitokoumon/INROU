@@ -7,3 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 admin = Admin.new(:email => 'hoge@hoge.com', :password => 'mitokoumon')
 admin.save!
+
+order = Order.new(:user_id =>"1",:post_code =>"1",:address =>"1",:name =>"1",:total_price  =>"1", :shipping_fee  =>"1",:payment  =>"1",:flag =>"1")
+order.save!

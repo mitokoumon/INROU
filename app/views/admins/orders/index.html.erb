@@ -1,4 +1,4 @@
-<h3 class="bg-light">注文履歴一覧</h3>
+<h3 class="">注文履歴一覧</h3>
 
 <table class="table table-bordered">
   <thead>
@@ -14,9 +14,10 @@
       <tr>
         <th>
           <%= link_to admins_order_path(order) do %>
-            <%= order.created_at.strftime("%Y-%m-%d %H:%M:%S") %> 
+            <%= order.created_at.strftime("%Y-%m-%d %H:%M:%S") %>
+          <!-- config/applocation.rbで(config.time_zone = 'Tokyo'）日本時間に変更済み -->
           <% end %>
-        </th>  
+        </th>
         <th><%= order.name %></th>
         <th><#%= order.ordered_products.number %></th>
         <th>

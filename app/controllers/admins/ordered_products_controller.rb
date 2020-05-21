@@ -31,3 +31,5 @@ class Admins::OrderedProductsController < ApplicationController
 	end
 
 end
+#１行目OrderedProductsControllerのようにordered_products_controllerから大文字に直す必要がある
+#１９行目flag=4の注文商品数とflag=?な注文商品数の要素数が一致するということは全てflag=4になったということを示している

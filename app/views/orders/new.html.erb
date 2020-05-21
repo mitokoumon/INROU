@@ -18,6 +18,7 @@
 		<%= f.radio_button :zyusyo, "2" %> 登録済住所から選択
 	</label><br>
 		<%= f.collection_select :zyusyo2, current_user.receivers, :id, :address_all %>
+		<!-- 選択肢として見せているのがreceiversのaddress_allで選んだときに送られるのはreceivers.idになってます -->
 	<br>
 	<label>
 		<%= f.radio_button :zyusyo, "3" %> 新しいお届け先

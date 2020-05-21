@@ -18,6 +18,7 @@ class ProductsController < ApplicationController
   end
 
   def judge
+    # カテゴリー検索で来た時用に別のコントローラーを用意してる
   	@category = Category.find(params[:id])
   	@products = @category.products
   	@categories = Category.where(flag: 1)

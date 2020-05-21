@@ -1,7 +1,8 @@
 <%= render "users/unless_login_header" %>
 <h2>登録情報編集</h2>
 <%= form_for(@user,url: users_path,method: :patch) do |f| %>
-
+<!-- useridが必要ないケースだとdevise側のeditとルーティングが一緒になるので変えるなり順番なりで注意が必要
+ -->
 	<div class="field">
 		<%= f.label :family_name %>
 		<%= f.text_field :family_name, class: "name" %>

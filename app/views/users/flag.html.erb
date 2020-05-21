@@ -6,3 +6,4 @@
 <br>
 <%= link_to "退会しない",users_path%>
 <%= link_to "退会する",flag_users_path(@user, { user: { flag: 2 }}),method: :patch,data: {confirm: "退会しますか？"} %>
+<!-- link_toでもパラメーターを渡してカラム更新ができる書き方。注文で転用しようとしてできなかったので、恐らくカラムは一つしか送れなそうです。（未確認） -->

@@ -6,8 +6,9 @@
       <th>購入者</th>
       <td>
         <%= link_to admins_user_path(@order.user) do %>
-          <%= @order.user.family_name %><%= @order.user.last_name %></td>
+          <%= @order.user.family_name %><%= @order.user.last_name %>
         <% end %>
+      </td>
     </tr>
     <tr>
       <th>配送先</th>

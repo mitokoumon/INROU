@@ -1,5 +1,4 @@
 class Admins::OrderedProductsController < ApplicationController
-	#OrderedProductsControllerのようにordered_products_controllerから大文字に直す必要がある
     before_action :authenticate_admin!
 	def create
 		@ordered_product = OrderedProduct.new(ordered_products_params)
@@ -18,7 +17,6 @@ class Admins::OrderedProductsController < ApplicationController
 			order.update(flag: 3)
   			redirect_to request.referer
 		elsif ordered_products_flag.count == ordered_products.count
-			#flag=4の注文商品数とflag=?な注文商品数の要素数が一致するということは全てflag=4になったということを示している
 			order.update(flag: 4)
 			redirect_to request.referer
 		else
@@ -33,3 +31,5 @@ class Admins::OrderedProductsController < ApplicationController
 	end
 
 end
+#１行目OrderedProductsControllerのようにordered_products_controllerから大文字に直す必要がある
+#１９行目flag=4の注文商品数とflag=?な注文商品数の要素数が一致するということは全てflag=4になったということを示している

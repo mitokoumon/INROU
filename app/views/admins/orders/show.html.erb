@@ -1,3 +1,4 @@
+<%= render "admins/tops/header" %>
 <div class="row">
 
   <h3 class="">注文履歴詳細</h3>
@@ -24,7 +25,7 @@
     <tr>
       <th>注文ステータス</th>
       <td>
-        <%= form_with model: @order, url: admins_order_path(@order),method: :patch do |f| %>
+        <%= form_with model: @order, url: admins_order_path(@order),method: :patch , local: true do |f| %>
           <%= f.select :flag, [['入金待ち', 1], ['入金確認', 2], ['製作中', 3], ['発送準備中', 4], ['発送済み', 5]], { include_blank: false,}, { id: "@order.id", class: "form-control" } %>
           <!-- include_blankは初期値を空にするオプション（今回はオフ）、selectedも初期値を指定するオプション（今回は入金待ちを初期値にしたいので1を指定）
           form-controlはbootstrapのセレクトボックスの枠をいい感じにするHTMLオプション -->

@@ -1,44 +1,4 @@
-<nav class="navbar">
-  <div class="row" style="border-bottom:solid 1px black; padding: 10px 20px">
-    <div class="col-xs-2">
-      <h3>LOGO</h3>
-    </div>
-    <% if user_signed_in? %>
-      <div class="col-xs-3">
-        <p>ようこそ、<%= "#{@user.family_name}" "#{@user.last_name}"  %>さん！</p>
-      </div>
-      <div class="col-xs-7 text-right">
-        <button type="button" class="btn btn-default navbar-btn"><%= link_to "マイページ", users_path %>
-          <!-- user_path(current_user.id) -->
-        </button>
-        <button type="button" class="btn btn-default navbar-btn"><%= link_to "商品一覧", products_path  %>
-          <!-- products_path -->
-        </button>
-        <button type="button" class="btn btn-default navbar-btn"><%= link_to "カート", users_carts_path  %>
-          <!-- users_carts_path -->
-        </button>
-        <button type="button" class="btn btn-default navbar-btn"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-          <!-- destroy_user_session_path -->
-        </button>
-      </div>
-    <% else %>
-      <div class="col-xs-10 text-right">
-        <button type="button" class="btn btn-default"><%= link_to "アバウト", about_path  %>
-          <!-- about_path -->
-        </button>
-        <button type="button" class="btn btn-default"><%= link_to "商品一覧", products_path  %>
-          <!-- products_path -->
-        </button>
-        <button type="button" class="btn btn-default"><%= link_to "新規登録", new_user_registration_path %>
-          <!-- new_user_registration_path -->
-        </button>
-        <button type="button" class="btn btn-default"><%= link_to "ログイン", new_user_session_path %>
-          <!-- new_user_session_path -->
-        </button>
-      </div>
-    <% end %>
-  </div>
-</nav>
+<%= render "users/unless_login_header" %>
 <div class="container">
   <div class="row">
     <div class="col-xs-3">

@@ -1,10 +1,10 @@
+<%= render "users/unless_login_header" %>
 <h2>マイページ</h2>
 <h1>登録情報</h1>
 <%= link_to "編集する",edit_users_path %>
 <%= link_to "パスワードを変更する",edit_user_password_path %><br>
 
 <h3>氏名</h3>
-<%= current_user.flag %>
 <%= current_user.family_name %>
 <%= current_user.last_name %><br>
 <h3>カナ</h3>

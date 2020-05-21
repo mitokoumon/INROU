@@ -1,3 +1,4 @@
+<%= render "users/unless_login_header" %>
 <div class = "container">
 	<div class = "row">
 		<div class="col-xs-4">
@@ -9,7 +10,7 @@
 			<% else %>
 				<b>商品一覧</b>
 			<% end %>
-			全<%= @products.count %>件
+			全<%= @total_number %>件
 			<% @products.each do |product| %>
 				<% if product.category.flag == 1 %>
 					<%= link_to product_path(product.id) do %>

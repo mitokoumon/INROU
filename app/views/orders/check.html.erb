@@ -1,3 +1,4 @@
+<%= render "users/unless_login_header" %>
 <h1>注文情報確認</h1>
 <table class = "table table-bordered">
 	<thead>
@@ -42,7 +43,7 @@
 </table>
 
 支払方法
-<% if @payment == 1 %>
+<% if @payment == "1" %>
 <span>クレジットカード</span>
 <% else %>
 <span>銀行振込</span>

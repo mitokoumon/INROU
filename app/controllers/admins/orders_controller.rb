@@ -2,6 +2,14 @@ class Admins::OrdersController < ApplicationController
 	before_action :authenticate_admin!
 	def index
 		@orders = Order.all
+		@total_number = [0]
+		@orders.each do |order|
+			i = 0
+			order.ordered_products.each do |ordered_product|
+				i += ordered_product.number
+			end
+			@total_number.append(i)
+		end
 	end
 
 	def show

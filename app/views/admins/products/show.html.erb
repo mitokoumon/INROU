@@ -1,3 +1,4 @@
+<%= render "admins/tops/header" %>
 <h1>商品詳細</h1>
 <div class = "container">
 	<div class = "row">
@@ -37,7 +38,7 @@
 						<% if @product.flag == 1 %>
 							<span>販売中</span>
 						<% else %>
-							<span>売り切れ</span>
+							<span>販売停止中</span>
 						<% end %>
 					</td>
 				</tr>

@@ -1,1 +1,32 @@
-<h1>order</h1>
+<h1>注文情報入力</h1>
+<%= form_with url:order_check_users_path,action: :check,method: :get,local: true do |f| %>
+	<span>支払方法</span><br>
+	<label>
+		<%= f.radio_button :payment, 1 %> クレジットカード
+	</label><br>
+	<label>
+		<%= f.radio_button :payment, 2 %> 銀行振込
+	</label><br>
+	<span>お届け先</span><br>
+	<label>
+		<%= f.radio_button :zyusyo, "1" %>ご自身の住所
+	</label><br>
+		<%= current_user.address_all %><br>
+	<label>
+		<%= f.radio_button :zyusyo, "2" %> 登録済住所から選択
+	</label><br>
+		<%= f.collection_select :zyusyo2, current_user.receivers, :id, :address_all %>
+	<br>
+	<label>
+		<%= f.radio_button :zyusyo, "3" %> 新しいお届け先
+	</label><br>
+		<%= f.label :post_code, "郵便番号(ハイフンなし)" %>
+		<%= f.text_field :post_code %><br>
+		<%= f.label :address, "住所"%>
+		<%= f.text_field :address %><br>
+		<%= f.label :name, "宛名"%>
+		<%= f.text_field :name %><br>
+	<br><%= f.submit "確認画面へ進む" %>
+<% end %>
+
+

@@ -13,10 +13,10 @@
 			<% @products.each do |product| %>
 				<% if product.category.flag == 1 %>
 					<%= link_to product_path(product.id) do %>
-						<%=  attachment_image_tag(product,:image)  %><br>
+						<%=  attachment_image_tag product,:image, size: "40x40",format: 'jpeg'  %><br>
 						<%= product.name %><br>
 					<% end %>
-					<%= number_to_currency(product.now_price) %><br>
+					<%= (product.now_price).round.to_s(:delimited) %><br>
 					<%= product.category.name %>
 				<% end %>
 			<% end %>

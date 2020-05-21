@@ -16,8 +16,8 @@ Rails.application.routes.draw do
     resources :carts,only:[:index, :update, :create, :destroy]
     resources :orders,only:[:index, :show, :new, :create]
 
-    get '/orders/thanks' => 'orders#thanks'
-    get '/orders/check' => 'orders#check'
+    get '/order/thanks' => 'orders#thanks'
+    get '/order/check' => 'orders#check'
     delete '/carts' => 'carts#destroy_all'
     get '/flag' => 'users#flag'
     patch '/flag' => 'users#update'

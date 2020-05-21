@@ -1,3 +1,4 @@
+<%= render "admins/tops/header" %>
 <h1>商品新規登録</h1>
 <%= form_for(@product,url: admins_products_path,method: :post) do |f| %>
 	<div class="field">
@@ -22,12 +23,12 @@
 
 	<div class="field">
 		<%= f.label :now_price %>
-		<%= f.text_field :now_price, class: "image" %>円
+		<%= f.number_field :now_price, class: "image" %>円
 	</div>
 
 	<div class="field">
 		<%= f.label :category %>
-		<%= f.select :flag, {"販売中":1, "売り切れ":2} %>
+		<%= f.select :flag, {"販売中":1, "販売停止中":2} %>
 	</div>
 
 	<!-- <div class="field">

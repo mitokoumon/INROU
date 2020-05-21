@@ -1,6 +1,6 @@
 class Admins::OrderedProductsController < ApplicationController
-	#OrderedProductsControllerのようにordered_products_controllerから大文字に直す必要がある
     before_action :authenticate_admin!
+#OrderedProductsControllerのようにordered_products_controllerから大文字に直す必要がある
 	def create
 		@ordered_product = OrderedProduct.new(ordered_products_params)
 		@ordered_product.save

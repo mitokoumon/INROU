@@ -15,6 +15,7 @@ class UsersController < ApplicationController
 	  		redirect_to users_path
 		elsif @user.flag == 2
 			reset_session
+			# userを強制的にログアウトする
       			redirect_to root_path
 		end
 	end

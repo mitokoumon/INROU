@@ -11,4 +11,5 @@ class User < ApplicationRecord
   def address_all
     self.post_code + self.address + self.family_name + self.last_name
   end
+  # カートのとこでの住所全般を書くのを楽にするため
 end

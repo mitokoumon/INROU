@@ -12,6 +12,7 @@ class OrdersController < ApplicationController
 
   def check
 	@order = Order.new
+  # newから持ってきた情報をcheckに送るためにインスタンス変数として情報を入れ込んでます
 	@order.ordered_products.build
 	@payment = params[:payment]
 	zyusyo = params[:zyusyo]
@@ -54,5 +55,6 @@ class OrdersController < ApplicationController
   private
   def order_params
     params.require(:order).permit(:user_id,:post_code, :address, :name, :total_price, :shipping_fee, :payment, :flag, ordered_products_attributes:[:id, :product_id, :number, :flag, :price])
+  # orderを作った時にordered_productsを作るための方法、modelにも定義が必要
   end
 end

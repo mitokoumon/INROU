@@ -41,7 +41,7 @@
 	</div>
 </div>
 <%= form_for([@product,@cart],url:users_carts_path(id: @product.id),method: :post) do |f| %>
-<%= f.select :number, [1,2,3]%>
+<%= f.number_field :number %>
 
 <%=f.submit %>
 <% end %>

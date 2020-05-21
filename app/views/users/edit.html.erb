@@ -1,3 +1,4 @@
+<%= render "users/unless_login_header" %>
 <h2>登録情報編集</h2>
 <%= form_for(@user,url: users_path,method: :patch) do |f| %>
 

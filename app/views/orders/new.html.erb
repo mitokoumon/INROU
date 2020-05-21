@@ -1,3 +1,4 @@
+<%= render "users/unless_login_header" %>
 <h1>注文情報入力</h1>
 <%= form_with url:order_check_users_path,action: :check,method: :get,local: true do |f| %>
 	<span>支払方法</span><br>

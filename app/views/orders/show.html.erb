@@ -1,3 +1,4 @@
+<%= render "users/unless_login_header" %>
 <h1>注文履歴詳細</h1>
 <h3>注文情報</h3>
 <table class = "table">
@@ -17,7 +18,7 @@
 			<th>支払方法</th>
 			<td>
 				<% if @order.payment == 1 %>
-				<span>クレジットカード払い</span>
+				<span>クレジットカード</span>
 				<% else %>
 				<span>銀行振込</span>
 				<% end %>

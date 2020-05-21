@@ -14,9 +14,9 @@ class Admins::OrdersController < ApplicationController
 		order.update(orders_params)
 		ordered_products = order.ordered_products
 		if order.flag == 2
-		 	ordered_products.update(flag: 2)
+			ordered_products.update(flag: 2)
 		end
-		redirect_to request.referer
+			redirect_to request.referer
 	end
 
 	private

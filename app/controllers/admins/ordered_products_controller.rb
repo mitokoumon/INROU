@@ -17,8 +17,7 @@ class Admins::OrderedProductsController < ApplicationController
 		if ordered_product.flag == 3
 			order.update(flag: 3)
   			redirect_to request.referer
-		elsif ordered_products_flag.count == ordered_products.count
-			#flag=4の注文商品数とflag=?な注文商品数の要素数が一致するということは全てflag=4になったということを示している
+		elsif ordered_products_flag.count == ordered_products.count#flag=4の注文商品数とflag=?な注文商品数の要素数が一致するということは全てflag=4になったということを示している
 			order.update(flag: 4)
 			redirect_to request.referer
 		else

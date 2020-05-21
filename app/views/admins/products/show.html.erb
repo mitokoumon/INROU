@@ -28,8 +28,8 @@
 				<tr>
 					<td>税込価格（税抜価格）</td>
 					<td>
-						<%= number_to_currency(@product.now_price*1.1) %>
-						(<%= @product.now_price %>)円
+						<%= (@product.now_price*1.1).round.to_s(:delimited) %>円
+						(<%= @product.now_price.round.to_s(:delimited) %>)円
 					</td>
 				</tr>
 				<tr>

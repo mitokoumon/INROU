@@ -1,0 +1,73 @@
+<h1>注文情報確認</h1>
+<table class = "table table-bordered">
+	<thead>
+		<tr>
+			<th>商品</th>
+			<th>単価（税込）</th>
+			<th>数量</th>
+			<th>小計</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% current_user.carts.each do |cart| %>
+		<tr>
+			<td>
+				<%= cart.product.name %><br>
+			</td>
+			<td>
+				<%= (cart.product.now_price * 1.1).round.to_s(:delimited) %><br>
+			</td>
+			<td>
+				<%= cart.number %><br>
+			</td>
+			<td><%= (cart.number * cart.product.now_price * 1.1).round.to_s(:delimited) %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+
+<table class = "table">
+		<tr>
+			<th>送料</th>
+			<td>800</td>
+		</tr>
+		<tr>
+			<th>商品合計</th>
+			<td><%= @total_price.round.to_s(:delimited) %></td>
+		</tr>
+		<tr>
+			<th>請求金額</th>
+			<td><%= (@total_price + 800).round.to_s(:delimited) %></td>
+		</tr>
+</table>
+
+支払方法
+<% if @payment == 1 %>
+<span>クレジットカード</span>
+<% else %>
+<span>銀行振込</span>
+<% end %>
+配送先<br>
+<%= @bbb %><br>
+<%= @ddd %><br>
+<%= @ccc %><br>
+
+<%= form_with(url: users_orders_path,model:@order, local: true) do |f| %>
+<%= f.hidden_field :user_id, :value => current_user.id %>
+<%= f.hidden_field :post_code, :value => @bbb %>
+<%= f.hidden_field :address, :value => @ddd %>
+<%= f.hidden_field :name, :value => @ccc %>
+<%= f.hidden_field :total_price, :value => @total_price %>
+<%= f.hidden_field :shipping_fee, :value => 800 %>
+<%= f.hidden_field :payment, :value => @payment %>
+<%= f.hidden_field :flag, :value => 1 %>
+	<% current_user.carts.each do |cart| %>
+	<%= f.fields_for :ordered_products do |a| %>
+		<%= a.hidden_field :product_id, :value => cart.product.id %>
+		<%= a.hidden_field :number, :value => cart.number %>
+		<%= a.hidden_field :price, :value => cart.product.now_price %>
+		<%= a.hidden_field :flag, :value => 1 %>
+	<% end %>
+<% end %>
+<%= f.submit "購入を確定する" %>
+<% end %>

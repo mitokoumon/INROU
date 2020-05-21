@@ -25,7 +25,7 @@
 						<% end %>
 					</td>
 					<td>
-						<%= product.now_price %>
+						<%= (product.now_price).round.to_s(:delimited) %>円
 					</td>
 					<td>
 						<%= product.category.name %>

@@ -4,7 +4,7 @@
 			<%= render "sidecategory",categories:@categories%>
 		</div>
 		<div class="col-xs-4">
-			<%=  attachment_image_tag(@product, :image)  %>
+			<%=  attachment_image_tag @product,:image, size: "40x40",format: 'jpeg'  %>
 		</div>
 		<div class="col-xs-5">
 			<table class ="table">
@@ -30,8 +30,8 @@
 					<tr>
 						<td>税込価格（税抜価格）</td>
 						<td>
-							<%= number_to_currency(@product.now_price*1.1) %>
-							(<%= @product.now_price %>)円
+							<%= (@product.now_price*1.1).round.to_s(:delimited) %>
+							(<%= (@product.now_price).round.to_s(:delimited) %>)円
 						</td>
 					</tr>
 				</tbody>

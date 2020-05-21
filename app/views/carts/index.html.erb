@@ -4,13 +4,13 @@
     <% @carts.each do |cart| %>
       <tr>
         <th><%= cart.product.name %></th>
-        <th><%= cart.product.now_price %></th>
+        <th><%= cart.product.now_price.round.to_s(:delimited) %></th>
         <th><%= form_with(url: users_cart_path(id: cart.id), model:cart, local: true) do |f| %>
           <%= f.number_field :number %>
           <%= f.submit "登録する", class: "btn btn-success" %>
           <% end %>
           </th>
-          <th><%= (cart.product.now_price * 1.1 * cart.number).round %></th>
+          <th><%= (cart.product.now_price * 1.1 * cart.number).round.to_s(:delimited) %></th>
         <th><%= link_to "削除する", users_cart_path(id: cart.id), method: :delete, data: {confirm:"本当に削除してもよろしいですか？"}, class: "btn btn-danger" %></th>
       </tr>
 
@@ -19,7 +19,5 @@
 </table>
 <%= link_to "カートを空にする", carts_users_path(@cart), method: :delete, data: {confirm:"本当に削除してもよろしいですか？"}, class: "btn btn-danger" %>
 <%= link_to "買い物を続ける", products_path, class: "btn btn-danger" %>
-
-<%= @total_price %>
 
 <%= link_to "情報入力に進む", new_users_order_path, class: "btn btn-danger" %>

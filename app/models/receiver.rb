@@ -4,4 +4,5 @@ class Receiver < ApplicationRecord
   def address_all
     self.post_code + self.address + self.name
   end
+  # selfにReciverが入る
 end

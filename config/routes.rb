@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   devise_for :admins, skip: [:registrations], controllers: {
   sessions:      'admins/sessions',
   passwords:     'admins/passwords',
-}
+}#skip:は指定アクションを消すデバイスでしか使えず、デバイスのviewの_sherdから該当箇所を消す必要があったりするみたい
+ #controllers:はコントローラーのディレクトリを指定できる。今回だとnamespaceに入れた方が早い気もする。
 
 
   resource :admins do

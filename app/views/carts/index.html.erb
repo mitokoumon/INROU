@@ -8,6 +8,7 @@
         <th><%= cart.product.now_price.round.to_s(:delimited) %></th>
         <th><%= form_with(url: users_cart_path(id: cart.id), model:cart, local: true) do |f| %>
           <%= f.number_field :number %>
+          <!-- number_fieldにすることで数字しか入力できなくする -->
           <%= f.submit "登録する", class: "btn btn-success" %>
           <% end %>
           </th>

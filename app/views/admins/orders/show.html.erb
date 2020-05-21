@@ -9,6 +9,7 @@
         <%= link_to admins_user_path(@order.user) do %>
           <%= @order.user.family_name %><%= @order.user.last_name %>
         <% end %>
+        <!-- 名前をlink_toで囲って詳細画面へ。show画面への遷移のため@order.userを引数にしている -->
       </td>
     </tr>
     <tr>
@@ -58,7 +59,10 @@
           </td>
           <td>
             <%= form_with model: product, url: admins_ordered_product_path(product.id),method: :patch,order_id:"product.order_id" do |f| %>
+            <!-- order_idはコントローラで必要になると思ったがなくても動いたのでぶっちゃけいらない。恐らくpathの引数でproduct.idがあるので必要ないのだと思われる -->
               <%= f.select :flag, [['着手不可', 1], ['製作待ち', 2], ['製作中', 3], ['製作完了', 4]], {}, { class: "form-control" } %>
+              <!-- form_withのmodelは変数を辿ってるため、頭文字が大文字ではないのかと思われる。
+              selectタグを使う場合、オプションがなくても{}を記入する必要がある。外したら後ろのHTMLオプションが無効化された（form_with自体は動いている模様） -->
               <%= f.submit "更新", class: "btn btn-success" %>
             <% end %>
 

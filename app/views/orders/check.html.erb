@@ -69,6 +69,9 @@
 		<%= a.hidden_field :price, :value => cart.product.now_price %>
 		<%= a.hidden_field :flag, :value => 1 %>
 	<% end %>
+<!-- 	orderコントローラーでparamsとして得られるようにしてから
+	fields_for :ordered_products内に保存するデータのフォームを入れることで、
+	ordered_productsに保存できるようになる。 -->
 <% end %>
 <%= f.submit "購入を確定する" %>
 <% end %>

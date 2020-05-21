@@ -24,7 +24,8 @@
       </td>
     </tr>
     <% end %>
-    <!-- kaminariページャ 10件ずつ表示 -->
+    <!-- コントローラーでUser.page(params[:page])、config/initializers/kaminari_config.rbで
+    config.default_per_page = 10とすることでkaminariページャ 10件ずつ表示に -->
     <%= paginate @users %>
   </tbody>
 </table>

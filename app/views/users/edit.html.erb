@@ -1,0 +1,42 @@
+<%= render "users/unless_login_header" %>
+<h2>登録情報編集</h2>
+<%= form_for(@user,url: users_path,method: :patch) do |f| %>
+<!-- useridが必要ないケースだとdevise側のeditとルーティングが一緒になるので変えるなり順番なりで注意が必要
+ -->
+	<div class="field">
+		<%= f.label :family_name %>
+		<%= f.text_field :family_name, class: "name" %>
+	</div>
+
+	<div class="field">
+		<%= f.label :last_name %>
+		<%= f.text_field :last_name, class: "name" %>
+	</div>
+
+	<div class="field">
+		<%= f.label :family_name_kana %>
+		<%= f.text_field :family_name_kana, class: "name" %>
+	</div>
+
+	<div class="field">
+		<%= f.label :last_name_kana %>
+		<%= f.text_field :last_name_kana, class: "name" %>
+	</div>
+
+	<div class="field">
+		<%= f.label :post_code %>
+		<%= f.text_field :post_code, class: "name" %>
+	</div>
+
+	<div class="field">
+		<%= f.label :address %>
+		<%= f.text_field :address, class: "name" %>
+	</div>
+
+	<div class="actions">
+		<%= f.submit %>
+	</div>
+
+<% end %>
+
+<%= link_to "退会する",flag_users_path %>

@@ -1,0 +1,47 @@
+<%= render "users/unless_login_header" %>
+<div class = "container">
+	<div class = "row">
+		<div class="col-xs-3">
+			<%= render "products/sidecategory",categories:@categories%>
+		</div>
+		<div class="col-xs-4">
+			<%=  attachment_image_tag @product, :image, size: "300x300",format: 'jpeg',fallback: "no_image.jpg"  %>
+		</div>
+		<div class="col-xs-5">
+			<table class ="table">
+				<tbody>
+					<tr>
+						<td>商品名</td>
+						<td>
+								<%= @product.name %>
+						</td>
+					</tr>
+					<tr>
+						<td>商品説明</td>
+						<td>
+								<%= @product.text %>
+						</td>
+					</tr>
+					<tr>
+						<td>ジャンル</td>
+						<td>
+								<%= @product.category.name %>
+						</td>
+					</tr>
+					<tr>
+						<td>税込価格（税抜価格）</td>
+						<td>
+							<%= (@product.now_price*1.1).round.to_s(:delimited) %>
+							(<%= (@product.now_price).round.to_s(:delimited) %>)円
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+<%= form_for([@product,@cart],url:users_carts_path(id: @product.id),method: :post) do |f| %>
+<%= f.number_field :number %>
+
+<%=f.submit %>
+<% end %>

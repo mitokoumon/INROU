@@ -1,0 +1,86 @@
+<%= render "users/unless_login_header" %>
+<h1>注文履歴詳細</h1>
+<h3>注文情報</h3>
+<table class = "table">
+		<tr>
+			<th>注文日</th>
+			<td><%= @order.created_at.strftime('%Y/%m/%d') %></td>
+		</tr>
+		<tr>
+			<th>配送先</th>
+			<td>
+				<%= @order.post_code %><br>
+				<%= @order.address %><br>
+				<%= @order.name %>
+			</td>
+		</tr>
+		<tr>
+			<th>支払方法</th>
+			<td>
+				<% if @order.payment == 1 %>
+				<span>クレジットカード</span>
+				<% else %>
+				<span>銀行振込</span>
+				<% end %>
+			</td>
+		</tr>
+		<tr>
+			<th>ステータス</th>
+			<td>
+				<% if @order.flag == 1 %>
+				<span>入金待ち</span>
+				<% elsif @order.flag == 2 %>
+				<span>入金確認</span>
+				<% elsif @order.flag == 3 %>
+				<span>製作中</span>
+				<% elsif @order.flag == 4 %>
+				<span>発送準備中</span>
+				<% elsif @order.flag == 5 %>
+				<span>発送済み</span>
+				<% else %>
+				<% end %>
+			</td>
+		</tr>
+</table>
+<h3>請求情報</h3>
+<table class = "table">
+		<tr>
+			<th>商品合計</th>
+			<td><%= @order.total_price.round.to_s(:delimited) %></td>
+		</tr>
+		<tr>
+			<th>配送料</th>
+			<td><%= @order.shipping_fee %></td>
+		</tr>
+		<tr>
+			<th>ご請求額</th>
+			<td><%= (@order.total_price + @order.shipping_fee).round.to_s(:delimited) %></td>
+		</tr>
+</table>
+<h3>注文内容</h3>
+<table class = "table">
+	<thead>
+		<tr>
+			<th>商品</th>
+			<th>単価（税込）</th>
+			<th>個数</th>
+			<th>小計</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @order.ordered_products.each do |ordered_product| %>
+		<tr>
+			<td>
+				<%= ordered_product.product.name %><br>
+			</td>
+			<td>
+				<%= ordered_product.price.round.to_s(:delimited) %><br>
+			</td>
+			<td>
+				<%= ordered_product.number %><br>
+			</td>
+			<td><%= (ordered_product.price * ordered_product.number).round.to_s(:delimited) %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>

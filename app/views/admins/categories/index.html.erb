@@ -1,0 +1,47 @@
+<%= render "admins/tops/header" %>
+<h1>ジャンル一覧・追加</h1>
+ジャンル
+<%= form_for(@category,url: admins_categories_path) do |f| %>
+<div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, autocomplete: "name" %>
+<label>
+	<%= f.radio_button :flag, 1 %> 有効
+</label>
+<label>
+	<%= f.radio_button :flag, 2 %> 無効
+</label>
+</div>
+
+ <div class="action">
+ 	<%= f.submit %>
+ </div>
+<% end %>
+
+<div class = "container" >
+	<div class = "row" >
+		<table class="table col-xs-6　table-inverse">
+			<thead>
+				<th>ジャンル</th>
+				<th>状態</th>
+			</thead>
+			<tbody>
+				<% @categories.each do |category| %>
+				<tr>
+				<td>
+					<%= category.name %>
+				</td>
+				<td>
+					<% if category.flag == 1 %>有効
+					<% else %>無効
+					<% end %>
+				</td>
+				<td>
+					<%= link_to "編集する",edit_admins_category_path(category.id) %>
+				</td>
+				</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+</div>

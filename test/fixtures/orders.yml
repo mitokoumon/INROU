@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  post_code: MyString
+  address: MyString
+  name: MyString
+  total_price: 1
+  shipping_fee: 1
+  payment: 1
+  flag: 1
+
+two:
+  user_id: 1
+  post_code: MyString
+  address: MyString
+  name: MyString
+  total_price: 1
+  shipping_fee: 1
+  payment: 1
+  flag: 1

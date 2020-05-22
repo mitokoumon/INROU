@@ -1,0 +1,48 @@
+<%= render "users/unless_login_header" %>
+<h1>注文一覧履歴</h1>
+<table class = "table">
+	<thead>
+		<tr>
+			<th>注文日</th>
+			<th>配送先</th>
+			<th>注文商品</th>
+			<th>支払い金額</th>
+			<th>ステータス</th>
+			<th>注文詳細</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @orders.each do |order| %>
+		<tr>
+			<td><%= order.created_at.strftime('%Y/%m/%d') %></td>
+			<td>
+				<%= order.post_code %><br>
+				<%= order.address %><br>
+				<%= order.name %>
+			</td>
+			<td>
+				<% order.ordered_products.each do |p| %>
+				<!-- 各注文の注文商品全部に対してeachしてます -->
+				<%= p.product.name %><br>
+				<% end %>
+			</td>
+			<td><%= order.total_price.round.to_s(:delimited) %></td>
+			<td>
+				<% if order.flag == 1 %>
+				<span>入金待ち</span>
+				<% elsif order.flag == 2 %>
+				<span>入金確認</span>
+				<% elsif order.flag == 3 %>
+				<span>製作中</span>
+				<% elsif order.flag == 4 %>
+				<span>発送準備中</span>
+				<% elsif order.flag == 5 %>
+				<span>発送済み</span>
+				<% else %>
+				<% end %>
+			</td>
+			<td><%= link_to"表示する",users_order_path(order) %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>

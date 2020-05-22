@@ -36,6 +36,8 @@ Rails.application.routes.draw do
     resources :categories,only:[:index, :edit, :create, :update]
     resources :products,except:[:destroy]
     resources :orders,only:[:index, :show, :update]
+    get 'order/userjudge' => 'orders#userjudge'
+    get 'order/topjudge' => 'orders#topjudge'
     resources :ordered_products,only:[:update, :create]
   end
 

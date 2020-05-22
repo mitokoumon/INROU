@@ -6,9 +6,14 @@ class Admins::CategoriesController < ApplicationController
 	end
 
 	def create
-		@category = Category.new(category_params)
-		@category.save
-		redirect_to admins_categories_path
+		category = Category.new(category_params)
+		if category.save
+			redirect_to admins_categories_path
+		else
+			@category = Category.new
+			@categories = Category.all
+			render "index"
+		end
 	end
 
 	def edit
@@ -16,13 +21,16 @@ class Admins::CategoriesController < ApplicationController
 	end
 
 	def update
-		category = Category.find(params[:id])
-		category.update(category_params)
-		products = category.products
-		if category.flag == 2
-			products.update(flag: 2)
+		@category = Category.find(params[:id])
+		if @category.update(category_params)
+			products = category.products
+			if @category.flag == 2
+				products.update(flag: 2)
+			end
+			redirect_to admins_categories_path
+		else
+			render "edit"
 		end
-		redirect_to admins_categories_path
 	end
 
 

@@ -1,7 +1,6 @@
 class CartsController < ApplicationController
   def index
-    @carts = Cart.all
-    @cart = current_user.carts
+    @carts = current_user.carts
     @total_price = 0
     @carts.each do |cart|
       @total_price += cart.product.now_price * cart.number
@@ -15,26 +14,39 @@ class CartsController < ApplicationController
     @product = Product.find(params[:id])
     cart = Cart.find_by(product_id: @product.id, user_id: current_user.id)
     @cart = Cart.new(cart_params)
-    if cart.present?
+    if cart.present? && @cart.number.present?
       total_number = 0
       total_number = cart.number + @cart.number
       cart.update(number: total_number)
+      redirect_to users_carts_path
     else
       @cart.product_id = @product.id
       @cart.user_id = current_user.id
-      @cart.save
+      if @cart.save
+        redirect_to users_carts_path
+      else
+        @categories = Category.where(flag: 1)
+        render template: 'products/show'
+      end
     end
     # Cart.find_by(product_id: @product.id, user_id: current_user.id)で既に
     # カレントユーザーが同じ商品をカートに入れているのか調べる
     # if文で同一カートが存在した場合は既存のカートに個数を足し、存在しない場合はカートを
     # 作成する
-    redirect_to users_carts_path
   end
 
   def update
     @cart = Cart.find(params[:id])
-    @cart.update(cart_params)
-    redirect_to users_carts_path
+    if @cart.update(cart_params)
+      redirect_to users_carts_path
+    else
+      @carts = current_user.carts
+      @total_price = 0
+      @carts.each do |cart|
+        @total_price += cart.product.now_price * cart.number
+      end
+      render "index"
+    end
   end
 
   def destroy

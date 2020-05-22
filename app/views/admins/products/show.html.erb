@@ -2,7 +2,7 @@
 <h1>商品詳細</h1>
 <div class = "container">
 	<div class = "row">
-		<%=  attachment_image_tag @product, :image, size: "40x40",format: 'jpeg'  %>
+		<%=  attachment_image_tag @product, :image, size: "300x300",format: 'jpeg',fallback: "no_image.jpg"  %>
 		<table class ="table">
 			<tbody>
 				<td>

@@ -2,12 +2,14 @@ class ReceiversController < ApplicationController
   before_action :authenticate_user!
 
   def create
-    receiver = current_user.receivers.new(receiver_params)
+    receiver = Receivers.new(receiver_params)
+    receiver.user_id = current_user.id
     if receiver.save
       redirect_to users_receivers_path
     else
       @receiver = Receiver.new
       @receivers = current_user.receivers
+      # redirect_back(fallback_location: root_path)
       render 'index'
     end
   end

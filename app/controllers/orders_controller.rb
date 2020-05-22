@@ -52,10 +52,13 @@ class OrdersController < ApplicationController
 
   def create
   	@order = Order.new(order_params)
-  	@order.save
-  	carts = current_user.carts
-  	carts.destroy_all
-  	redirect_to order_thanks_users_path
+  	if @order.save
+    	carts = current_user.carts
+    	carts.destroy_all
+    	redirect_to order_thanks_users_path
+    else
+      render "new"
+    end
   end
 
   private

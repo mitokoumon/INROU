@@ -58,7 +58,7 @@
             <%= (product.price * product.number).round %>
           </td>
           <td>
-            <%= form_with model: product, url: admins_ordered_product_path(product.id),method: :patch,order_id:"product.order_id" do |f| %>
+            <%= form_with model: product, url: admins_ordered_product_path(product.id),method: :patch,order_id:"product.order_id", local:true do |f| %>
             <!-- order_idはコントローラで必要になると思ったがなくても動いたのでぶっちゃけいらない。恐らくpathの引数でproduct.idがあるので必要ないのだと思われる -->
               <%= f.select :flag, [['着手不可', 1], ['製作待ち', 2], ['製作中', 3], ['製作完了', 4]], {}, { class: "form-control" } %>
               <!-- form_withのmodelは変数を辿ってるため、頭文字が大文字ではないのかと思われる。

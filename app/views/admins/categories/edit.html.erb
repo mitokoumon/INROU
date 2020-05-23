@@ -1,19 +1,40 @@
 <%= render "admins/tops/header" %>
-<h1>ジャンル編集</h1>
+<div style="width:150px; text-align: center; margin-left:60px">
+  <h3 style="background-color: #EEEEEEEE">ジャンル編集</h3>
+</div>
+<div style="height:80px">
+</div>
 
 <%= form_for(@category,url: admins_category_path) do |f| %>
-<div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name, autocomplete: "name" %>
-<label>
-	<%= f.radio_button :flag, 1 %> 有効
-</label>
-<label>
-	<%= f.radio_button :flag, 2 %> 無効
-</label>
-</div>
-<div class="action">
- 	<%= f.submit %>
-</div>
+  <div class="flex"  >
+    <div style="padding-right:15px; padding-top:3px">
+      <%= f.label :name, "ジャンル" %>
+    </div>
+    <div style="padding-right:15px;">
+      <%= f.text_field :name, autocomplete: "name" %>
+    </div>
+    <div style="padding-right:15px;">
+      <label>
+      	<%= f.radio_button :flag, 1 %> 有効
+      </label>
+    </div>
+    <div style="padding-right:15px;">
+      <label>
+      	<%= f.radio_button :flag, 2 %> 無効
+      </label>
+    </div>
+    <div style="padding-bottom:5px;">
+      <%= f.submit "変更を保存",class: "btn btn-primary btn-md" %>
+    </div>
+  </div>
+
 <% end %>
 <!-- ラジオボタンは○にチェックを入れる形式のボタン。form_withでも動くはず -->
+<style>
+.flex {
+    display: flex;
+  }
+  .flex > div {
+    margin:auto 0;
+  }
+</style>

@@ -14,7 +14,7 @@
 		</div>
 		</div>
 
-		<div class="flex" style="padding-bottom:10px;">
+		<div class="flex">
 				<div style="padding-right:63px;">
 					<%= f.label :name, "商品名" %>
 				</div>
@@ -23,7 +23,7 @@
 				</div>
 			</div>
 			
-			<div class="flex" style="padding-bottom:10px;">
+			<div class="flex">
 				<div style="padding-right:50px;">
 					<%= f.label :text, "商品説明" %>
 				</div>
@@ -33,16 +33,16 @@
 			</div>
 
 
-			<div class="flex" style="padding-bottom:10px;">
-				<div style="padding-right:50px;">
+			<div class="flex">
+				<div style="padding-right:50px">
 					<%= f.label :category, "ジャンル" %>
 				</div>
 				<div>
-					<%= f.collection_select :category_id, @categories, :id, :name, :prompt => "--選択して下さい--"  %>
+					<%= f.collection_select :category_id, @categories, :id, :name %>
 				</div>
 			</div>
 
-			<div class="flex" style="padding-bottom:10px;">
+			<div class="flex">
 				<div style="padding-right:50px;">
 					<%= f.label :now_price, "税抜価格" %>
 				</div>
@@ -56,7 +56,7 @@
 					<%= f.label :category, "販売ステータス" %>
 				</div>
 				<div style="text-align: center">
-					<%= f.select :flag, {"販売中":1, "販売停止中":2}, :prompt => "--選択して下さい--" %>
+					<%= f.select :flag, {"販売中":1, "販売停止中":2} %>
 				</div>
 			</div>
 
@@ -73,6 +73,7 @@
 <style>
 	.flex {
     display: flex;
+    padding-bottom:10px;
   }
   .flex > div {
   }

@@ -20,7 +20,7 @@ class ProductsController < ApplicationController
   def judge
     # カテゴリー検索で来た時用に別のコントローラーを用意してる
   	@category = Category.find(params[:id])
-  	@products = @category.products
+  	@products = @category.products.page(params[:page]).per(8).order(created_at: :desc)
   	@categories = Category.where(flag: 1)
     @total_number = @products.count
   	render :index

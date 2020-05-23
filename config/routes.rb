@@ -1,6 +1,7 @@
 
 Rails.application.routes.draw do
 
+  devise_for :users
   devise_for :admins, skip: [:registrations], controllers: {
   sessions:      'admins/sessions',
   passwords:     'admins/passwords',
@@ -12,7 +13,7 @@ Rails.application.routes.draw do
     get '/top' => 'admins/tops#top'
   end
 
-  resource :users,only:[:show, :update, :edit] do
+  resource :users,only:[:show, :update] do
     resources :receivers,only:[:index, :create, :destroy, :edit, :update]
     resources :carts,only:[:index, :update, :create, :destroy]
     resources :orders,only:[:index, :show, :new, :create]
@@ -29,7 +30,7 @@ Rails.application.routes.draw do
     root 'tops#top'#test
     get '/about' => 'tops#about'
 
-  devise_for :users
+  get 'user_root' => 'users#show'
   get "search" => "admins/users#search"
 
   namespace :admins do

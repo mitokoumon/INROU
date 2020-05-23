@@ -1,35 +1,97 @@
 <%= render "users/unless_login_header" %>
-<h1>注文情報入力</h1>
-<%= form_with url:order_check_users_path,action: :check,method: :get,local: true do |f| %>
-<!-- form_withにモデルを関連させずに確認画面を表示させるようにすることで下記のフォームの内容を確認画面で使用できるようにする -->
-<span>支払方法</span><br>
-	<label>
-		<%= f.radio_button :payment, 1 %> クレジットカード
-	</label><br>
-	<label>
-		<%= f.radio_button :payment, 2 %> 銀行振込
-	</label><br>
-	<span>お届け先</span><br>
-	<label>
-		<%= f.radio_button :zyusyo, "1" %>ご自身の住所
-	</label><br>
-		<%= current_user.address_all %><br>
-	<label>
-		<%= f.radio_button :zyusyo, "2" %> 登録済住所から選択
-	</label><br>
-		<%= f.collection_select :zyusyo2, current_user.receivers, :id, :address_all %>
-		<!-- 選択肢として見せているのがreceiversのaddress_allで選んだときに送られるのはreceivers.idになってます -->
-	<br>
-	<label>
-		<%= f.radio_button :zyusyo, "3" %> 新しいお届け先
-	</label><br>
-		<%= f.label :post_code, "郵便番号(ハイフンなし)" %>
-		<%= f.text_field :post_code %><br>
-		<%= f.label :address, "住所"%>
-		<%= f.text_field :address %><br>
-		<%= f.label :name, "宛名"%>
-		<%= f.text_field :name %><br>
-	<br><%= f.submit "確認画面へ進む" %>
-<% end %>
-
+<div class="row">
+	<div class="col-xs-4 col-xs-offset-2">
+		<span style="background-color: #EEEEEEEE; font-size: 24px; font-weight:bold;">注文情報入力</span>
+	</div>
+</div>
+<div class ="row">
+	<%= form_with url:order_check_users_path,action: :check,method: :get,local: true do |f| %>
+	<!-- form_withにモデルを関連させずに確認画面を表示させるようにすることで下記のフォームの内容を確認画面で使用できるようにする -->
+	<div>
+		<span style="font-size:18; font-weight:bold; ">支払方法</span><br>
+	</div>
+	<div class="col-xs-offset-1">
+		<label>
+			<%= f.radio_button :payment, 1 %> <span style="font-weight:300;">クレジットカード</span>
+		</label>
+	</div>
+	<div class="col-xs-offset-1">
+		<label>
+			<%= f.radio_button :payment, 2 %> <span style="font-weight:300;">銀行振込</span>
+		</label>
+	</div>
+	<div>
+		<span style="font-size:18; font-weight:bold; ">お届け先</span>
+	</div>
+	<div class="col-xs-offset-1">
+		<label>
+			<%= f.radio_button :zyusyo, "1" %><span style="font-weight:300;">ご自身の住所</span>
+		</label>
+	</div>
+	<div class="col-xs-offset-2">
+			<%= current_user.address_all %>
+	</div>
+	<div class="col-xs-offset-1">
+		<label>
+			<%= f.radio_button :zyusyo, "2" %> <span style="font-weight:300;">登録済住所から選択</span>
+		</label>
+	</div>
+	<div class="col-xs-offset-2">
+			<%= f.collection_select :zyusyo2, current_user.receivers, :id, :address_all %>
+			<!-- 選択肢として見せているのがreceiversのaddress_allで選んだときに送られるのはreceivers.idになってます -->
+	</div>
+	<div class="col-xs-offset-1">
+		<label>
+			<%= f.radio_button :zyusyo, "3" %> <span style="font-weight:300;">新しいお届け先</span>
+		</label>
+	</div>
+	<div class="row">
+		<div class="col-xs-2">
+		</div>
+		<div class ="flex">
+			<div class="col-xs-2">
+				<span style="font-weight:300; font-size: 10px">郵便番号(ハイフンなし)</span>
+			</div>
+			<div class ="col-xs-3">
+				<%= f.text_field :post_code %>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-2">
+		</div>
+		<div class ="flex">
+			<div class="col-xs-2">
+				<span style="font-weight:300; font-size: 10px">住所</span>
+			</div>
+			<div class ="col-xs-3">
+				<%= f.text_field :address %><br>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-2">
+		</div>
+		<div class ="flex">
+			<div class="col-xs-2">
+				<span style="font-weight:300; font-size: 10px">宛名</span>
+			</div>
+			<div class ="col-xs-3">
+				<%= f.text_field :name %>
+			</div>
+		</div>
+	</div>
+	<div align="center">
+		<%= f.submit "確認画面へ進む" ,class: "btn btn-primary" %>
+	</div>
+	<% end %>
+</div>
+<style>
+	.flex {
+	          display: flex;
+	        }
+	        .flex > div {
+	        	margin: 4px 0;
+	        }
+</style>
 

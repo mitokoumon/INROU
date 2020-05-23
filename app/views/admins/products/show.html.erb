@@ -7,15 +7,11 @@
 <div class = "container">
 	<div class = "row">
 		<div class="col-xs-4">
-			<%=  attachment_image_tag @product, :image, size: "300x300",format: 'jpeg',fallback: "no_image.jpg"  %>
+			<%=  attachment_image_tag @product, :image, size: "280x190",format: 'jpeg',fallback: "no_image.jpg"  %>
 		</div>
 		<div class="col-xs-8">
 			<table style="text-align: left">
 				<tbody>
-					<th>商品ID</th>
-					<td>
-						<%=  @product.id  %>
-					</td>
 					<tr>
 						<th>商品名</th>
 						<td>

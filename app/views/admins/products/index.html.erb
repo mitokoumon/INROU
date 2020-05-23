@@ -10,7 +10,7 @@
 
 <div class = "container">
 	<div class = "row">
-		<table class ="table table-bordered" style="text-align: center">
+		<table class ="table table-bordered">
 			<thead style="background-color: #EEEEEE">
 				<th>商品ID</th>
 				<th>商品名</th>
@@ -18,11 +18,7 @@
 				<th>ジャンル</th>
 				<th>ステータス</th>
 			</thead>
-			<style>
-				th {
-					text-align: center;
-				}
-			</style>
+
 			<tbody id="items">
 				<% @products.each do |product| %>
 				  <tr>
@@ -31,7 +27,7 @@
 				  </td>
 				  <td>
 				    <%= link_to admins_product_path(product.id) do %>
-				      <%= product.name %>
+				      <font color="black"><u><%= product.name %></u></font>
 				    <% end %>
 				  </td>
 				  <td>

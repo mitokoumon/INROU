@@ -1,12 +1,16 @@
 <%= render "admins/tops/header" %>
-<h1>商品一覧</h1>
-<%= link_to new_admins_product_path do %>
-	<i class="glyphicon glyphicon-plus-sign" style="size: large;" aria-hidden="true"></i>
-<% end %>
+<div style="width:130px; text-align: center">
+	<h3 style="background-color: #EEEEEEEE">商品一覧</h3>
+</div>
+<div align="right">
+	<%= link_to new_admins_product_path do %>
+		<i class="glyphicon glyphicon-plus-sign" style="font-size: 30px;" aria-hidden="true"></i>
+	<% end %>
+</div>
 
 <div class = "container">
 	<div class = "row">
-		<table class ="table table-bordered">
+		<table class ="table table-bordered" style="text-align: center">
 			<thead style="background-color: #EEEEEE">
 				<th>商品ID</th>
 				<th>商品名</th>
@@ -14,7 +18,11 @@
 				<th>ジャンル</th>
 				<th>ステータス</th>
 			</thead>
-
+			<style>
+				th {
+					text-align: center;
+				}
+			</style>
 			<tbody id="items">
 				<% @products.each do |product| %>
 				  <tr>
@@ -23,7 +31,7 @@
 				  </td>
 				  <td>
 				    <%= link_to admins_product_path(product.id) do %>
-				      <font color="black"><u><%= product.name %></u></font>
+				      <%= product.name %>
 				    <% end %>
 				  </td>
 				  <td>
@@ -43,6 +51,9 @@
 				<% end %>
 			</tbody>
 		</table>
+		<div id="pager" align="center">
+		<%= paginate @products%>
+		</div>
 	</div>
 </div>
 

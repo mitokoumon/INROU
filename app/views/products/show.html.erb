@@ -32,32 +32,20 @@
 </div>
 <div class="row">
 	<div class="col-xs-5 col-xs-offset-7">
-		<%= render 'products/error', cart: @cart %>
 	</div>
 </div>
 <div class="row">
 	<%= form_for([@product,@cart],url:users_carts_path(id: @product.id),method: :post) do |f| %>
-	<div class="flex">
-		<div class="number-tab">
-			<%= f.number_field :number %>
-		</div>
-		<div class="submit-button">
+	<div class="col-xs-1 col-xs-offset-7 number-tab">
+		<%= f.number_field :number, class: "form-control" %>
+	</div>
+		<div class="col-xs-3">
 			<%=f.submit "カートに入れる", class: "btn btn-primary" %>
 		</div>
-	</div>
 	<% end %>
 </div>
 
 <style>
-	.flex {
-		display: flex;
-		justify-content: flex-end;
-	}
-  .flex > div {
-  	margin-left: 10px;
-  }
-  .number-tab {
-  	padding-top: 5px;
-  }
+
 
 </style>

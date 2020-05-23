@@ -2,7 +2,7 @@ class ReceiversController < ApplicationController
   before_action :authenticate_user!
 
   def create
-    receiver = Receivers.new(receiver_params)
+    receiver = Receiver.new(receiver_params)
     receiver.user_id = current_user.id
     if receiver.save
       redirect_to users_receivers_path

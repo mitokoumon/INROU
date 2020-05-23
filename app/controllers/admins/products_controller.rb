@@ -1,5 +1,5 @@
 class Admins::ProductsController < ApplicationController
-  before_action :authenticate_admin!
+  before_action :authenticate_admin!,except:[:index]
   def index
   	@product = Product.all
   end

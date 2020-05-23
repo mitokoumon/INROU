@@ -23,7 +23,7 @@ class Admins::CategoriesController < ApplicationController
 	def update
 		@category = Category.find(params[:id])
 		if @category.update(category_params)
-			products = category.products
+			products = @category.products
 			if @category.flag == 2
 				products.update(flag: 2)
 			end

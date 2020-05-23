@@ -2,7 +2,7 @@
 <div>
 	<span style="background-color: #EEEEEEEE; font-size: 24px; margin: 100px 50px 100 50;">登録情報編集</span>
 </div>
-<%= form_for(@user,url: users_path,method: :patch) do |f| %>
+<%= form_for(@user,url: user_info_path,method: :patch) do |f| %>
 <!-- useridが必要ないケースだとdevise側のeditとルーティングが一緒になるので変えるなり順番なりで注意が必要
  -->
 <div class ="container">

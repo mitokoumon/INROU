@@ -5,4 +5,8 @@ class Product < ApplicationRecord
   attachment :image
 
   validates :name, :text, :now_price, presence: true
+
+  def Product.search(search)
+    Product.where(['name LIKE ?', "%#{search}%"])
+  end
 end

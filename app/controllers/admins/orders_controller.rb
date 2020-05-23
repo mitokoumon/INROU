@@ -35,7 +35,7 @@ class Admins::OrdersController < ApplicationController
 	end
 
 	def userjudge
-		user = User.find(params[:user_id])
+		user = User.find(params[:id])
 		@orders = Order.where(user_id: user.id)
 		render "index"
 

@@ -1,49 +1,79 @@
 <%= render "admins/tops/header" %>
-<h1>商品詳細</h1>
+<div style="width:130px; text-align: center; margin-left:80px">
+	<h3 style="background-color: #EEEEEEEE">商品詳細</h3>
+</div>
+<div style="height:100px">
+</div>
 <div class = "container">
 	<div class = "row">
-		<%=  attachment_image_tag @product, :image, size: "300x300",format: 'jpeg',fallback: "no_image.jpg"  %>
-		<table class ="table">
-			<tbody>
-				<td>
-					<%=  @product.id  %>
-				</td>
-				<tr>
-					<td>商品名</td>
+		<div class="col-xs-4">
+			<%=  attachment_image_tag @product, :image, size: "300x300",format: 'jpeg',fallback: "no_image.jpg"  %>
+		</div>
+		<div class="col-xs-8">
+			<table style="text-align: left">
+				<tbody>
+					<th>商品ID</th>
 					<td>
-							<%= @product.name %>
+						<%=  @product.id  %>
 					</td>
-				</tr>
-				<tr>
-					<td>商品説明</td>
-					<td>
-							<%= @product.text %>
-					</td>
-				</tr>
-				<tr>
-					<td>ジャンル</td>
-					<td>
-							<%= @product.category.name %>
-					</td>
-				</tr>
-				<tr>
-					<td>税込価格（税抜価格）</td>
-					<td>
-						<%= (@product.now_price*1.1).round.to_s(:delimited) %>円
-						(<%= @product.now_price.round.to_s(:delimited) %>)円
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<% if @product.flag == 1 %>
-							<span>販売中</span>
-						<% else %>
-							<span>販売停止中</span>
-						<% end %>
-					</td>
-				</tr>
-			</tbody>
-		</table>
+					<tr>
+						<th>商品名</th>
+						<td>
+								<%= @product.name %>
+						</td>
+					</tr>
+					<tr>
+						<th>商品説明</th>
+						<td>
+								<%= @product.text %>
+						</td>
+					</tr>
+					<tr>
+						<th>ジャンル</th>
+						<td>
+								<%= @product.category.name %>
+						</td>
+					</tr>
+					<tr>
+						<th>税込価格（税抜価格）</th>
+						<td>
+							<%= (@product.now_price*1.1).round.to_s(:delimited) %>円
+							(<%= @product.now_price.round.to_s(:delimited) %>)円
+						</td>
+					</tr>
+					<tr>
+						<th>販売ステータス</th>
+						<td>
+							<% if @product.flag == 1 %>
+								<span>販売中</span>
+							<% else %>
+								<span>販売停止中</span>
+							<% end %>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
 	</div>
 </div>
-<%= link_to "編集する",edit_admins_product_path(@product) %>
+<div class="col-xs-9">
+</div>
+<div class="col-xs-3">
+	<%= link_to "編集する",edit_admins_product_path(@product), class: "btn btn-default btn-primary" %>
+</div>
+
+<style>
+	.col-xs-8 {
+		width:600px;
+	}
+	table {
+		height:350px;
+	}
+	th {
+		text-align: center;
+	}
+	td {
+		padding-left:20px;
+		width:380px;
+	}
+</style>

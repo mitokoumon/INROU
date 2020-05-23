@@ -1,0 +1,61 @@
+<%= render "users/unless_login_header" %>
+<<<<<<< HEAD
+<h2>本当に退会しますか？</h2>
+退会すると、会員登録情報や<br>
+これまでの購入履歴が閲覧できなくなります。<br>
+退会する場合は、「退会する」をクリックしてください。<br>
+<br>
+<%= link_to "退会しない",users_path%>
+<%= link_to "退会する",flag_users_path(@user, { user: { flag: 2 }}),method: :patch,data: {confirm: "退会しますか？"} %>
+=======
+<div class = "container">
+	<div class="row">
+		<div>
+			<br><br><br><br>
+		</div>
+	</div>
+	<div class = "row">
+		<div>
+		</div>
+		<div align="center" >
+			<div class = "center">
+				<span style="font-size: 18px; font-weight:bold;">本当に退会しますか？</span>
+				<br><br>
+			</div>
+		</div>
+	</div>
+	<div class = "row">
+		<div align="center">
+			退会すると、会員登録情報や<br>
+			これまでの購入履歴が閲覧できなくなります。<br>
+			退会する場合は、「退会する」をクリックしてください。<br>
+		</div>
+	</div>
+	<div class = "row">
+		<div class="flex">
+			<div class="col-xs-4">
+			</div>
+				<div>
+					<%= link_to "退会しない",users_path, class: "btn btn-primary"%>
+				</div>
+				<div>
+					<%= link_to "退会する",flag_users_path(@user, { user: { flag: 2 }}),method: :patch,class: "btn btn-danger",data: {confirm: "退会しますか？"} %>
+				</div>
+			<div>
+			</div>
+		</div>
+	</div>
+</div>
+<style>
+	.flex {
+	          display: flex;
+	        }
+	        .flex > div {
+	        	margin:20px 5px;
+	        }
+	.button{
+		width:60px;
+	}
+</style>
+>>>>>>> origin/master
+<!-- link_toでもパラメーターを渡してカラム更新ができる書き方。注文で転用しようとしてできなかったので、恐らくカラムは一つしか送れなそうです。（未確認） -->

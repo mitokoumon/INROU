@@ -1,22 +1,81 @@
-<%= render "users/unless_login_header" %>
-<h2>マイページ</h2>
-<h1>登録情報</h1>
-<%= link_to "編集する",edit_users_path %>
-<%= link_to "パスワードを変更する",edit_user_password_path %><br>
-
-<h3>氏名</h3>
-<%= current_user.family_name %>
-<%= current_user.last_name %><br>
-<h3>カナ</h3>
-<%= current_user.family_name_kana %>
-<%= current_user.last_name_kana %>
-<h3>郵便番号</h3>
-<%= current_user.post_code %><br>
-<h3>住所</h3>
-<%= current_user.address %><br>
-<h3>電話番号</h3>
-<%= current_user.telephone_number %><br>
-<h3>メールアドレス</h3>
-<%= current_user.email %><br>
-<h1>配送先</h1><%= link_to "一覧を見る",users_receivers_path %><br>
-<h1>注文履歴</h1><%= link_to "一覧を見る",users_orders_path %><br>
+<div class = "container　border">
+	<div class = "row">
+		<%= render "users/unless_login_header" %>
+	</div>
+	<div class = "row">
+		<div class="col-xs-5">
+			<span style="background-color: #EEEEEEEE; font-size: 24px; margin: 100px 50px 100 50;">マイページ</span>
+		</div>
+		<div class="col-xs-5">
+		</div>
+	</div>
+	<div class = "row">
+		<div class="col-xs-7">
+			<div class="flex">
+				<div>
+				<span style="font-size: 24px; font-weight: 600px; margin-top: 0 auto;">登録情報</span>
+				</div>
+				<div>
+				<%= link_to "編集する",edit_users_path, class: 'btn btn-primary'%>
+				</div>
+				<div>
+				<%= link_to "パスワードを変更する",edit_user_password_path, class: 'btn btn-primary' %>
+				</div>
+			</div>
+			<style>
+				.flex {
+				          display: flex;
+				        }
+				        .flex > div {
+				        	margin:5px 5px;
+				        }
+			</style>
+			<table class="table table-bordered">
+				<tr>
+					<th  class="active col-xs-2">氏名</th>
+					<th class=" col-xs-9"><%= current_user.family_name + current_user.last_name %></th>
+				</tr>
+				<tr>
+					<th  class="active">カナ</th>
+					<th><%= current_user.family_name_kana + current_user.last_name_kana %></th>
+				</tr>
+				<tr>
+					<th  class="active">郵便番号</th>
+					<th><%= current_user.post_code %></th>
+				</tr>
+				<tr>
+					<th  class="active">住所</th>
+					<th><%= current_user.address %></th>
+				</tr>
+				<tr>
+					<th  class="active">電話番号</th>
+					<th><%= current_user.telephone_number %></th>
+				</tr>
+				<tr>
+					<th  class="active">メールアドレス</th>
+					<th><%= current_user.email %></th>
+				</tr>
+			</table>
+		</div>
+		<div class="col-xs-5">
+		</div>
+	</div>
+	<div class = "row">
+		<div class="col-xs-2">
+			<span style="font-size: 24px; font-weight: 600px;">配送先</span>
+		</div>
+		<div class="col-xs-3">
+			<%= link_to "一覧を見る",users_receivers_path,class: "btn btn-primary" %><br><br>
+		</div>
+	</div>
+	<div class = "row">
+		<div class="col-xs-2">
+			<span style="font-size: 24px; font-weight: 600px;">注文履歴</span>
+		</div>
+		<div class="col-xs-3">
+			<%= link_to "一覧を見る",users_orders_path,class: "btn btn-primary" %>
+		</div>
+		<div class="col-xs-7">
+		</div>
+	</div>
+</div>

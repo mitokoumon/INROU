@@ -30,6 +30,7 @@ Rails.application.routes.draw do
     get '/about' => 'tops#about'
 
   devise_for :users
+  get "search" => "admins/users#search"
 
   namespace :admins do
     resources :users

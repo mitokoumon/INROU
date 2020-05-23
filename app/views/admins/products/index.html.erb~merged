@@ -1,0 +1,102 @@
+<%= render "admins/tops/header" %>
+<<<<<<< HEAD
+<h1>商品一覧</h1>
+<%= link_to new_admins_product_path do %>
+	<i class="glyphicon glyphicon-plus-sign" style="size: large;" aria-hidden="true"></i>
+<% end %>
+
+<div class = "container">
+	<div class = "row">
+		<table class ="table">
+			<thead>
+=======
+<div style="width:130px; text-align: center">
+	<h3 style="background-color: #EEEEEEEE">商品一覧</h3>
+</div>
+<div align="right">
+	<%= link_to new_admins_product_path do %>
+		<i class="glyphicon glyphicon-plus-sign" style="font-size: 30px;" aria-hidden="true"></i>
+	<% end %>
+</div>
+
+<div class = "container">
+	<div class = "row">
+		<table class ="table table-bordered" style="text-align: center">
+			<thead style="background-color: #EEEEEE">
+>>>>>>> origin/master
+				<th>商品ID</th>
+				<th>商品名</th>
+				<th>税抜き価格</th>
+				<th>ジャンル</th>
+				<th>ステータス</th>
+			</thead>
+<<<<<<< HEAD
+			<tbody>
+				<% @product.each do |product| %>
+					<tr>
+					<td>
+						<%=  product.id  %>
+					</td>
+					<td>
+						<%= link_to admins_product_path(product.id) do %>
+							<%= product.name %>
+						<% end %>
+					</td>
+					<td>
+						<%= (product.now_price).round.to_s(:delimited) %>円
+					</td>
+					<td>
+						<%= product.category.name %>
+					</td>
+					<td>
+						<% if product.flag == 1 %>
+							<span>販売中</span>
+						<% else %>
+							<span>販売停止中</span>
+						<% end %>
+					</td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+=======
+			<style>
+				th {
+					text-align: center;
+				}
+			</style>
+			<tbody id="items">
+				<% @products.each do |product| %>
+				  <tr>
+				  <td>
+				    <%=  product.id  %>
+				  </td>
+				  <td>
+				    <%= link_to admins_product_path(product.id) do %>
+				      <%= product.name %>
+				    <% end %>
+				  </td>
+				  <td>
+				    <%= (product.now_price).round.to_s(:delimited) %>円
+				  </td>
+				  <td>
+				    <%= product.category.name %>
+				  </td>
+				  <td>
+				    <% if product.flag == 1 %>
+				      <span>販売中</span>
+				    <% else %>
+				      <span>販売停止中</span>
+				    <% end %>
+				  </td>
+				  </tr>
+				<% end %>
+			</tbody>
+		</table>
+		<div id="pager" align="center">
+		<%= paginate @products%>
+		</div>
+>>>>>>> origin/master
+	</div>
+</div>
+

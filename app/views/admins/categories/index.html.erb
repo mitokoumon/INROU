@@ -1,47 +1,66 @@
 <%= render "admins/tops/header" %>
-<h1>ジャンル一覧・追加</h1>
-ジャンル
-<%= form_for(@category,url: admins_categories_path) do |f| %>
-<div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name, autocomplete: "name" %>
-<label>
-	<%= f.radio_button :flag, 1 %> 有効
-</label>
-<label>
-	<%= f.radio_button :flag, 2 %> 無効
-</label>
+<div style="width:250px; text-align: center; margin-left:60px">
+  <h3 style="background-color: #EEEEEEEE">ジャンル一覧・追加</h3>
 </div>
-
- <div class="action">
- 	<%= f.submit %>
- </div>
+<div style="height:40px">
+</div>
+<%= form_for(@category,url: admins_categories_path) do |f| %>
+	<div class="flex" >
+    <div style="padding-right:15px; padding-top:3px">
+      <%= f.label :name, "ジャンル" %>
+    </div>
+    <div style="padding-right:15px;">
+      <%= f.text_field :name, autocomplete: "name" %>
+    </div>
+    <div style="padding-right:15px;">
+      <label>
+      	<%= f.radio_button :flag, 1 %> 有効
+      </label>
+    </div>
+    <div style="padding-right:15px;">
+      <label>
+      	<%= f.radio_button :flag, 2 %> 無効
+      </label>
+    </div>
+    <div style="padding-bottom:5px;">
+      <%= f.submit "追加",class: "btn btn-primary btn-md" %>
+    </div>
+  </div>
 <% end %>
 
-<div class = "container" >
-	<div class = "row" >
-		<table class="table col-xs-6　table-inverse">
-			<thead>
-				<th>ジャンル</th>
-				<th>状態</th>
-			</thead>
-			<tbody>
-				<% @categories.each do |category| %>
-				<tr>
-				<td>
-					<%= category.name %>
-				</td>
-				<td>
-					<% if category.flag == 1 %>有効
-					<% else %>無効
-					<% end %>
-				</td>
-				<td>
-					<%= link_to "編集する",edit_admins_category_path(category.id) %>
-				</td>
-				</tr>
+<style>
+.flex {
+    display: flex;
+    margin-bottom: 40px;
+  }
+  .flex > div {
+    margin:auto 0;
+  }
+</style>
+
+<div class = "row" >
+	<table class="table table-bordered" style="width: 340px">
+		<thead style="background-color: #EEEEEE">
+			<th>ジャンル</th>
+			<th>状態</th>
+			<th></th>
+		</thead>
+		<tbody>
+			<% @categories.each do |category| %>
+			<tr>
+			<td>
+				<%= category.name %>
+			</td>
+			<td>
+				<% if category.flag == 1 %>有効
+				<% else %>無効
 				<% end %>
-			</tbody>
-		</table>
-	</div>
+			</td>
+			<td>
+				<%= link_to "編集する",edit_admins_category_path(category.id), class: "btn btn-primary btn-md" %>
+			</td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
 </div>

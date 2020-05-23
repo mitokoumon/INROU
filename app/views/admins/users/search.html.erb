@@ -1,8 +1,12 @@
 <%= render "admins/tops/header" %>
-<h3>検索結果</h3>
+<div style="width:150px; text-align: center; margin:0 auto">
+  <h3 style="background-color: #EEEEEEEE">検索結果</h3>
+</div>
+<div style="height:40px">
+</div>
 
-<h6>会員情報</h6>
-<table class="table table-bordered">
+<h4>会員情報</h4>
+<table class="table table-bordered" style="margin-bottom:50px">
   <thead>
     <tr class="active">
       <th>会員ID</th>
@@ -29,20 +33,33 @@
   </tbody>
 </table>
 
-<h6>商品情報</h6>
-<div class = "container">
-  <div class = "row">
-    <div class ="col-xs-12">
-      <% @products.each do |product| %>
-        <% if product.category.flag == 1 %>
-          <%= link_to product_path(product.id) do %>
-            <%=  attachment_image_tag product,:image, size: "100x100",format: 'jpeg',fallback: "no_image.jpg" %><br>
-            <%= product.name %><br>
-          <% end %>
-          <%= (product.now_price).round.to_s(:delimited) %><br>
-          <%= product.category.name %>
-        <% end %>
+<h4>商品情報</h4>
+<table class="table table-bordered">
+  <thead>
+    <tr class="active">
+      <th class="col-xs-4">商品名</th>
+      <th class="col-xs-2">単価</th>
+      <th class="col-xs-2">ジャンル</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @products.each do |product| %>
+      <% if product.category.flag == 1 %>
+        <tr>
+          <td>
+            <%= link_to product_path(product.id) do %>
+              <%=  attachment_image_tag product,:image, size: "100x100",format: 'jpeg',fallback: "no_image.jpg" %>
+              <span style="font-size:15px"><%= product.name %></span>
+            <% end %>
+          </td>
+          <td>
+            <%= (product.now_price).round.to_s(:delimited) %>
+          </td>
+          <td>
+            <%= product.category.name %>
+          </td>
+        </tr>
       <% end %>
-    </div>
-  </div>
-</div>
+    <% end %>
+  </tbody>
+</table>

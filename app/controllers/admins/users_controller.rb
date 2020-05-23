@@ -1,6 +1,6 @@
 class Admins::UsersController < ApplicationController
 	def index
-		@users = User.page(params[:page])
+		@users = User.page(params[:page]).per(10)
 	end
 
 	def show
@@ -15,6 +15,11 @@ class Admins::UsersController < ApplicationController
 		@user = User.find(params[:id])
 		@user.update(user_params)
 		redirect_to admins_user_path(@user.id)
+	end
+
+	def search
+		@users = User.search(params[:search])
+		@products = Product.search(params[:search])
 	end
 
 	private

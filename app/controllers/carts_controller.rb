@@ -3,7 +3,7 @@ class CartsController < ApplicationController
     @carts = current_user.carts
     @total_price = 0
     @carts.each do |cart|
-      @total_price += cart.product.now_price * cart.number
+      @total_price += cart.product.now_price * cart.number * 1.1
     end
   # total_price=0で変数の初期値を0と設定する
   # eachで取り出した各カートの小計(cart.product.now_price * cart.number)を

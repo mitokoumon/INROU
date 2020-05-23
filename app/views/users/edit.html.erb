@@ -1,42 +1,96 @@
 <%= render "users/unless_login_header" %>
-<h2>登録情報編集</h2>
+<div>
+	<span style="background-color: #EEEEEEEE; font-size: 24px; margin: 100px 50px 100 50;">登録情報編集</span>
+</div>
 <%= form_for(@user,url: users_path,method: :patch) do |f| %>
 <!-- useridが必要ないケースだとdevise側のeditとルーティングが一緒になるので変えるなり順番なりで注意が必要
  -->
-	<div class="field">
-		<%= f.label :family_name %>
-		<%= f.text_field :family_name, class: "name" %>
+<div class ="container">
+	<div class ="row">
+			<div class="col-xs-2">
+				<span>名前</span>
+			</div>
+			<div class="col-xs-1">
+				<span>(姓)</span>
+			</div>
+			<div class="col-xs-3">
+				<%= f.text_field :family_name, class: "name" %>
+			</div>
+			<div class="col-xs-1">
+				<span>(名)</span>
+			</div>
+			<div class="col-xs-3">
+				<%= f.text_field :last_name, class: "name" %>
+			</div>
 	</div>
+	<div class ="row">
+			<div class="col-xs-2">
+				<span>フリガナ</span>
+			</div>
+			<div class="col-xs-1">
+				<span>(セイ)</span>
+			</div>
+			<div class="col-xs-3">
+				<%= f.text_field :family_name_kana, class: "name" %>
+			</div>
+			<div class="col-xs-1">
+				<span>(メイ)</span>
+			</div>
 
-	<div class="field">
-		<%= f.label :last_name %>
-		<%= f.text_field :last_name, class: "name" %>
+			<div class="col-xs-3">
+				<%= f.text_field :last_name_kana, class: "name" %>
+			</div>
 	</div>
-
-	<div class="field">
-		<%= f.label :family_name_kana %>
-		<%= f.text_field :family_name_kana, class: "name" %>
+	<div class ="row">
+			<div class="col-xs-3">
+				<span>メールアドレス</span>
+			</div>
+			<div class="col-xs-3">
+				<%= f.text_field :address, class: "name" %>
+			</div>
 	</div>
-
-	<div class="field">
-		<%= f.label :last_name_kana %>
-		<%= f.text_field :last_name_kana, class: "name" %>
+	<div class ="row">
+			<div class="col-xs-3">
+				<span>郵便番号（ハイフンなし）</span>
+			</div>
+			<div class="col-xs-3">
+				<%= f.text_field :post_code, class: "name" %>
+			</div>
 	</div>
-
-	<div class="field">
-		<%= f.label :post_code %>
-		<%= f.text_field :post_code, class: "name" %>
+	<div class ="row">
+			<div class="col-xs-3">
+					<span>住所</span>
+			</div>
+			<div class="col-xs-7">
+				<%= f.text_field :address, class: "name" %>
+			</div>
 	</div>
-
-	<div class="field">
-		<%= f.label :address %>
-		<%= f.text_field :address, class: "name" %>
+	<div class ="row">
+			<div class="col-xs-3">
+					<span>電話番号（ハイフンなし）</span>
+			</div>
+			<div class="col-xs-3">
+				<%= f.text_field :address, class: "name" %>
+			</div>
 	</div>
-
-	<div class="actions">
-		<%= f.submit %>
+	<div class ="row">
+		<div class="flex">
+			<div class="col-xs-3">
+			</div>
+			<div class="actions col-xs-5">
+				<%= f.submit "編集内容を保存する",class: "btn btn-primary"%>
+			</div>
+			<div>
+				<%= link_to "退会する",flag_users_path, class: "btn btn-danger" %>
+			</div>
 	</div>
-
+</div>
 <% end %>
-
-<%= link_to "退会する",flag_users_path %>
+<style>
+			.flex {
+			          display: flex;
+			        }
+			        .flex > div {
+			        	margin: 10px 0;
+			        }
+		</style>

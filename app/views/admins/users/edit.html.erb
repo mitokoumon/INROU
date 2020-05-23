@@ -1,7 +1,8 @@
 <%= render "admins/tops/header" %>
-<%= @user.family_name %>
-<%= @user.last_name %>さんの会員情報編集
-<br>
+
+<div style="background-color: #EEEEEE; margin: 100px 50px 100 50;">
+	<h3><%= @user.family_name %><%= @user.last_name %>さんの会員情報編集</h3>
+</div>
 
 会員ID  :  <%= @user.id %>
 

@@ -2,7 +2,7 @@
 <div style="width:150px; background-color: #EEEEEE; text-align: center;">
   <h3>注文履歴一覧</h3>
 </div>
-<table class="table">
+<table class="table table-bordered">
   <thead>
     <tr class="active">
       <th>購入日時</th>
@@ -39,3 +39,6 @@
     <% end %>
   </tbody>
 </table>
+<div id="pager" align="center">
+  <%= paginate @orders%>
+</div>

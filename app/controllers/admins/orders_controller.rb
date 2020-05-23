@@ -1,7 +1,7 @@
 class Admins::OrdersController < ApplicationController
 	before_action :authenticate_admin!
 	def index
-		@orders = Order.all
+		@orders = Order.all.order(created_at: :desc).page(params[:page]).per(10)
 		# # @total_number = [0]
 		# @orders.each do |order|
 		# 	i = order.ordered_products.sum(:number)
@@ -35,7 +35,7 @@ class Admins::OrdersController < ApplicationController
 	end
 
 	def userjudge
-		user = User.find(params[:user_id])
+		user = User.find(params[:id])
 		@orders = Order.where(user_id: user.id)
 		render "index"
 	end

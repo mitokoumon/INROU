@@ -17,7 +17,7 @@ class Admins::OrderedProductsController < ApplicationController
 		else
 	  		redirect_to request.referer
 	  end
-		#前のページに遷移
+		# 前のページに遷移
 	end
 
 	private

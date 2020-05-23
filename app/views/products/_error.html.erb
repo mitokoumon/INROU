@@ -1,0 +1,8 @@
+<% if cart.errors.any? %>
+  <h4><%= cart.errors.count %> errors prevented obj from being saved:</h4>
+  <ul>
+    <% cart.errors.full_messages.each do |message| %>
+      <li><%= message%></li>
+    <% end %>
+  </ul>
+<% end %>

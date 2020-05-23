@@ -1,45 +1,88 @@
 <%= render "admins/tops/header" %>
-<div style="width:130px; text-align: center; margin-left:80px">
+<div style="width:150px; text-align: center; margin-left:60px">
 	<h3 style="background-color: #EEEEEEEE">商品新規登録</h3>
 </div>
-<div style="height:100px">
+<div style="height:80px">
 </div>
+<%= render "admins/shared/error_messages", resource: @product %>
 <%= form_for(@product,url: admins_products_path,method: :post) do |f| %>
-	<div class="field">
-		<%= f.label :image %>
-		<%= f.attachment_field :image, class: "image" %>
-	</div>
+	<div class="row">
+		<div class="col-xs-4">
+			<%= attachment_image_tag @product, :image, size: "280x190",format: 'jpeg',fallback: "no_image.jpg"  %><br>
+			<%= f.attachment_field :image, class: "image btn-lg" %>
+		<div style="height:100px">
+		</div>
+		</div>
 
-	<div class="field">
-		<%= f.label :name %>
-		<%= f.text_field :name, class: "image" %>
-	</div>
+		<div class="flex" style="padding-bottom:10px;">
+				<div style="padding-right:63px;">
+					<%= f.label :name, "商品名" %>
+				</div>
+				<div>
+					<%= f.text_field :name, class: "image", :size=>"32" %>
+				</div>
+			</div>
+			
+			<div class="flex" style="padding-bottom:10px;">
+				<div style="padding-right:50px;">
+					<%= f.label :text, "商品説明" %>
+				</div>
+				<div>
+					<%= f.text_area :text, class: "image", :size=>"30x7" %>
+				</div>
+			</div>
 
-	<div class="field">
-		<%= f.label :text %>
-		<%= f.text_area :text, class: "image" %>
-	</div>
 
-	<div class="field">
-		<%= f.label :category %>
-		<%= f.collection_select :category_id, @categories, :id, :name %>
-	</div>
+			<div class="flex" style="padding-bottom:10px;">
+				<div style="padding-right:50px;">
+					<%= f.label :category, "ジャンル" %>
+				</div>
+				<div>
+					<%= f.collection_select :category_id, @categories, :id, :name, :prompt => "--選択して下さい--"  %>
+				</div>
+			</div>
 
-	<div class="field">
-		<%= f.label :now_price %>
-		<%= f.number_field :now_price, class: "image" %>円
-	</div>
+			<div class="flex" style="padding-bottom:10px;">
+				<div style="padding-right:50px;">
+					<%= f.label :now_price, "税抜価格" %>
+				</div>
+				<div>
+					<%= f.number_field :now_price, class: "image" %>円
+				</div>
+			</div>
 
-	<div class="field">
-		<%= f.label :category %>
-		<%= f.select :flag, {"販売中":1, "販売停止中":2} %>
-	</div>
+			<div class="flex" >
+				<div style="padding-right:8px;">
+					<%= f.label :category, "販売ステータス" %>
+				</div>
+				<div style="text-align: center">
+					<%= f.select :flag, {"販売中":1, "販売停止中":2}, :prompt => "--選択して下さい--" %>
+				</div>
+			</div>
 
-	<!-- <div class="field">
-		<%= f.label :image %>
-		<%= f.attachment_field :image, class: "image" %>
-	</div> -->
-	<div class="action">
- 		<%= f.submit %>
+				<!-- <div class="field">
+					<%= f.label :image %>
+					<%= f.attachment_field :image, class: "image" %>
+				</div> -->
+			<div class="col-xs-offset-9 col-xs-3 action">
+		 		<%= f.submit "新規登録",class: "btn btn-primary btn-lg" %>
+			</div>
+		</div>
 	</div>
 <% end %>
+<style>
+	.flex {
+    display: flex;
+  }
+  .flex > div {
+  }
+ 	#product_category_id {
+ 		width: 230px;
+ 	}
+ 	#product_now_price {
+ 		width: 230px;
+ 	}
+ 	#product_flag{
+ 		width: 230px;
+ 	}
+</style>

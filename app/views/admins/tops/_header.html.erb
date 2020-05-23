@@ -31,8 +31,12 @@
     </div>
     <div align="right">
     <%= form_tag(search_path, :method => "get" ) do %>
-      <%= text_field_tag :search %>
-      <%= submit_tag "Search", :name => nil %>
+      <div class="input-group">
+        <%= text_field_tag :search,params[:search], placeholder: "search" %>
+        <%= button_tag(type: "submit") do %>
+          <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+        <% end %>
+      </div>
     <% end %>
   </div>
   </div>

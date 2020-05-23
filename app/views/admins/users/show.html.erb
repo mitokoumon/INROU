@@ -1,30 +1,91 @@
 <%= render "admins/tops/header" %>
-<%= @user.family_name %>
-<%= @user.last_name %>さんの会員詳細
-
-<br>
-顧客ID  :  <%= @user.id %> 
-<% if @user.flag == 1 %>
-<p>有効会員</p>
-<% else %>
-<p>退会済み</p>
-<% end %>
-
-<br>
-<h3>氏名</h3>
-<%= @user.family_name %>
-<%= @user.last_name %><br>
-<h3>カナ</h3>
-<%= @user.family_name_kana %>
-<%= @user.last_name_kana %>
-<h3>郵便番号</h3>
-<%= @user.post_code %><br>
-<h3>住所</h3>
-<%= @user.address %><br>
-<h3>電話番号</h3>
-<%= @user.telephone_number %><br>
-<h3>メールアドレス</h3>
-<%= @user.email %><br>
-<%= link_to "編集する",edit_admins_user_path %>
-<%= link_to "注文履歴一覧を見る",admins_order_userjudge_path(id: @user.id) %><br>
-<!-- admin_orders_path -->
+<div>
+	<span style="background-color: #EEEEEEEE; font-size: 24px; margin: 100px 50px 100 50;">
+		<%= @user.family_name %>
+		<%= @user.last_name %>さんの会員詳細
+	</span>
+</div>
+<div style="margin-bottom: 40px;"></div>
+<div class ="container">
+	<div class ="row">
+		<div class ="col-xs-2">
+			<b>顧客ID</b>
+		</div>
+		<div class ="col-xs-1">
+			<%= @user.id %>
+		</div>
+		<div class="col-xs-1" style="background-color:#AFDFE4; border-radius: 0.5em; text-align: center; border:solid 1px; padding-top: 5px; line-height: 8px;">
+			<% if @user.flag == 1 %>
+			<p>有効会員</p>
+			<% else %>
+			<p>退会済み</p>
+			<% end %>
+		</div>
+	</div>
+	<div style="margin-bottom: 20px;"></div>
+	<div class="row">
+		<div class="col-xs-2">
+			<b>氏名</b>
+		</div>
+		<div class ="col-xs-1">
+			<%= @user.family_name %>
+			<%= @user.last_name %>
+		</div>
+	</div>
+	<div style="margin-bottom: 30px;"></div>
+	<div class="row">
+		<div class="col-xs-2">
+			<b>カナ</b>
+		</div>
+		<div class ="col-xs-1">
+			<%= @user.family_name_kana %>
+			<%= @user.last_name_kana %>
+		</div>
+	</div>
+	<div style="margin-bottom: 30px;"></div>
+	<div class="row">
+		<div class="col-xs-2">
+			<b>郵便番号</b>
+		</div>
+		<div class ="col-xs-1">
+			<%= @user.post_code %>
+		</div>
+	</div>
+	<div style="margin-bottom: 30px;"></div>
+	<div class="row">
+		<div class="col-xs-2">
+			<b>住所</b>
+		</div>
+		<div class ="col-xs-1">
+			<%= @user.address %>
+		</div>
+	</div>
+	<div style="margin-bottom: 30px;"></div>
+	<div class="row">
+		<div class="col-xs-2">
+			<b>電話番号</b>
+		</div>
+		<div class ="col-xs-1">
+			<%= @user.telephone_number %>
+		</div>
+	</div>
+	<div style="margin-bottom: 30px;"></div>
+	<div class="row">
+		<div class="col-xs-2">
+			<b>メールアドレス</b>
+		</div>
+		<div class ="col-xs-1">
+			<%= @user.email %>
+		</div>
+	</div>
+	<div style="margin-bottom: 30px;"></div>
+	<div class="row">
+		<div class="col-xs-1">
+			<%= link_to "編集する",edit_admins_user_path,class: "btn btn-primary btn-md" %>
+		</div>
+		<div class="col-xs-1">
+			<%= link_to "注文履歴一覧を見る",admins_order_userjudge_path(id: @user.id), class: "btn btn-primary btn-md" %>
+		</div>
+	</div>
+</div>
+	<!-- admin_orders_path -->

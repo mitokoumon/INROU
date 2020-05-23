@@ -8,32 +8,59 @@
         <p>ようこそ、<%= "#{current_user.family_name}" "#{current_user.last_name}"  %>さん！</p>
       </div>
       <div class="col-xs-7 text-right">
-        <button type="button" class="btn btn-default navbar-btn"><%= link_to "マイページ", users_path %>
+        <%= link_to users_path do %>
+          <button type="button" class="btn btn-default navbar-btn">
+            <span>マイページ</span>
           <!-- user_path(current_user.id) -->
         </button>
-        <button type="button" class="btn btn-default navbar-btn"><%= link_to "商品一覧", products_path  %>
+        <% end %>
+      <%= link_to products_path do %>
+        <button type="button" class="btn btn-default navbar-btn">
+          <span>商品一覧</span>
           <!-- products_path -->
         </button>
-        <button type="button" class="btn btn-default navbar-btn"><%= link_to "カート", users_carts_path  %>
+        <% end %>
+      <%= link_to users_carts_path do %>
+        <button type="button" class="btn btn-default navbar-btn">
+          <span>カート</span>
           <!-- users_carts_path -->
         </button>
-        <button type="button" class="btn btn-default navbar-btn"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+      <% end %>
+      <%= link_to destroy_user_session_path, method: :delete do %>
+        <button type="button" class="btn btn-default navbar-btn">
+          <span>ログアウト</span>
           <!-- destroy_user_session_path -->
         </button>
+      <% end %>
       </div>
-      <% else %>        <div class="col-xs-10 text-right">
-          <button type="button" class="btn btn-default"><%= link_to "アバウト", about_path  %>
+
+      <% else %>
+      <div class="col-xs-10 text-right">
+        <%= link_to about_path do %>
+          <button type="button" class="btn btn-default">
+            <span>アバウト</span>
+
             <!-- about_path -->
           </button>
-          <button type="button" class="btn btn-default"><%= link_to "商品一覧", products_path  %>
+        <% end %>
+        <%= link_to products_path do %>
+          <button type="button" class="btn btn-default">
+            <span>商品一覧</span>
             <!-- products_path -->
           </button>
-          <button type="button" class="btn btn-default"><%= link_to "新規登録", new_user_registration_path %>
+        <% end %>
+        <%= link_to new_user_registration_path do %>
+          <button type="button" class="btn btn-default">
+            <span>新規登録</span>
             <!-- new_user_registration_path -->
           </button>
-          <button type="button" class="btn btn-default"><%= link_to "ログイン", new_user_session_path %>
+        <% end %>
+        <%= link_to  new_user_session_path do %>
+          <button type="button" class="btn btn-default">
             <!-- new_user_session_path -->
+            <span>ログイン</span>
           </button>
+        <% end %>
         </div>
     <% end %>
   </div>

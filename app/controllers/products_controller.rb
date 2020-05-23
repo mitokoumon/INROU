@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   def index
   	@categories = Category.where(flag: 1)
-    @products = Product.all
+    @products = Product.page(params[:page]).per(8).order(created_at: :desc)
     @total_number = 0
     @categories.each do |category|
       @total_number += category.products.count

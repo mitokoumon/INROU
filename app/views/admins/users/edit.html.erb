@@ -1,61 +1,96 @@
 <%= render "admins/tops/header" %>
-
-<div style="background-color: #EEEEEE; margin: 100px 50px 100 50;">
-	<h3><%= @user.family_name %><%= @user.last_name %>さんの会員情報編集</h3>
+<div>
+	<span style="background-color: #EEEEEEEE; font-size: 24px; margin: 100px 50px 100 50;">
+		<%= @user.family_name %>
+		<%= @user.last_name %>さんの会員情報編集
+	</span>
 </div>
-
-会員ID  :  <%= @user.id %>
-
-<%= form_for(@user,url: admins_user_path,method: :patch) do |f| %>
-
-	<div class="field">
-		<%= f.label :family_name %>
-		<%= f.text_field :family_name, class: "name" %>
+<div class ="container">
+	<div class ="row">
+		<div class ="col-xs-2">
+			<b>顧客ID</b>
+		</div>
+		<div class ="col-xs-1">
+			<%= @user.id %>
+		</div>
 	</div>
-
-	<div class="field">
-		<%= f.label :last_name %>
-		<%= f.text_field :last_name, class: "name" %>
+	<div style="margin-bottom: 20px;"></div>
+	<div class="row">
+		<%= form_for(@user,url: admins_user_path,method: :patch) do |f| %>
+		<div class="col-xs-2">
+			<b>氏名</b>
+		</div>
+		<div class ="col-xs-1">
+			<%= f.text_field :family_name, class: "name" %>
+		</div>
+		<div class ="col-xs-1 col-xs-offset-1">
+			<%= f.text_field :last_name, class: "name" %>
+		</div>
 	</div>
-
-	<div class="field">
-		<%= f.label :family_name_kana %>
-		<%= f.text_field :family_name_kana, class: "name" %>
+	<div style="margin-bottom: 30px;"></div>
+	<div class="row">
+		<div class="col-xs-2">
+			<b>カナ</b>
+		</div>
+		<div class ="col-xs-1">
+			<%= f.text_field :family_name_kana, class: "name" %>
+		</div>
+		<div class ="col-xs-1 col-xs-offset-1">
+			<%= f.text_field :last_name_kana, class: "name" %>
+		</div>
 	</div>
-
-	<div class="field">
-		<%= f.label :last_name_kana %>
-		<%= f.text_field :last_name_kana, class: "name" %>
+	<div style="margin-bottom: 30px;"></div>
+	<div class="row">
+		<div class="col-xs-2">
+			<b>郵便番号</b>
+		</div>
+		<div class ="col-xs-1">
+			<%= f.text_field :post_code, class: "name" %>
+		</div>
 	</div>
-
-	<div class="field">
-		<%= f.label :post_code %>
-		<%= f.text_field :post_code, class: "name" %>
+	<div style="margin-bottom: 30px;"></div>
+	<div class="row">
+		<div class="col-xs-2">
+			<b>住所</b>
+		</div>
+		<div class ="col-xs-1">
+			<%= f.text_field :address, class: "name" %>
+		</div>
 	</div>
-
-	<div class="field">
-		<%= f.label :address %>
-		<%= f.text_field :address, class: "name" %>
+	<div style="margin-bottom: 30px;"></div>
+	<div class="row">
+		<div class="col-xs-2">
+			<b>電話番号</b>
+		</div>
+		<div class ="col-xs-1">
+			<%= f.text_field :telephone_number, autocomplete: "telephone_number" %>
+		</div>
 	</div>
-
-	<div class="field">
-    <%= f.label :telephone_number %><br />
-    <%= f.text_field :telephone_number, autocomplete: "telephone_number" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autocomplete: "email" %>
-  </div>
-
-	<div class="field">
-    <%= f.label :flag, "会員ステータス" %><br />
-		<label><%=f.radio_button :flag, 1 %>有効</label>
-		<label><%=f.radio_button :flag, 2 %>退会済み</label>
-  </div>
-
-	<div class="actions">
-		<%= f.submit %>
+	<div style="margin-bottom: 30px;"></div>
+	<div class="row">
+		<div class="col-xs-2">
+			<b>メールアドレス</b>
+		</div>
+		<div class ="col-xs-1">
+			<%= f.email_field :email, autocomplete: "email" %>
+		</div>
 	</div>
-
-<% end %>
+	<div style="margin-bottom: 30px;"></div>
+	<div class="row">
+		<div class="col-xs-2">
+		    <%= f.label :flag, "会員ステータス" %>
+		</div>
+		<div class="col-xs-2">
+			<label><%=f.radio_button :flag, 1 %>有効</label>
+		</div>
+		<div class="col-xs-2">
+			<label><%=f.radio_button :flag, 2 %>退会済み</label>
+		</div>
+	</div>
+	<div style="margin-bottom: 30px;"></div>
+		<div class="actions">
+			<%= f.submit class: "btn btn-primary btn-md" %>
+		</div>
+		<% end %>
+	</div>
+</div>

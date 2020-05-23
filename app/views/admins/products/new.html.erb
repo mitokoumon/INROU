@@ -1,5 +1,9 @@
 <%= render "admins/tops/header" %>
-<h1>商品新規登録</h1>
+<div style="width:130px; text-align: center; margin-left:80px">
+	<h3 style="background-color: #EEEEEEEE">商品新規登録</h3>
+</div>
+<div style="height:100px">
+</div>
 <%= form_for(@product,url: admins_products_path,method: :post) do |f| %>
 	<div class="field">
 		<%= f.label :image %>

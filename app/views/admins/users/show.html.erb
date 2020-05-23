@@ -26,5 +26,5 @@
 <h3>メールアドレス</h3>
 <%= @user.email %><br>
 <%= link_to "編集する",edit_admins_user_path %>
-<%= link_to "注文履歴一覧を見る",admins_order_userjudge_path(user_id: @user.id) %><br>
+<%= link_to "注文履歴一覧を見る",admins_order_userjudge_path(id: @user.id) %><br>
 <!-- admin_orders_path -->

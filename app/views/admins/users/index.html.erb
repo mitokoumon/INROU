@@ -1,5 +1,8 @@
 <%= render "admins/tops/header" %>
-<h2>会員一覧</h2>
+<span style="background-color: #EEEEEEEE; font-size: 24px; font-weight:bold;">会員一覧</span>
+<div class="row" style="margin-top: 20px;">
+  <div class=" col-xs-1"></div>
+  <div class=" col-xs-10">
 <table class="table table-bordered">
   <thead>
     <tr class="active">
@@ -29,3 +32,5 @@
     <%= paginate @users %>
   </tbody>
 </table>
+</div>
+</div>

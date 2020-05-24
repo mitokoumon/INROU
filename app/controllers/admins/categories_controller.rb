@@ -6,11 +6,10 @@ class Admins::CategoriesController < ApplicationController
 	end
 
 	def create
-		category = Category.new(category_params)
-		if category.save
+		@category = Category.new(category_params)
+		if @category.save
 			redirect_to admins_categories_path
 		else
-			@category = Category.new
 			@categories = Category.all
 			render "index"
 		end

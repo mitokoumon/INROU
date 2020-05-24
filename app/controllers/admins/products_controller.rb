@@ -23,7 +23,6 @@ class Admins::ProductsController < ApplicationController
     if @product.save
        redirect_to admins_product_path(@product)
     else
-      @product = Product.new
       @categories = Category.where(flag: 1)
       render "new"
     end
@@ -34,7 +33,6 @@ class Admins::ProductsController < ApplicationController
     if @product.update(product_params)
      redirect_to admins_product_path(@product)
     else
-      @product = Product.find(params[:id])
       @categories = Category.where(flag: 1)
       render "edit"
     end

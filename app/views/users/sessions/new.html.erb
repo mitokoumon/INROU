@@ -9,6 +9,7 @@
 </div>
 <div class="row">
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<%= flash[:alert]%>
   <div class="row flex">
     <div class="col-xs-2">
     </div>

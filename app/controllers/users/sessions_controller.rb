@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 class Users::SessionsController < Devise::SessionsController
+  rescue_from ActionController::InvalidAuthenticityToken do
+    redirect_to request.referrer, alert: "Your request has expired, please try again"
+  end
   # before_action :configure_sign_in_params, only: [:create]
   # before_action :reject_user, only: [:create]
 

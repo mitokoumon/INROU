@@ -10,13 +10,16 @@ class UsersController < ApplicationController
 
 	def update
 		@user = User.find(current_user.id)
-		@user.update(user_params)
-		if @user.flag == 1 then
-	  		redirect_to users_path
-		elsif @user.flag == 2
-			reset_session
-			# userを強制的にログアウトする
-      			redirect_to root_path
+		if @user.update(user_params)
+			if @user.flag == 1 then
+		  		redirect_to users_path
+			elsif @user.flag == 2
+				reset_session
+				# userを強制的にログアウトする
+	      			redirect_to root_path
+			end
+		else
+			render "edit"
 		end
 	end
 

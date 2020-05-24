@@ -1,7 +1,7 @@
 class TopsController < ApplicationController
   def top
-    @categories =Category.all
-    @products =Product.all
+    @categories = Category.where(flag: 1)
+    @products = Product.page(params[:page]).per(4).order(created_at: :desc)
   end
   def about
   end

@@ -47,57 +47,57 @@
 					<% end %>
 				</td>
 			</tr>
-</table>
-</div>
-<div class="col-xs-3">
-<h5><strong>請求情報</strong></h5>
-<table class = "table table-bordered">
-		<tr>
-			<td class="active">商品合計</td>
-			<td><%= @order.total_price.round.to_s(:delimited) %></td>
-		</tr>
-		<tr>
-			<td class="active">配送料</td>
-			<td><%= @order.shipping_fee %></td>
-		</tr>
-		<tr>
-			<th class="active">ご請求額</th>
-			<td><%= (@order.total_price + @order.shipping_fee).round.to_s(:delimited) %></td>
-		</tr>
-</table>
-</div>
+		</table>
+	</div>
+	<div class="col-xs-3">
+		<h5><strong>請求情報</strong></h5>
+		<table class = "table table-bordered">
+				<tr>
+					<td class="active">商品合計</td>
+					<td><%= @order.total_price.round.to_s(:delimited) %></td>
+				</tr>
+				<tr>
+					<td class="active">配送料</td>
+					<td><%= @order.shipping_fee %></td>
+				</tr>
+				<tr>
+					<th class="active">ご請求額</th>
+					<td><%= (@order.total_price + @order.shipping_fee).round.to_s(:delimited) %></td>
+				</tr>
+		</table>
+	</div>
 </div>
 
 <div class="row">
-<div class="col-xs-7">
-<h5><strong>注文内容</strong></h5>
-<table class="table table-bordered">
-	<thead>
-		<tr class="active">
-			<th>商品</th>
-			<th>単価（税込）</th>
-			<th>個数</th>
-			<th>小計</th>
-		</tr>
-	</thead>
-	<tbody>
-		<% @order.ordered_products.each do |ordered_product| %>
-		<tr>
-			<td>
-				<%= ordered_product.product.name %><br>
-			</td>
-			<td>
-				<%= ordered_product.price.round.to_s(:delimited) %><br>
-			</td>
-			<td>
-				<%= ordered_product.number %><br>
-			</td>
-			<td><%= (ordered_product.price * ordered_product.number).round.to_s(:delimited) %></td>
-		</tr>
-		<% end %>
-	</tbody>
-</table>
-</div>
+	<div class="col-xs-7">
+	<h5><strong>注文内容</strong></h5>
+		<table class="table table-bordered">
+			<thead>
+				<tr class="active">
+					<th>商品</th>
+					<th>単価（税込）</th>
+					<th>個数</th>
+					<th>小計</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @order.ordered_products.each do |ordered_product| %>
+				<tr>
+					<td>
+						<%= ordered_product.product.name %><br>
+					</td>
+					<td>
+						<%= ordered_product.price.round.to_s(:delimited) %><br>
+					</td>
+					<td>
+						<%= ordered_product.number %><br>
+					</td>
+					<td><%= (ordered_product.price * ordered_product.number).round.to_s(:delimited) %></td>
+				</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
 </div>
 
 <style>

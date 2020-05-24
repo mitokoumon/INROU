@@ -30,13 +30,13 @@ class Admins::OrdersController < ApplicationController
 
 	def topjudge
 		range = Date.today.beginning_of_day..Date.today.end_of_day
-		@orders=Order.where(created_at: range)
+		@orders=Order.where(created_at: range).page(params[:page]).per(10)
 		render "index"
 	end
 
 	def userjudge
 		user = User.find(params[:id])
-		@orders = Order.where(user_id: user.id)
+		@orders = Order.where(user_id: user.id).page(params[:page]).per(10)
 		render "index"
 	end
 

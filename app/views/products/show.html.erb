@@ -1,9 +1,7 @@
 <%= render "users/unless_login_header" %>
 <div class = "container">
 	<div class = "row">
-		<div class="col-xs-3">
 			<%= render "products/sidecategory",categories:@categories%>
-		</div>
 		<div class="col-xs-4">
 			<%=  attachment_image_tag @product, :image, size: "280x190",format: 'jpeg',fallback: "no_image.jpg"  %>
 		</div>

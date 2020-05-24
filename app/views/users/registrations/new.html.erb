@@ -10,6 +10,7 @@
 
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= flash[:alert]%>
   <%= render "devise/shared/error_messages", resource: resource %>
 <div class="row form-box form-box">
   <div class="col-xs-2 col-xs-offset-1">

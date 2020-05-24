@@ -5,6 +5,9 @@
 <div style="height:40px">
 </div>
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div style="margin: 0 20px 40px 0">
+    <%= flash[:alert]%>
+  </div>
     <div class="flex row" style="margin-bottom: 20px;">
       <div class="col-xs-2"></div>
       <div align="right" class="col-xs-2">

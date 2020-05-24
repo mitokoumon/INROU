@@ -1,0 +1,36 @@
+<%= render "admins/tops/header" %>
+<div style="width:250px; text-align: center; margin-left:200px; margin-top:50px">
+  <h3 style="background-color: #EEEEEEEE">管理者ログイン</h3>
+</div>
+<div style="height:40px"><!-- test -->
+</div>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="flex">
+      <div>
+        <%= f.label :email, "メールアドレス" %>
+      </div>
+      <div>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
+    </div>
+    <div class="flex">
+      <div>
+        <%= f.label :password, "パスワード" %>
+      </div>
+      <div>
+        <%= f.password_field :password, autocomplete: "current-password" %>
+      </div>
+    </div>
+
+  <div class="actions">
+    <%= f.submit "ログイン" %>
+  </div>
+<% end %>
+<style>
+.flex {
+    display: flex;
+  }
+  .flex > div {
+    margin:auto 0;
+  }
+</style>

@@ -14,21 +14,28 @@ class Admins::UsersController < ApplicationController
 
 	def update
 		@user = User.find(params[:id])
-		@user.update(user_params)
-		redirect_to admins_user_path(@user.id)
+		if @user.update(user_params)
+			redirect_to admins_user_path(@user.id)
+		else
+			render "edit"
+		end
 	end
 
 	def search
 		split_keyword = params[:search].split(/[[:blank:]]+/)
+		# 検索窓に入力した文字列を空白で分割する
 	  @users = []
 	  @products = []
+	  # 各キーワードで調べた結果を入れるための箱を作る
 	  split_keyword.each do |keyword|
 	    next if keyword == ""
 	    @users += User.where('family_name LIKE ?', "%#{keyword}%").or(User.where(['last_name LIKE ?', "%#{keyword}%"])).or(User.where(['family_name_kana LIKE ?', "%#{keyword}%"])).or(User.where(['last_name_kana LIKE ?', "%#{keyword}%"]))
 	    @products += Product.where('name LIKE ?', "%#{keyword}%")
 	  end
+	  # 各キーワード毎に検索して、[]に入れる
 	  @users.uniq!
 	  @products.uniq!
+	  # []の中で重複した情報を削除する
 		# @users = User.search(params[:search])
 		# @products = Product.search(params[:search])
 	end

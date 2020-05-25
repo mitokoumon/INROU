@@ -2,10 +2,6 @@ class Admins::UsersController < ApplicationController
 	before_action :authenticate_admin!
 	def index
 		@users = User.page(params[:user_page]).per(10)
-		respond_to do |format|
-    	format.html
-    	format.js
-  	end
 	end
 
 	def show

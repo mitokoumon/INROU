@@ -25,6 +25,7 @@ Rails.application.routes.draw do
     patch '/flag' => 'users#update'
   end
   resources :products,only:[:index, :show]
+    resources :product_comments, only: [:create,:destroy]
     get '/product/judge' =>'products#judge'
     get 'user/info/edit' =>'users#edit'
     patch 'user/info' => 'users#update'

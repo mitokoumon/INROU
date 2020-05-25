@@ -24,7 +24,9 @@ Rails.application.routes.draw do
     get '/flag' => 'users#flag'
     patch '/flag' => 'users#update'
   end
-  resources :products,only:[:index, :show]
+  resources :products,only:[:index, :show] do
+    resource :likes, only: [:create, :destroy]
+  end
     get '/product/judge' =>'products#judge'
     get 'user/info/edit' =>'users#edit'
     patch 'user/info' => 'users#update'

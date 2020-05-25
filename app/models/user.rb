@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_many :orders, dependent: :destroy
   has_many :receivers, dependent: :destroy
   has_many :carts, dependent: :destroy
-
+  has_many :likes, dependent: :destroy
   def User.search(search)
     User.where(['family_name LIKE ?', "%#{search}%"]).or(User.where(['last_name LIKE ?', "%#{search}%"])).or(User.where(['family_name_kana LIKE ?', "%#{search}%"])).or(User.where(['last_name_kana LIKE ?', "%#{search}%"]))
   end

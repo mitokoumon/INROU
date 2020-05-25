@@ -2,35 +2,7 @@
 <span style="background-color: #EEEEEEEE; font-size: 24px; font-weight:bold;">会員一覧</span>
 <div class="row" style="margin-top: 20px;">
   <div class=" col-xs-1"></div>
-  <div class=" col-xs-10">
-<table class="table table-bordered">
-  <thead>
-    <tr class="active">
-      <th>会員ID</th>
-      <th>氏名</th>
-      <th>メールアドレス</th>
-      <th>ステータス</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @users.each do |user| %>
-    <tr>
-      <td><%= user.id %></td>
-      <td><%= link_to "#{user.family_name}#{user.last_name}", admins_user_path(user) %></td>
-      <td><%= user.email %></td>
-      <td>
-        <% if user.flag == 1 %>
-          <p>有効</p>
-        <% else %>
-          <p>退会済み</p>
-        <% end %>
-      </td>
-    </tr>
-    <% end %>
-    <!-- コントローラーでUser.page(params[:page])、config/initializers/kaminari_config.rbで
-    config.default_per_page = 10とすることでkaminariページャ 10件ずつ表示に -->
-    <%= paginate @users %>
-  </tbody>
-</table>
-</div>
+  <div class=" col-xs-10" id="item">
+    <%= render 'admins/users/userlist', users: @users %>
+  </div>
 </div>

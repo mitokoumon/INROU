@@ -11,23 +11,25 @@ class ApplicationController < ActionController::Base
     		@user = current_user
     		if @user.flag == 2
       			reset_session
-      			root_path
-			else
-				users_path
-			end
+				end
+				root_path
 		else
 			top_admins_path
 		end
 	end
 
-	def after_sign_up_path_for(resource)
-		users_path
-	end
-
 	# ログアウトと退会後の変遷
-	def after_sign_out_path_for(resource)
+	# def after_sign_out_path_for(resource)
+ #    	root_path
+ # 	end
+
+ 	def after_sign_out_path_for(resource)
+    if resource == :user
     	root_path
- 	end
+    elsif resource == :admin
+      new_admin_session_path
+    end
+  end
 
 	def configure_permitted_parameters
 		devise_parameter_sanitizer.permit(:sign_up, keys: [:family_name, :last_name, :family_name_kana, :last_name_kana, :post_code, :address, :telephone_number, :email, :flag])

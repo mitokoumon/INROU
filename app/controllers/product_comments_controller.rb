@@ -1,14 +1,16 @@
 class ProductCommentsController < ApplicationController
 
     def create
+    	product = Product.find(params[:product_id])
     	comment = current_user.product_comments.new(product_comment_params)
     	#product = Product.find_by(id: comment.product_id)
     	#comment.product_id = product.id
-    	user_comment = ProductComment.find_by(user_id: current_user.id, product_id: comment.product_id)
-	    if user_comment.present?
-	      user_comment.update(title: comment.title, comment: comment.comment, rate: comment.rate)
+    	user_comment = ProductComment.find_by(user_id: current_user.id, product_id: product.id)
+	    if  user_comment.present?
+	    	user_comment.update(title: comment.title, comment: comment.comment, rate: comment.rate)
 	    else
-			comment.save
+	    	comment.product_id = product.id
+			comment.save(product_comment_params)
 	    end
 	    redirect_back(fallback_location: root_path)
 	end

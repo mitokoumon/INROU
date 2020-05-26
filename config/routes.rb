@@ -25,9 +25,9 @@ Rails.application.routes.draw do
   end
 
   resources :products,only:[:index, :show] do
-    resources :product_comments, only: [:create,:destroy]
     resource :bookmarks, only: [:create, :destroy]
   end
+    resources :product_comments, only: [:create,:destroy]
 
     get '/product/judge' =>'products#judge'
     get 'user/info/edit' =>'users#edit'

@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   def index
-  	@categories = Category.where(flag: 1)
+    @categories = Category.where(flag: 1)
     @total_number = 0
     products =[]
     @categories.each do |category|

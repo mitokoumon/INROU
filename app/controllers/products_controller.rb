@@ -1,22 +1,20 @@
 class ProductsController < ApplicationController
   def index
-  	@categories = Category.where(flag: 1)
+    @categories = Category.where(flag: 1)
     @total_number = 0
-    products ={}
-    products.class
+    products =[]
     @categories.each do |category|
       @total_number += category.products.count
-      i = 0
       category.products.each do |product|
-        products.store(product,product.now_price)
+        products.append(product)
       end
     end
-    products = Hash[ products.sort_by{ |_, v| v } ]
-    @products = Kaminari.paginate_array(products.keys).page(params[:page]).per(2)
+    @products = Kaminari.paginate_array(products).page(params[:page]).per(10)
   end
 
   def show
   	@product = Product.find(params[:id])
+    @product_comment = ProductComment.new
   	@categories = Category.where(flag: 1)
   	@cart = Cart.new
     if @product.category.flag == 2

@@ -22,6 +22,10 @@
 						<td>
 							<p style="font-size: 16px">￥ <%= (@product.now_price*1.1).round.to_s(:delimited) %><span style="font-size: 10px"> (税込)</span></p>
 						</td>
+						<td id="bookmarks_buttons_<%= @product.id%>">
+							<!-- 非同期通信したいコードの部分テンプレート -->
+							<%= render 'bookmarks/bookmark', product: @product%>
+						</td>
 					</tr>
 				</tbody>
 			</table>
@@ -47,7 +51,4 @@
 	<% end %>
 </div>
 
-<style>
-
-
-</style>
+<%= render "product_comment",product: @product, product_comment: @product_comment %>

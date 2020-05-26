@@ -25,8 +25,8 @@ ActiveRecord::Schema.define(version: 2020_05_25_091109) do
   end
 
   create_table "bookmarks", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "product_id", null: false
+    t.integer "user_id"
+    t.integer "product_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["product_id"], name: "index_bookmarks_on_product_id"
@@ -119,6 +119,8 @@ ActiveRecord::Schema.define(version: 2020_05_25_091109) do
     t.integer "flag"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "latitude"
+    t.float "longitude"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

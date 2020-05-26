@@ -23,7 +23,12 @@
 									<%=  attachment_image_tag product,:image, size: "120x90",format: 'jpeg',fallback: "no_image.jpg" %><br>
 									<p style="width: 120px"><%= product.name %></p>
 								<% end %>
-								<p>￥<%= (product.now_price).round.to_s(:delimited) %></p>
+								<p>￥<%= (product.now_price).round.to_s(:delimited) %>
+								<span id="bookmarks_buttons_<%= product.id%>" style="margin-left: 40px">
+									<!-- 非同期通信したいコードの部分テンプレート -->
+									<%= render 'bookmarks/bookmark', product: product %>
+							  </span>
+							  </p>
 							</div>
 						<% end %>
 					<% end %>

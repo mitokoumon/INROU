@@ -35,12 +35,15 @@
 <div class="row">
 	<%= form_for([@product,@cart],url:users_carts_path(id: @product.id),method: :post) do |f| %>
 	<%= render 'admins/shared/error_messages', resource: f.object %>
-	<div class="col-xs-1 col-xs-offset-7 number-tab">
-		<%= f.number_field :number, class: "form-control" %>
-	</div>
-		<div class="col-xs-3">
-			<%=f.submit "カートに入れる", class: "btn btn-primary" %>
+	<% if user_signed_in? && @product.flag == 1 %>
+		<div class="col-xs-1 col-xs-offset-7 number-tab">
+			<%= f.number_field :number, class: "form-control" %>
 		</div>
+			<div class="col-xs-3">
+				<%=f.submit "カートに入れる", class: "btn btn-primary" %>
+			</div>
+	<% else %>
+	<% end %>
 	<% end %>
 </div>
 

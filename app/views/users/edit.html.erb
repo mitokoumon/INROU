@@ -7,71 +7,77 @@
 <!-- useridが必要ないケースだとdevise側のeditとルーティングが一緒になるので変えるなり順番なりで注意が必要
  -->
 <div class ="container">
-	<div class ="row">
+	<div class ="row flex">
 			<div class="col-xs-2">
 				<span>名前</span>
 			</div>
 			<div class="col-xs-1">
 				<span>(姓)</span>
 			</div>
-			<div class="col-xs-3">
-				<%= f.text_field :family_name, class: "name" %>
+			<div class="col-xs-2">
+				<%= f.text_field :family_name, class: "name form-control" %>
 			</div>
 			<div class="col-xs-1">
 				<span>(名)</span>
 			</div>
-			<div class="col-xs-3">
-				<%= f.text_field :last_name, class: "name" %>
+			<div class="col-xs-2">
+				<%= f.text_field :last_name, class: "name form-control" %>
 			</div>
 	</div>
-	<div class ="row">
+	<div class ="row flex">
 			<div class="col-xs-2">
 				<span>フリガナ</span>
 			</div>
 			<div class="col-xs-1">
 				<span>(セイ)</span>
 			</div>
-			<div class="col-xs-3">
-				<%= f.text_field :family_name_kana, class: "name" %>
+			<div class="col-xs-2">
+				<%= f.text_field :family_name_kana, class: "name form-control" %>
 			</div>
 			<div class="col-xs-1">
 				<span>(メイ)</span>
 			</div>
 
-			<div class="col-xs-3">
-				<%= f.text_field :last_name_kana, class: "name" %>
+			<div class="col-xs-2">
+				<%= f.text_field :last_name_kana, class: "name form-control" %>
 			</div>
 	</div>
-	<div class ="row">
+	<div class ="row flex">
 			<div class="col-xs-3">
 				<span>メールアドレス</span>
 			</div>
-			<div class="col-xs-3">
-				<%= f.text_field :address, class: "name" %>
+			<div class="col-xs-2">
+				<%= f.text_field :email, class: "name form-control" %>
 			</div>
 	</div>
-	<div class ="row">
-			<div class="col-xs-3">
-				<span>郵便番号（ハイフンなし）</span>
-			</div>
-			<div class="col-xs-3">
-				<%= f.text_field :post_code, class: "name" %>
-			</div>
-	</div>
-	<div class ="row">
-			<div class="col-xs-3">
-					<span>住所</span>
-			</div>
-			<div class="col-xs-7">
-				<%= f.text_field :address, class: "name" %>
-			</div>
-	</div>
-	<div class ="row">
+			<form>
+    		<div class="h-adr">
+    			<span class="p-country-name" style="display:none;">Japan</span>
+    			<div class="row flex">
+	      			<input type="hidden" class="p-country-name">
+	      			<div class="col-xs-3">
+						<span>郵便番号</span>
+					</div>
+					<div class="col-xs-2">
+	        			<%= f.text_field :post_code, class: 'p-postal-code form-control', size: 8, max_length: 8, placeholder: '1000000' %>
+	        		</div>
+	        	</div>
+	        	<div class="row flex">
+	        		<div class="col-xs-3">
+	        			<span>住所</span>
+					</div>
+					<div class="col-xs-5">
+						<%= f.text_field :address, class: 'p-region p-locality p-street-address p-extended-address form-control' %>
+					</div>
+				</div>
+      		</div>
+      		</form>
+	<div class ="row flex">
 			<div class="col-xs-3">
 					<span>電話番号（ハイフンなし）</span>
 			</div>
-			<div class="col-xs-3">
-				<%= f.text_field :address, class: "name" %>
+			<div class="col-xs-2">
+				<%= f.text_field :telephone_number, class: "name form-control" %>
 			</div>
 	</div>
 	<div class ="row">

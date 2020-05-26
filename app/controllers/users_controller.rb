@@ -2,6 +2,8 @@ class UsersController < ApplicationController
 	before_action :authenticate_user!
 	def show
 		@user = User.find(current_user.id)
+		@products = @user.bookmark_products
+		# ユーザーがブックマークした商品を代入する。bookmark_productsはuser.rbでアソシエーションしたもの。
 	end
 
 	def edit

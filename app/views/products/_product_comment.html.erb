@@ -46,6 +46,7 @@
             <%= product_comment.comment %>
           </td>
           <td class="col-xs-1">
+            <!-- 自分の口コミ削除機能 -->
             <% if user_signed_in? %>
               <% if product_comment.user_id == current_user.id %>
               <%= link_to "削除",product_comment_path(product_comment.id), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"}, class: "btn-sm btn-danger" %>
@@ -64,8 +65,8 @@
       <%= form_with url:product_comments_path(product_id: product.id), model:[product, product_comment], local: true do |f| %>
 
         <!--商品コードの送信-->
-        <%#= f.hidden_field :product_id, :value => product.id productはparamsに入れて送ることに%>
-        <%#= f.hidden_field :user_id, :value => current_user.id userは言わずもがな必要ないと%>
+        <%#= f.hidden_field :product_id, :value => product.id #productはparamsに入れて送ることに%>
+        <%#= f.hidden_field :user_id, :value => current_user.id #userは言わずもがな必要ないと%>
 
         <!-- タイトル -->
         <div class="form-group row">

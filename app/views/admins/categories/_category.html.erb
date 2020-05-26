@@ -1,0 +1,15 @@
+<% categories.each do |category| %>
+<tr>
+<td>
+  <%= category.name %>
+</td>
+<td>
+  <% if category.flag == 1 %>有効
+  <% else %>無効
+  <% end %>
+</td>
+<td>
+  <%= link_to "編集する",edit_admins_category_path(category.id), class: "btn btn-primary btn-md" %>
+</td>
+</tr>
+<% end %>

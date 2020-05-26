@@ -10,7 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 2020_05_25_091109) do
 
   create_table "admins", force: :cascade do |t|
@@ -26,8 +25,8 @@ ActiveRecord::Schema.define(version: 2020_05_25_091109) do
   end
 
   create_table "bookmarks", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "product_id", null: false
+    t.integer "user_id"
+    t.integer "product_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["product_id"], name: "index_bookmarks_on_product_id"
@@ -78,8 +77,8 @@ ActiveRecord::Schema.define(version: 2020_05_25_091109) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.float "rate"
     t.string "title"
+    t.float "rate"
     t.index ["product_id"], name: "index_product_comments_on_product_id"
     t.index ["user_id"], name: "index_product_comments_on_user_id"
   end
@@ -120,6 +119,8 @@ ActiveRecord::Schema.define(version: 2020_05_25_091109) do
     t.integer "flag"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "latitude"
+    t.float "longitude"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

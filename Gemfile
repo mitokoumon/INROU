@@ -39,8 +39,6 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'rspec-rails'
-  gem 'factory_bot_rails'
 end
 
 group :development do
@@ -69,4 +67,3 @@ gem 'refile', require: "refile/rails", github: 'manfe/refile'
 gem 'refile-mini_magick'
 gem 'kaminari', '~> 1.1.1'
 gem 'pry-rails'
-gem 'jp_prefecture'

@@ -22,6 +22,10 @@
 						<td>
 							<p style="font-size: 16px">￥ <%= (@product.now_price*1.1).round.to_s(:delimited) %><span style="font-size: 10px"> (税込)</span></p>
 						</td>
+						<td id="bookmarks_buttons_<%= @product.id%>">
+							<!-- 非同期通信したいコードの部分テンプレート -->
+							<%= render 'bookmarks/bookmark', product: @product%>
+						</td>
 					</tr>
 				</tbody>
 			</table>
@@ -35,16 +39,16 @@
 <div class="row">
 	<%= form_for([@product,@cart],url:users_carts_path(id: @product.id),method: :post) do |f| %>
 	<%= render 'admins/shared/error_messages', resource: f.object %>
-	<div class="col-xs-1 col-xs-offset-7 number-tab">
-		<%= f.number_field :number, class: "form-control" %>
-	</div>
-		<div class="col-xs-3">
-			<%=f.submit "カートに入れる", class: "btn btn-primary" %>
+	<% if user_signed_in? && @product.flag == 1 %>
+		<div class="col-xs-1 col-xs-offset-7 number-tab">
+			<%= f.number_field :number, class: "form-control" %>
 		</div>
+			<div class="col-xs-3">
+				<%=f.submit "カートに入れる", class: "btn btn-primary" %>
+			</div>
+	<% else %>
+	<% end %>
 	<% end %>
 </div>
 
-<style>
-
-
-</style>
+<%= render "product_comment",product: @product, product_comment: @product_comment %>

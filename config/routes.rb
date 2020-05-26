@@ -17,14 +17,18 @@ Rails.application.routes.draw do
     resources :receivers,only:[:index, :create, :destroy, :edit, :update]
     resources :carts,only:[:index, :update, :create, :destroy]
     resources :orders,only:[:index, :show, :new, :create]
-
     get '/order/thanks' => 'orders#thanks'
     get '/order/check' => 'orders#check'
     delete '/carts' => 'carts#destroy_all'
     get '/flag' => 'users#flag'
     patch '/flag' => 'users#update'
   end
-  resources :products,only:[:index, :show]
+
+  resources :products,only:[:index, :show] do
+    resources :product_comments, only: [:create,:destroy]
+    resource :bookmarks, only: [:create, :destroy]
+  end
+
     get '/product/judge' =>'products#judge'
     get 'user/info/edit' =>'users#edit'
     patch 'user/info' => 'users#update'

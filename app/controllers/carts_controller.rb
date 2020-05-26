@@ -28,7 +28,6 @@ class CartsController < ApplicationController
         @categories = Category.where(flag: 1)
         render template: 'products/show'
       end
-      
     end
     # Cart.find_by(product_id: @product.id, user_id: current_user.id)で既に
     # カレントユーザーが同じ商品をカートに入れているのか調べる

@@ -6,6 +6,7 @@ class Admins::ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    @product_comment = ProductComment.new #必要ない
   end
 
   def new

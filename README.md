@@ -1,24 +1,34 @@
-# README
+# ECサイト　「長野CAKE」
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##概要
+洋菓子店のネット販売をするためのサイト
 
-Things you may want to cover:
+##アプリケーションの説明
+###user
+-トップページ
+-ログイン
+-マイページ
+-配送先
+-商品一覧
+-カート
+-注文
+-注文履歴
+-お気に入り
+-コメント
+-ランキング
+###admin
+-ログイン
+-トップページ
+-ユーザー一覧
+-注文管理
+-ジャンル機能
+-検索
 
-* Ruby version
+##使用言語
+###フロント
+-HTML/css
+-javascript
+###バック
+-ruby
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+##製作者

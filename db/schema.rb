@@ -62,6 +62,18 @@ ActiveRecord::Schema.define(version: 2020_05_18_084823) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "product_comments", force: :cascade do |t|
+    t.text "comment"
+    t.integer "product_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.float "rate"
+    t.string "title"
+    t.index ["product_id"], name: "index_product_comments_on_product_id"
+    t.index ["user_id"], name: "index_product_comments_on_user_id"
+  end
+
   create_table "products", force: :cascade do |t|
     t.integer "category_id"
     t.string "name"

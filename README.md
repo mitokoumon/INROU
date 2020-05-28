@@ -32,7 +32,7 @@
 -ruby
 
 ##製作者
--Hiro-o-ai　
+-Hiro-o-ai
 -ryusuke06
 -tatsukikamei
 -Tatsuro-div1122

@@ -1,5 +1,5 @@
 <%= render "admins/tops/header" %>
-
+<div class="container">
 <div style="width:130px; text-align: center; margin-left:80px">
 	<h3 style="background-color: #EEEEEEEE">商品詳細</h3>
 </div>
@@ -11,7 +11,7 @@
 			<%=  attachment_image_tag @product, :image, size: "280x190",format: 'jpeg',fallback: "no_image.jpg"  %>
 		</div>
 		<div class="col-xs-8">
-			<table style="text-align: left">
+			<table style="text-align: left; height:350px;">
 				<tbody>
 					<tr>
 						<th>商品名</th>
@@ -58,13 +58,13 @@
 <div class="col-xs-3">
 	<%= link_to "編集する",edit_admins_product_path(@product), class: "btn btn-default btn-primary" %>
 </div>
+</div>
+
+<%= render "products/product_comment",product: @product %>
 
 <style>
 	.col-xs-8 {
 		width:600px;
-	}
-	table {
-		height:350px;
 	}
 	th {
 		text-align: center;

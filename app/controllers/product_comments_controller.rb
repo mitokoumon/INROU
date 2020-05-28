@@ -1,5 +1,5 @@
 class ProductCommentsController < ApplicationController
-	before_action :authenticate_user!, only[:create]
+	before_action :authenticate_user!, only:[:create]
     def create
     	product = Product.find(params[:product_id])
     	comment = current_user.product_comments.new(product_comment_params)

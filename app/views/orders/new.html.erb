@@ -47,43 +47,41 @@
 			<%= f.radio_button :zyusyo, "3" %> <span style="font-weight:300;">新しいお届け先</span>
 		</label>
 	</div>
-	<form>
-    		<div class="h-adr">
-    			<span class="p-country-name" style="display:none;">Japan</span>
-    			<div class="row flex">
-    				<div class="col-xs-2">
-					</div>
-	      			<input type="hidden" class="p-country-name">
-	      			<div class="col-xs-2">
-						<span>郵便番号</span>
-					</div>
-					<div class="col-xs-2">
-	        			<%= f.text_field :post_code, class: 'p-postal-code form-control', size: 8, max_length: 8, placeholder: '1000000' %>
-	        		</div>
-	        	</div>
-	        	<div class="row flex">
-	        		<div class="col-xs-2">
-					</div>
-	        		<div class="col-xs-2">
-	        			<span>住所</span>
-					</div>
-					<div class="col-xs-3">
-						<%= f.text_field :address, class: 'p-region p-locality p-street-address p-extended-address form-control' %>
-					</div>
-				</div>
-      		</div>
-      		</form>
+		<div class="h-adr">
+			<span class="p-country-name" style="display:none;">Japan</span>
 			<div class="row flex">
 				<div class="col-xs-2">
 				</div>
-					<div class="col-xs-2">
-						<span>宛名</span>
-					</div>
-					<div class ="col-xs-2">
-						<%= f.text_field :name,class: 'form-control' %>
-					</div>
+      			<input type="hidden" class="p-country-name">
+      			<div class="col-xs-2">
+					<span>郵便番号</span>
+				</div>
+				<div class="col-xs-2">
+        			<%= f.text_field :post_code, class: 'p-postal-code form-control', size: 8, max_length: 8, placeholder: '1000000' %>
+        		</div>
+        	</div>
+        	<div class="row flex">
+        		<div class="col-xs-2">
+				</div>
+        		<div class="col-xs-2">
+        			<span>住所</span>
+				</div>
+				<div class="col-xs-3">
+					<%= f.text_field :address, class: 'p-region p-locality p-street-address p-extended-address form-control' %>
 				</div>
 			</div>
+  		</div>
+		<div class="row flex">
+			<div class="col-xs-2">
+			</div>
+				<div class="col-xs-2">
+					<span>宛名</span>
+				</div>
+				<div class ="col-xs-2">
+					<%= f.text_field :name,class: 'form-control' %>
+				</div>
+			</div>
+		</div>
 	<div align="center">
 		<%= f.submit "確認画面へ進む" ,class: "btn btn-primary" %>
 	</div>

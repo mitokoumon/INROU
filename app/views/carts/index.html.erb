@@ -25,6 +25,7 @@
       </thead>
       <tbody>
       <% @carts.each do |cart| %>
+        <% unless cart.product.flag == 2 %>
         <tr>
           <td>
             <%= attachment_image_tag cart.product,:image, size: "70x40",format: 'jpeg',fallback: "no_image.jpg", class: "imagetag" %>
@@ -32,7 +33,7 @@
           </td>
           <td><%= cart.product.now_price.round.to_s(:delimited) %></td>
           <td>
-            <%= form_with(url: users_cart_path(id: cart.id), model:cart, local: true) do |f| %>
+            <%= form_with(url: users_cart_path(id: cart.id), model:cart, remote: true) do |f| %>
             <div class="row">
             <div class="col-xs-7">
             <%= f.number_field :number, class: "form-control" %>
@@ -51,6 +52,7 @@
             <%= link_to "削除する", users_cart_path(id: cart.id), method: :delete, data: {confirm:"本当に削除してもよろしいですか？"}, class: "btn btn-danger" %>
           </td>
         </tr>
+        <% end %>
       <% end %>
     </tbody>
   </table>

@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   def index
-  	@categories = Category.where(flag: 1)
+    @categories = Category.where(flag: 1)
     @total_number = 0
     products =[]
     @categories.each do |category|
@@ -14,6 +14,7 @@ class ProductsController < ApplicationController
 
   def show
   	@product = Product.find(params[:id])
+    @product_comment = ProductComment.new
   	@categories = Category.where(flag: 1)
   	@cart = Cart.new
     if @product.category.flag == 2

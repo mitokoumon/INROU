@@ -2,7 +2,6 @@ class Order < ApplicationRecord
   belongs_to :user
   has_many :ordered_products, dependent: :destroy
   accepts_nested_attributes_for :ordered_products
-  validates :address, presence: true
 
   validates :address,:name,:payment, presence: true
   validates :post_code,length:{is:7}

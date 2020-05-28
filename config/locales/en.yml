@@ -34,7 +34,7 @@ en:
 
   views:
     pagination:
-      first: <i><img src='nagano-chara.png'></i>
+      first: <i class="fas fa-angle-right"></i>
       last: <i class="fas fa-angle-double-right"></i>
       previous: <i class="fas fa-angle-left"></i>
       next: <i class="fas fa-angle-right"></i>

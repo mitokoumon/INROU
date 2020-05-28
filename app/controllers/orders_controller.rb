@@ -11,41 +11,31 @@ class OrdersController < ApplicationController
     @order = Order.new
   end
 
+  def create_test
+    address_select = params[:address]
+    session[:payment] = params[:payment]
+    binding.pry
+    if address_select == "1"
+      session[:order] = {"postcode": current_user.post_code, "address": current_user.address, "name": current_user.family_name+current_user.last_name }
+    elsif address_select == "2"
+      receiver = Receiver.find(params[:id])
+      session[:order] = {"postcode": receiver.post_code, "address": receiver.address, "name": receiver.name }
+    elsif address_select =="3"
+      session[:order] = {"postcode": params[:post_code], "address": params[:address], "name": params[:name] }
+    end
+    redirect_to order_check_users_path
+  end
+
   def check
 	@order = Order.new
   # newから持ってきた情報をcheckに送るためにインスタンス変数として情報を入れ込んでます
 	@order.ordered_products.build
   # orderとordered_productに同時に保存する際に必要
-	@payment = params[:payment]
-  # new画面のpaymentのデータを取り出す
-	zyusyo = params[:zyusyo]
-  # new画面のzyusyo(ラジオボタンの番号)のデータを取り出す
 	@total_price = 0
 	current_user.carts.each do |cart|
 		@total_price += cart.product.now_price * cart.number * 1.1
 	end
-  	if zyusyo == "1"
-  		@aaa = current_user.address_all
-      # user.rbに定義したメソッド(address_all)を使用
-  		@ddd = current_user.address
-  		@bbb = current_user.post_code
-  		@ccc = current_user.family_name+current_user.last_name
-  	elsif zyusyo == "2"
-  		reciever_id = params[:zyusyo2]
-  		receiver = Receiver.find(reciever_id)
-  		@aaa = receiver.address_all
-      # receiver.rbに定義したメソッド(address_all)を使用
-  		@ddd = receiver.address
-  		@bbb = receiver.post_code
-  		@ccc = receiver.name
-  	elsif zyusyo == "3"
-  		@aaa = params[:address] +params[:post_code] +params[:name]
-  		@ddd = params[:address]
-  		@bbb = params[:post_code]
-  		@ccc = params[:name]
-  	else
-  	end
-    # 選んだラジオボタンによってユーザーの住所、登録配送先、入力した住所を取り出せるようにする
+
   end
 
   def thanks
@@ -56,6 +46,7 @@ class OrdersController < ApplicationController
   	if @order.save
     	carts = current_user.carts
     	carts.destroy_all
+      reset_session
     	redirect_to order_thanks_users_path
     else
       render "new"

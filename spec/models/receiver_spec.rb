@@ -1,19 +1,39 @@
 require 'rails_helper'
 
 RSpec.describe Receiver, type: :model do
-  context "データが正しく保存される" do
+  describe 'バリデーションのテスト' do
     before do
-      @user = create :user
-      @receiver = Receiver.new
-      # @receiver.id = 1
-      @receiver.user_id = @user.id
-      @receiver.post_code = "1234567"
-      @receiver.address = "石川県"
-      @receiver.name ="酒井龍樹"
-      @receiver.save
+      # @user = create :user
+      @receiver = build :receiver
     end
-    it "全て入力してあるので保存される" do
-      expect(@receiver).to be_valid
+    context "データが正しく保存される" do
+      it "全て入力してあるので保存される" do
+        expect(@receiver).to be_valid
+      end
+    end
+    context "データが保存されない" do
+      it "郵便番号6文字" do
+        @receiver.post_code = "123456"
+        expect(@receiver).to be_invalid
+        expect(@receiver.errors[:post_code]).to include("is the wrong length (should be 7 characters)")
+      end
+      it "住所なし" do
+        @receiver.address = ""
+        expect(@receiver).to be_invalid
+        expect(@receiver.errors[:address]).to include("can't be blank")
+      end
+      it "宛名なし" do
+        @receiver.name = ""
+        expect(@receiver).to be_invalid
+        expect(@receiver.errors[:name]).to include("can't be blank")
+      end
+    end
+  end
+  describe 'アソシエーションのテスト' do
+    context 'Userモデルとの関係' do
+      it 'N:1となっている' do
+        expect(Receiver.reflect_on_association(:user).macro).to eq :belongs_to
+      end
     end
   end
 end

@@ -77,8 +77,8 @@ ActiveRecord::Schema.define(version: 2020_05_25_091109) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.float "rate"
     t.string "title"
+    t.float "rate"
     t.index ["product_id"], name: "index_product_comments_on_product_id"
     t.index ["user_id"], name: "index_product_comments_on_user_id"
   end

@@ -5,7 +5,7 @@
 	</div>
 </div>
 <div class ="row">
-	<%= form_with url:order_check_users_path,action: :check,method: :get,local: true do |f| %>
+	<%= form_with model:@order, url:order_check_users_path,method: :post,local: true do |f| %>
 	<%=  %>
 	<%= render 'admins/shared/error_messages', resource: @order %>
 	<!-- form_withにモデルを関連させずに確認画面を表示させるようにすることで下記のフォームの内容を確認画面で使用できるようにする -->
@@ -27,7 +27,7 @@
 	</div>
 	<div class="col-xs-offset-1">
 		<label>
-			<%= f.radio_button :zyusyo, "1" %><span style="font-weight:300;">ご自身の住所</span>
+			<%= f.radio_button :address, "1" %><span style="font-weight:300;">ご自身の住所</span>
 		</label>
 	</div>
 	<div class="col-xs-offset-2">
@@ -35,16 +35,16 @@
 	</div>
 	<div class="col-xs-offset-1">
 		<label>
-			<%= f.radio_button :zyusyo, "2" %> <span style="font-weight:300;">登録済住所から選択</span>
+			<%= f.radio_button :address, "2" %> <span style="font-weight:300;">登録済住所から選択</span>
 		</label>
 	</div>
 	<div class="col-xs-offset-2">
-			<%= f.collection_select :zyusyo2, current_user.receivers, :id, :address_all %>
+			<%= f.collection_select :id, current_user.receivers, :id, :address_all %>
 			<!-- 選択肢として見せているのがreceiversのaddress_allで選んだときに送られるのはreceivers.idになってます -->
 	</div>
 	<div class="col-xs-offset-1">
 		<label>
-			<%= f.radio_button :zyusyo, "3" %> <span style="font-weight:300;">新しいお届け先</span>
+			<%= f.radio_button :address, "3" %> <span style="font-weight:300;">新しいお届け先</span>
 		</label>
 	</div>
 		<div class="h-adr">

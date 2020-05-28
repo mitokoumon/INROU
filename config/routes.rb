@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     resources :receivers,only:[:index, :create, :destroy, :edit, :update]
     resources :carts,only:[:index, :update, :create, :destroy]
     resources :orders,only:[:index, :show, :new, :create]
+
     get '/order/thanks' => 'orders#thanks'
     get '/order/check' => 'orders#check'
     delete '/carts' => 'carts#destroy_all'

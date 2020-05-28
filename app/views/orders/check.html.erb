@@ -56,7 +56,7 @@
 		<h5><strong>支払方法</strong></h5>
 	</div>
 	<div class="col-xs-8" style="padding-top: 5px">
-		<% if session[:order]["payment"] == "1" %>
+		<% if session[:payment] == 1 %>
 			<p>クレジットカード</p>
 		<% else %>
 			<p>銀行振込</p>
@@ -68,33 +68,33 @@
 		<h5><strong>お届け先</strong></h5>
 	</div>
 	<div class="col-xs-8" style="padding-top: 5px">
-		<%= session[:order]["postcode"] %>
-		<%= session[:order]["address"] %><br>
-		<%= session[:order]["name"]%>
+		<%= session[:input]["postcode"] %>
+		<%= session[:input]["address"] %><br>
+		<%= session[:input]["name"]%>
 	</div>
 </div>
 <%= form_with(url: users_orders_path,model:@order, local: true) do |f| %>
 <%= f.hidden_field :user_id, :value => current_user.id %>
-<%= f.hidden_field :post_code, :value => session[:order]["postcode"] %>
-<%= f.hidden_field :address, :value => session[:order]["address"] %>
-<%= f.hidden_field :name, :value => session[:order]["name"] %>
+<%= f.hidden_field :post_code, :value => session[:input]["postcode"] %>
+<%= f.hidden_field :address, :value => session[:input]["address"] %>
+<%= f.hidden_field :name, :value => session[:input]["name"] %>
 <%= f.hidden_field :total_price, :value => @total_price %>
 <%= f.hidden_field :shipping_fee, :value => 800 %>
-<%= f.hidden_field :payment, :value => session[:order]["payment"] %>
+<%= f.hidden_field :payment, :value => session[:payment] %>
 <%= f.hidden_field :flag, :value => 1 %>
-	<% current_user.carts.each do |cart| %>
-	<%= f.fields_for :ordered_products do |a| %>
-		<%= a.hidden_field :product_id, :value => cart.product.id %>
-		<%= a.hidden_field :number, :value => cart.number %>
-		<%= a.hidden_field :price, :value => cart.product.now_price %>
-		<%= a.hidden_field :flag, :value => 1 %>
+	<#% current_user.carts.each do |cart| %>
+	<#%= f.fields_for :ordered_products do |a| %>
+		<#%= a.hidden_field :product_id, :value => cart.product.id %>
+		<#%= a.hidden_field :number, :value => cart.number %>
+		<#%= a.hidden_field :price, :value => cart.product.now_price %>
+		<#%= a.hidden_field :flag, :value => 1 %>
 		<!-- 親モデルにデータを飛ばすときに子モデルにも一緒にデータを飛ばす方法
 		https　://www.y-hakopro.com/entry/2019/08/03/234126 -->
-	<% end %>
+	<#% end %>
 <!-- 	orderコントローラーでparamsとして得られるようにしてから
 	fields_for :ordered_products内に保存するデータのフォームを入れることで、
 	ordered_productsに保存できるようになる。 -->
-<% end %>
+<#% end %>
 <div class="row">
 	<div class="col-xs-1 col-xs-offset-5" style="padding-top: 50px">
 	<%= f.submit "購入を確定する" , class: "btn btn-success" %>

@@ -19,7 +19,7 @@ Rails.application.routes.draw do
     resources :orders,only:[:index, :show, :new, :create]
     get '/order/thanks' => 'orders#thanks'
     get '/order/check' => 'orders#check'
-    post '/order/check' => 'orders#create_test'
+    get '/order/checktest' => 'orders#create_test'
     delete '/carts' => 'carts#destroy_all'
     get '/flag' => 'users#flag'
     patch '/flag' => 'users#update'

@@ -5,7 +5,7 @@
 	</div>
 </div>
 <div class ="row">
-	<%= form_with url:order_check_users_path,method: :post,local: true do |f| %>
+	<%= form_with url: order_checktest_users_path,method: :get,local: true do |f| %>
 	<%=  %>
 	<%= render 'admins/shared/error_messages', resource: @order %>
 	<!-- form_withにモデルを関連させずに確認画面を表示させるようにすることで下記のフォームの内容を確認画面で使用できるようにする -->

@@ -14,6 +14,7 @@ class ProductsController < ApplicationController
 
   def show
   	@product = Product.find(params[:id])
+    session[:product] = @product
     @product_comment = ProductComment.new
   	@categories = Category.where(flag: 1)
   	@cart = Cart.new

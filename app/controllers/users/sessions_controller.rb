@@ -12,10 +12,13 @@ class Users::SessionsController < Devise::SessionsController
   #   super
   # end
 
-  # POST /resource/sign_in
-  # def create
-  #   super
-  # end
+  POST /resource/sign_in
+  def create
+     super
+     if session[:product].present?
+      redirect_to session[:product]
+    end
+  end
 
   # DELETE /resource/sign_out
   # def destroy
